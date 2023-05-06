@@ -1,0 +1,3 @@
+this may be logo goes into a smaller version. but not just by scaling down. 
+instead it can shrink to a point, then move to left, completely disappear, then 
+come up back with a smaller version.

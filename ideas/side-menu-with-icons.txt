@@ -1,0 +1,7 @@
+Just like the VSCode's side menu. everything with icons. this will make 
+sidebar's width thinner. but when hovered, a tooltip should come with animation 
+that names the item. we can use after with animation transform translate 
+and opacity. don't forget to add no select and pointer events none to the after 
+element.
+
+this will also give familiar feelings to the reviewer if he uses VSCode.

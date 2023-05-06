@@ -1,0 +1,2 @@
+I haven't done that bu I think there's such thing. I saw examples with css for 
+mobile with horizontal scrolls.

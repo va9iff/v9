@@ -1,0 +1,6 @@
+a dot following the cursor was a cute idea. but what about 2 - big and small 
+balls fallows? and big bal can't reach it as fast as the small ball.
+
+so moving it will make them go in different trajectories.
+
+maybe even crazier, multiple balls

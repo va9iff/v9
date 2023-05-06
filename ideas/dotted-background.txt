@@ -1,0 +1,1 @@
+and these dots will go low in opacity with going away from center.

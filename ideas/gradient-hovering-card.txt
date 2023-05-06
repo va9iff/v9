@@ -1,0 +1,3 @@
+there could not be better hover effect than this.
+
+a radial gradient appears in the card and follows your cursor.

@@ -1,0 +1,3 @@
+for exmaple, circles in the background that will move (transform translate) 
+according to relative position of the mouse in the window (cursorX/windowWidth, 
+cursorY/windowHeight)

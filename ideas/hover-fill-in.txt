@@ -1,0 +1,10 @@
+instad of hovering turns black bg to white, we can:
+
+hovering to an elment will a circle grow in this element with white bg.
+
+this will give a fill efect.
+
+but what if circle doesn't fill completely? using too big values would mess it up.
+
+the bg turning white from dark will go with it simultaniously. but since the 
+circle has 100% opacity, these parts will appear to be "already filled".

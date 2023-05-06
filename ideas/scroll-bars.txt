@@ -1,0 +1,16 @@
+this is a must.
+
+I have a cool idea for "inverted" or "negative" border radius.
+
+scroll bar would look like this by default:
+|            |============|         |
+
+with normal radius:
+|            (============)         |
+
+with "negative" radius:
+|============)            (=========|
+
+how?
+a shadow with normal radius that starts at the end goes to the infinity end.
+a shadow with normal radius that starts at the start goes to the infinity start.

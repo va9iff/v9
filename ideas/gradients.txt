@@ -1,0 +1,2 @@
+radial gradients in the background would look nice in dark. 
+especially cool colors like purple and cyan.

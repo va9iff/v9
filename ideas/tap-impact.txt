@@ -1,0 +1,10 @@
+the one I had in the previous portfolio. when you click, a buble appears and 
+goes away. add a circle div with white inset shadow that grows in scale and 
+opacity goes to 0.
+
+a completely saperate div may overlay everything with no pointer events for 
+this divs.
+
+also moving mouse may make them move too.
+
+different colors in different impacts.

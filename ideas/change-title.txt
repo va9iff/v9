@@ -1,0 +1,2 @@
+with the active pane this can be shown in the tab's name.
+or a slow animation that writes my name in the tab name letter by letter.

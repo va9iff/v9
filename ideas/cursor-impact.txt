@@ -1,0 +1,2 @@
+a dot that follows the cursor. like a cursor but don't wanna disappear the 
+default one, so mine just follows it. it is small circle with filter inver 100%. 

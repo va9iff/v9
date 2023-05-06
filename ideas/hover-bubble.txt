@@ -1,0 +1,4 @@
+the similar thing that I made but what I made was a bit more complicated. 
+it can be as simple as one dot with filter invert with animations scale 0->1.
+
+or maybe mine was good. just make the circle bigger and colorful.
