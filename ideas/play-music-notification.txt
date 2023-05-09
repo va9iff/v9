@@ -1,0 +1,12 @@
+notifications can be used for keeping the website alive
+
+after 20 seconds, a notification would come and ask:
+"Can I play some Lo-Fi chills? It's been too quiet."
+<yes!> <no.>
+
+and after you say yes, it'll bring a little player somewhere in the page.
+the sound level should be lower and jenre is Lofi Hip-Hop
+
+and another notification saying:
+"Enjoy! These are what I'm used to listen."
+<cool.>

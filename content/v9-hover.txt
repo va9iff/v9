@@ -1,0 +1,25 @@
+the V9 is actually VA9IFF with A and IFF in a span with font size 0.
+when you hover it, their font size will grow to normal.
+since it's written from top to bottom, like
+
+V
+9
+
+it'll grow to
+
+V
+A
+9
+I
+F
+F
+
+and will push the buttons to bottom.
+
+when you click it, the VA9IFF container will grow to take up full height
+of the side bar and the buttons will disappear.
+it'll stay in the center with the same font size with a little 
+bit more line space. the sidebar will have gradients and clicking it again 
+will make a big colored background VA9IFF text come from left with animation, 
+cover and replace the whole content. clicking the VA9IFF that's come will make 
+it go to left again.

@@ -1,0 +1,5 @@
+this folder contains content to be displayed.
+
+also all the content can be drived from somewhere else (like this folder) so it 
+can has a structured data. then we can translate parts with comfort for 
+azerbaijani and english.
