@@ -1,0 +1,7 @@
+I don't want to use js event listener for EVERY single letter. An easy way to 
+make something like this is to split text to characters and wrap them in an 
+element (preferably a span) and give a class. This class has 
+:hover { transform: scale(0.87); opacity: 0.92; } 
+I don't know if it's a bad idea, but 60 event listeners calculating distances on 
+per should be havier than native hover checker. yes this will look more simpler 
+but anyways
