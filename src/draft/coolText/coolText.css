@@ -1,58 +1,72 @@
 /*
 	IDEA:
 		wrap it in a coolTextContainer
-		coolTextContainer:active .coolText:hover {transform: scale: 1.1}
+		coolTextContainer:active .coolText span:hover {transform: scale: 1.1}
 		when clicked and dragged, it'll make them go larger instead.
 		that's the only way to have clicked and hovered for multiple elements I've found
 */
 
+body{
+	background-color: #1a1a1a;
+	color: #ededed;
+}
 
 .coolText {
 	font-size: 70px;
+	user-select: none;
+}
+
+.coolText span {
 	transition: 600ms;
 	display: inline-block;
 	cursor: default;
 	transition-timing-function: cubic-bezier(0.21, 2.1, 0.58, 1);
 	transform-origin: bottom;
-	user-select: none;
 	-webkit-user-drag: none;
 	font-family: sans-serif;
 }
 
-.coolText.white {
-	width: 0.3em;
+.coolText span.white {
+/*	width: 0.3em;*/
 }
 
-.coolText:hover { 
+.coolText span:hover { 
 	transform: scale(0.8);
 /*	opacity: 0.6; */
 	transition: 100ms;
 	transition-timing-function: ease;
 }
+body:active .coolText span:hover { 
+	opacity: 0.6; 
+	transform: scale(1.2);
+		transition: 200ms;
+	transition-timing-function: cubic-bezier(0.21, 2.1, 0.58, 1);
+/*	!!! super !!!*/
+/*	filter: drop-shadow(8px 8px 0 #0ff) drop-shadow(-8px -8px 0 #f0f);*/*/
 
-.coolText::selection {
+}
+
+.coolText span::selection {
   color: #eee;
   background: #7700ff;
 }
 
-.coolText.extra{
+.coolText span.extra{
 	transform-origin: center;
 	border-radius: 3px;
 }
 
-.coolText.extra:hover{
-	--highlight: #22f3;
+.coolText span.extra:hover{
+	--highlight: #55f3;
 	box-shadow: 0 0 0 20px var(--highlight);
 	background-color: var(--highlight);
 }
 
-.coolText.extra::selection{
+.coolText span.extra::selection{
   background: #6600aa;
 }
 
-.coolText:active { 
+.coolText span:active { 
 /*	opacity: 1; */
-	transform: scale(1.2);
-	transition: 200ms;
-	transition-timing-function: cubic-bezier(0.21, 2.1, 0.58, 1);
+/*	transform: scale(1.2);*/
 }
