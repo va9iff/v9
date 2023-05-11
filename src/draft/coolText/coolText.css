@@ -26,10 +26,6 @@ body{
 	font-family: sans-serif;
 }
 
-.coolText span.white {
-/*	width: 0.3em;*/
-}
-
 .coolText span:hover { 
 	transform: scale(0.8);
 /*	opacity: 0.6; */
@@ -51,18 +47,18 @@ body:active .coolText span:hover {
   background: #7700ff;
 }
 
-.coolText span.extra{
+.coolText.extra span{
 	transform-origin: center;
 	border-radius: 3px;
 }
 
-.coolText span.extra:hover{
+.coolText.extra span:hover{
 	--highlight: #55f3;
 	box-shadow: 0 0 0 20px var(--highlight);
 	background-color: var(--highlight);
 }
 
-.coolText span.extra::selection{
+.coolText.extra span::selection{
   background: #6600aa;
 }
 

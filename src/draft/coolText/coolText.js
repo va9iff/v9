@@ -5,9 +5,9 @@ function coolify(str, opts) {
 	if (opts?.extra) classes.push("extra")
 	if (opts?.class) classes.push(opts.class)
 	return (
-		'<span class="coolText">' +
+		`<span class="coolText ${classes.length ? classes.join(" ") : ""}">` +
 		str.split("").map(
-				s => `<span${classes.length ? ` class = ${classes.join(" ")}` : ""}>${s}</span>${s == " " ? " " : s == "\n" ? "<br>":""}`
+				s => `<span>${s}</span>${s == " " ? " " : s == "\n" ? "<br>":""}`
 			)
 			.join("")+
 		"</span>"
