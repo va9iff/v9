@@ -5,7 +5,7 @@ body {
 	padding: 0;
 }
 
-.sidebar {
+v-sidebar {
 	background-color: #101010;
 	position: fixed;
 	left: 0;
@@ -17,11 +17,32 @@ body {
 	overflow-y: scroll;
 }
 
-/*.sidebar.active9{*/
+v-sidebar[v9="1"] {
+	overflow: hidden;
+}
+
+v-sidebar:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, #0ff1, #6060);
+	opacity: 0;
+	transition: 400ms;
+}
+v-sidebar[v9="1"]:before {
+	transition: 1600ms;
+	opacity: 1;
+}
+
+
+/*v-sidebar.active9{*/
 /*	overflow: hidden;*/
 /*}*/
 
-.sidebar .header {
+v-sidebar .header {
 	display: flex;
 	text-align: center;
 	justify-content: center;
@@ -34,14 +55,14 @@ body {
 	font-family: jost;
 	font-weight: 400;
 	font-size: 32px;
-	padding: 18px 21px;
+	padding: 18px 0;
 	cursor: default;
 	transition: 200ms;
 
 
 }
 
-.sidebar .content {
+v-sidebar .content {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -51,7 +72,8 @@ body {
 	opacity: 1;
 }
 
-.sidebar .content button {
+v-sidebar .content button {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -67,16 +89,20 @@ body {
 
 	border: 0px solid #0000;
 }
-.sidebar .content button:hover {
+v-sidebar .content button:hover {
 	background-color: #181818;
 }
-.sidebar .content button:focus {
+v-sidebar .content button[active] {
 	transition: 1200ms;
 	box-shadow: 0 0 0 1px #585858;
 	border-radius: 13px;
 }
+v-sidebar .content button[active]:hover {
+	transform: scale(1.05);
+	transition: 400ms;
+}
 
-.sidebar .content button img {
+v-sidebar .content button img {
 	user-select: none;
 	user-drag: none;
 	-webkit-user-drag: none;
@@ -87,49 +113,49 @@ body {
 	height: auto;
 	transition: 700ms;
 }
-.sidebar .content button:hover img {
+v-sidebar .content button:hover img {
 	transition: 200ms;
 	transform: rotate(7deg) /*translateX(+1px)*/;
 }
 
-.sidebar .content button:focus img {
+v-sidebar .content button[active] img {
 	transition: 300ms;
 	transform: scale(1.3);
 }
 
 /*   */
 
-.sidebar .header:hover {
+v-sidebar .header:hover {
 	padding-top: 35px;
 	height: 300px;
 	transition: 299ms;
 }
 
-.sidebar .header span {
+v-sidebar .header span {
 	position: relative;
 	line-height: 30px;
 	user-select: none;
 }
 
-.sidebar .header span.reveal {
+v-sidebar .header span.reveal {
 	line-height: 0px;
 	font-size: 0;
 	opacity: 0;
 	transition: 200ms;
 	transform-origin: center;
 }
-.sidebar .header:active span.reveal,
-.sidebar .header:hover span.reveal {
+v-sidebar .header[v9="1"] span.reveal,
+v-sidebar .header:hover span.reveal {
 	line-height: 30px;
 	font-size: 32px;
 	opacity: 1;
 	transition: all 700ms, line-height 500ms, font-size 200ms;
 }
 
-.sidebar .header:active {
+v-sidebar .header[v9="1"] {
 	/*	background-color: #33334f;*/
 	border-radius: 0;
-	box-shadow: 0 0 80px 7px #101010 inset;
+/*	box-shadow: 0 0 80px 7px #101010 inset;*/
 	flex: 1;
 	height: 100%;
 	transition: 400ms;
@@ -138,7 +164,7 @@ body {
 	z-index: 999;
 }
 
-.sidebar .header:before {
+v-sidebar .header:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -148,10 +174,11 @@ body {
 	pointer-events: none;
 	opacity: 0;
 	transition: 1200ms;
-	background: linear-gradient(to right, #0ff1, #6060);
+/*	background: linear-gradient(to right, #0ff1, #6060);*/
+/*	box-shadow: 0 -20px 20px #101010 inset;*/
 	transform: translateX(-30px);
 }
-.sidebar .header:active:before {
+v-sidebar .header[v9="1"]:before {
 	content: "";
 	opacity: 1;
 	transform: translateX(0);
@@ -160,17 +187,25 @@ body {
 
 /*   */
 
-.sidebar .header:active span,
-.sidebar .header:active span.reveal {
+v-sidebar .header[v9="1"] span,
+v-sidebar .header[v9="1"] span.reveal {
 	line-height: 50px;
 	transition: 2000ms;
 }
 
-.sidebar .header:active + .content,
-.sidebar .header:active + .content + .footer {
+v-sidebar .header[v9="1"] + .content,
+v-sidebar .header[v9="1"] + .content + .footer {
 	transform: translateY(85px);
+	transition-delay: 300ms;
 	flex: 0;
 	height: 0;
 	border-radius: 50px;
 	box-shadow: 0 13px 5px 10px #0ff inset;
+	opacity: 0.7;
+}
+
+v-sidebar .header[v9="2"] {
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: 150ms;
 }
