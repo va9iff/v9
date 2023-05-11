@@ -46,6 +46,17 @@ body:active .coolText span:hover {
 	background-color: var(--coolTextHighlight);
 }
 
+.coolText.super {
+	border-bottom: 0.07em solid #f0f4;
+	border-radius: 0.3em;
+	transition: 200ms;
+	user-select: none;
+}
+.coolText.super:hover {
+	border-bottom: 0.07em solid #f0f;
+	border-radius: 0;
+}
+
 body:active .coolText.super span:hover {
 	filter: drop-shadow(0.17em 0.17em 0 #0ff) drop-shadow(-0.17em -0.17em 0 #f0f);
 }
