@@ -4,6 +4,8 @@ import {
 	LitElement,
 	classMap,
 	ref,
+	keyed,
+	styleMap
 } from "https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js"
 
 class VLitElement extends LitElement {
@@ -36,4 +38,4 @@ class VLitElement extends LitElement {
 	}
 }
 
-export { html, css, LitElement, VLitElement, classMap }
+export { html, css, LitElement, VLitElement, classMap, keyed, styleMap }

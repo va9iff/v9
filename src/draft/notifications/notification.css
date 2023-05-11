@@ -5,26 +5,31 @@ html, body{
 v-notification {
 	--b-radius: 25px;
 	--b-width: 2px;
+	position: relative;
+	overflow: hidden;
 
-	display: block;
-	align-items: center;
-	justify-content: center;
+	display: flex;
+	align-items: stretch;
+/*	justify-content: stretch;*/
 	background: linear-gradient(20deg, #0ff, #00f);
 	padding: var(--b-width);
 	box-sizing: border-box;
 	border-radius: var(--b-radius);
 	font-family: "open sans";
 
+	height: 180px;
+	min-height: 180px;
 }
 
 v-notification .content {
+	flex: 1;
 	border-radius: calc(var(--b-radius) - var(--b-width) / 2);
 	background-color: #101010;
 	color: #eee;
 	padding: 25px;
+	overflow: hidden;
+	position: relative;
 }
-
-
 
 v-notification.important{
 	background: linear-gradient(20deg, #f00, #00f);
@@ -42,4 +47,37 @@ v-notification.important{
 	100% {
 		background-position: -100% 0;
 	}
+}
+
+
+v-notification{
+/*	max-height: 100vh;*/
+/*	min-max-height: 100vh;*/
+	margin-top: 20px;
+}
+
+v-notification{
+	--time: 700ms;
+}
+
+v-notification.closing > *{
+/*	max-height: 0;*/
+/*	min-max-height: 0;*/
+/*	opacity: 0;*/
+	transition: var(--time);
+/*	padding: 0;*/
+
+}
+
+v-notification.closing{
+	pointer-events: none;
+
+	transition: var(--time);
+	height: 0;
+	min-height: 0;
+	padding: 0;
+	margin: 0;
+
+	transform: translateX(200%);
+	overflow: hidden;
 }

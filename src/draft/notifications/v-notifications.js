@@ -1,22 +1,57 @@
-import { html, VLitElement } from "/src/vlit.js"
+import { html, keyed, VLitElement } from "/src/vlit.js"
 
-import "./v-notification.js"
+import { VNotification } from "./v-notification.js"
 
-class VNotifications extends VLitElement {
-	static props = {
-		notifications: [
-			notfi => html`hi <button @click=${e=>notfi.k++}>${notfi.k}</button>`,
-			notfi => html`hi <button @click=${e=>notfi.k++}>${notfi.k}</button>`,
-			notfi => html`bye`,
-			notfi => html`anoda`,
-			notfi => html`fistan<br />fisifistan`,
-		],
-	}
-	render() {
-		return this.notifications.map(
-			content => html`<v-notification .content=${content}></v-notification>`
-		)
-	}
+const counter = ((count=0) => ()=>count++)()
+let notifications = document.querySelector(".v-notifications")
+window.notfis = [
+			// {
+				// uid: counter(),
+				// content: html`hi <button @click=${e=>notfi.k++}>${notfi.k}</button>`,
+			// },
+		]
+
+window.notify = notfi => {
+	notfi.uid = counter()
+	notfis.push(notfi)
+	let notification = document.createElement(notfi.element ?? "v-notification")
+	notification.addEventListener('mousemove', e=> {
+					const rect = notification.getBoundingClientRect();
+					const x = e.clientX - rect.left;
+					const y = e.clientY - rect.top;
+
+					notification.x = x
+					notification.y = y
+					notification.rota = x/rect.width*150+15
+					console.log(notification.rota)
+			})
+	notification.content = notfi.content
+	notification.uid = notfi.uid
+	window.notfis.push(notfi)
+	notifications.appendChild(notification)
+
 }
 
-VNotifications.tag = "v-notifications"
+
+window.notify({
+	content: "hi"
+})
+
+window.notify({
+	content: "widsja ksjlask kwjl"
+})
+window.notify({
+	content: "widsja ksjlask kwjl"
+})
+window.notify({
+	content: "widsja ksjlask kwjl"
+})
+window.notify({
+	content: "widsja ksjlask kwjl"
+})
+window.notify({
+	content: "widsja ksjlask kwjl"
+})
+window.notify({
+	content: "widsja ksjlask kwjl"
+})
