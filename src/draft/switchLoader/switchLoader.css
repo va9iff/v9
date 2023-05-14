@@ -1,0 +1,138 @@
+html, body{
+	background-color: #1a1a1a;
+}
+
+img {
+	background-image: url("./glowing.png");
+/*	background-repeat: repeat-x;*/
+	background-repeat: repeat-y;
+	repeat-x;
+/*	object-position: 300px 0;*/
+	object-fit: contain;
+
+	--width: 800px;
+/*	width: var(--width);*/
+/*	background-size: 100% auto;*/
+/*	animation: gradientAnim 2.6s infinite;*/
+	animation: objectAnim 2.6s infinite;
+}
+
+/*@keyframes gradientAnim {*/
+/*	0% {*/
+/*		background-position: -000% 0;*/
+/*		transform: translateX(0);*/
+/*	}*/
+/*	50%{*/
+/*		background-position: -200% 0;*/
+/*		transform: translateX(-100%);*/
+/*	}*/
+/*	100% {*/
+/*		background-position: 400% 0;*/
+/*		transform: translateX(-400%);*/
+/*	}*/
+/*}*/
+
+
+@keyframes objectAnim{
+	0% {
+		object-position: calc(var(--width) * -1) 0;
+	}
+	50%{
+		object-position: 0 0;
+	}
+	100%{
+		object-position: calc(var(--width) * -4) 0;
+	}
+
+}
+
+@keyframes gradientAnim {
+	0% {
+		background-position: 0 0;
+	}
+	50%{
+		background-position: calc(var(--width) * 2) 0;
+	}
+	100%{
+		background-position: calc(var(--width) * -4) 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.switchLoader{
+/*	filter:  brightness(2.0);*/
+	filter:  none;
+	user-select: none;
+}
+.switchLoader.hover> span{
+	transition: 300ms;
+	background-clip: text;
+	-webkit-background-clip: text;
+/*	filter: drop-shadow(0 0 10px #34d2eb);*/
+
+
+}
+.switchLoader.hover> span:hover{
+	text-fill-color: #34d2eb88;
+	-webkit-text-fill-color: #34d2eb88;
+	background-color: #34d2eb88;
+}
+
+.switchLoader.blurry{
+	filter: blur(30px);
+	pointer-events: none;
+}
+
+
+.switchLoader{
+/*	position: absolute;*/
+/*	left: 0;*/
+/*	top: 0;*/
+/*	width: 100%;*/
+/*	height: 100%;*/
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	justify-content: center;*/
+	border: 2px solid red;
+
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13vw;
+/*	letter-spacing: 0.25em;*/
+	letter-spacing: 0.1em;
+
+		background: 
+/*		radial-gradient(85.19% 859.52% at -41.81% 64.71%, #34d2eb 0%, rgba(237, 237, 237, 0) 100%)*/
+/*		linear-gradient(94.86deg, rgba(255, 255, 255, 0) 2.17%, #34d2eb 31.43%, rgba(237, 237, 237, 0) 69.93%);*/
+		url("./gradient.png");
+
+		background-size: 200% auto;
+		animation: gradientAnim 2.6s;
+		animation-timing-function: ease-in-out;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+/*	filter: blur(4px);*/
+
+}
