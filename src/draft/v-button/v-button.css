@@ -1,46 +1,62 @@
-body{
-	padding: 6px;
+body {
+	/* for v-button to inherit */
+	--size-to: 50px;
+	--passive: #1a1a1a;
+	--active: #ededed;
 }
 
 v-button {
 	margin: 4px;
-	overflow: hidden;
+	border-radius: 10em;
+	/*----*/
+	background-color: var(--passive);
 	display: inline-block;
 	position: relative;
-	--size-to: 50px;
-	background-color: #1a1a1a;
-	border-radius: 10em;
+	overflow: hidden;
 }
 
 v-button .circle {
-	position: absolute;
-	z-index: 1;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
+	transition: width 350ms, height 350ms;
+	/*----*/
 	border-radius: 50%;
 	width: 0;
 	height: 0;
-	transition: width 350ms, height 350ms;
-	background-color: #ededed;
+	background-color: var(--active);
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	position: absolute;
+	pointer-events: none;
+}
+
+v-button {
+	box-shadow: 0 0 0 1px #444;
+}
+v-button:hover {
+	transition: 800ms;
 }
 
 v-button button {
-	z-index: 2;
-	border-radius: inherit;
-	position: relative;
-	overflow: hidden;
-	background-color: #0000;
-	padding: 7px 13px;
-	border: 1px solid #444;
-	color: #ededed;
-
+	margin: 2px; /* padding for highlight border */
 	transition: 350ms;
 	font-size: 1.2em;
+	padding: 7px 13px;
+	/*----*/
+	color: var(--active);
+	background-color: transparent;
+	border: none;
+	border-radius: inherit;
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
 }
 
 v-button:hover button {
-	background-color: #ededed;
-	color: #1a1a1a;
+	background-color: var(--active);
+	color: var(--passive);
+	box-shadow: 0 0 0 10px var(--active);
+}
+v-button button:focus {
+	box-shadow: none;
 }
 
 v-button:hover .circle{
@@ -49,41 +65,24 @@ v-button:hover .circle{
 	height: var(--size-to);
 }
 
-/* INVERTER  */
-
-v-button.inverter .circle{
-	backdrop-filter: invert(100%);
-	background-color: #0000;
-
-}
-v-button.inverter button{
-	z-index: 1;
-	background-color: #0000;
-}
-v-button.inverter:hover button{
-	color: #eee;
+v-button button:focus + .circle{
+	width: 120%;
+	height: 120%;
+	transition: 400ms cubic-bezier(0.11, 0.88, 0.58, 1);
 }
 
+v-button button:focus{
+	transition: 200ms;
+	border-width: 0;
+/*	transform: scale(0.95);*/
+	background-color: var(--passive);
+	color: #ededed;
+}
 
-/*v-button.inverter:hover .circle{*/
-/*	width: var(--size-to);*/
-/*	height: var(--size-to);*/
-/*}*/
-/*v-button .circle{*/
-	/*	display: none;*/
-	/*	width: var(--size-to);*/
-	/*	height: var(--size-to);*/
-	/*	animation: hoverIn 350ms ;*/
-	/*	transition: 350ms linear;*/
-/*}*/
-/*@keyframes hoverIn{*/
-/*	from {*/
-/*		width: 0;*/
-/*		height: 0;*/
-/*	}*/
-/*	to{*/
-/*		width: var(--size-to);*/
-/*		height: var(--size-to);*/
-/**/
-/*	}*/
-/*}*/
+v-button.glass button:focus{
+	opacity: 0.9;
+}
+
+v-button.glass .circle{
+	filter: blur(5px);
+}

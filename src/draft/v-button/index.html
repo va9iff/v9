@@ -12,11 +12,36 @@
 <body>
 
 	<script src="./v-button.js" type="module"></script>
-	<v-button text="Profile"></v-button>
-	<v-button text="Django"></v-button>
-	<v-button class="inverter" text="Python"></v-button>
-	<v-button text="JavaScript"></v-button>
-	<v-button text="GitHub"></v-button>
-	<v-button text="F"></v-button>
+
+	<v-button 
+		text="Profile">
+	</v-button>
+	<v-button 
+		text="Django" 
+		style="--active: hsl(120deg, 100%, 70%)">
+	</v-button>
+	<v-button 
+		text="Python" 
+		class="glass"
+		style="--active: hsl(207deg, 100%, 70%)">
+	</v-button>
+	<v-button 
+		text="JavaScript" 
+		class="glass"
+		style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
+	</v-button>
+	<v-button/ 
+		text="GitHub" 
+		class="glass"
+		style="--active: hsl(153deg, 100%, 70%); --passive: #131313">
+	</v-button>
+	<v-button 
+		text="F">
+	</v-button>
+	<style>
+		body{
+			padding: 6px;
+		}
+	</style>
 </body>
 </html>
