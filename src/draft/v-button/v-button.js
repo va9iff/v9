@@ -7,8 +7,8 @@ class VButton extends VLitElement {
 	}
 	constructor() {
 		super()
-		this.x = 0
-		this.y = 0
+		this.x = 30
+		this.y = 30
 		this.text ??= this.getAttribute("text")
 		this.addEventListener("mousemove", this.hoverPositionFix)
 	}

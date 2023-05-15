@@ -2,30 +2,31 @@ body{
 	padding: 6px;
 }
 
-button{
-/*	font-size: 12em;*/
-/*height: 400px;*/
-}
-
 v-button {
 	margin: 4px;
-/*	background-color: red;*/
 	overflow: hidden;
 	display: inline-block;
 	position: relative;
-
 	--size-to: 50px;
 	background-color: #1a1a1a;
 	border-radius: 10em;
 }
 
-v-button span {
-	position: relative;
-	z-index: 2;
-}
-v-button button {
-	border-radius: inherit;
+v-button .circle {
+	position: absolute;
 	z-index: 1;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	width: 0;
+	height: 0;
+	transition: width 350ms, height 350ms;
+	background-color: #ededed;
+}
+
+v-button button {
+	z-index: 2;
+	border-radius: inherit;
 	position: relative;
 	overflow: hidden;
 	background-color: #0000;
@@ -36,41 +37,53 @@ v-button button {
 	transition: 350ms;
 	font-size: 1.2em;
 }
-v-button:hover button {
-	background-color: #ffffffed;
-	background-color: #ededed;
-	color: #1a1a1a;
-}
 
 v-button:hover button {
 	background-color: #ededed;
 	color: #1a1a1a;
 }
 
-v-button .circle{
-	position: absolute;
-	background-color: #ededed;
-	width: var(--size-to);
-	height: var(--size-to);
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	border-radius: 50%;
-	animation: hoverIn 350ms ;
-
-	display: none;
-}
 v-button:hover .circle{
 	display: inline;
+	width: var(--size-to);
+	height: var(--size-to);
 }
 
-@keyframes hoverIn{
-	from {
-		width: 0;
-		height: 0;
-	}
-	to{
-		width: var(--size-to);
-		height: var(--size-to);
+/* INVERTER  */
 
-	}
+v-button.inverter .circle{
+	backdrop-filter: invert(100%);
+	background-color: #0000;
+
 }
+v-button.inverter button{
+	z-index: 1;
+	background-color: #0000;
+}
+v-button.inverter:hover button{
+	color: #eee;
+}
+
+
+/*v-button.inverter:hover .circle{*/
+/*	width: var(--size-to);*/
+/*	height: var(--size-to);*/
+/*}*/
+/*v-button .circle{*/
+	/*	display: none;*/
+	/*	width: var(--size-to);*/
+	/*	height: var(--size-to);*/
+	/*	animation: hoverIn 350ms ;*/
+	/*	transition: 350ms linear;*/
+/*}*/
+/*@keyframes hoverIn{*/
+/*	from {*/
+/*		width: 0;*/
+/*		height: 0;*/
+/*	}*/
+/*	to{*/
+/*		width: var(--size-to);*/
+/*		height: var(--size-to);*/
+/**/
+/*	}*/
+/*}*/
