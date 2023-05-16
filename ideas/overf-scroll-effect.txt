@@ -1,0 +1,3 @@
+something like in Xiaomi's old thing. When you drag more than it can scroll, 
+it'll bring an oval. But that's really annoying. Instead, let's bring light 
+with gradients.
