@@ -1,0 +1,36 @@
+when headed to a new url it is handled by ourselves.
+I update it 
+from
+/ 
+to 
+/projects.
+
+so I can do this
+/
+/p
+/pr
+/pro
+/proj
+/proje
+/projec
+/project
+/projects
+
+or
+
+/
+/s
+/ts
+/cts
+/ects
+/jects
+/ojects
+/rojects
+/projects
+
+but, there's a big BUT that I'm not sure about:
+can I animate without adding to history?
+cuz if I can't, the user will have to go back every letter one by one :|
+
+I found this
+history.replaceState({}, 'Title', link.href);
