@@ -1,0 +1,7 @@
+just replace the default cursor to something that's gonna fit to the dark theme of the website. 
+
+but if I do this, it'd be better to use a pack with pointer too. 
+one custom the others default would look weird.
+
+a bit of work. maybe I wont even add, or just a suggestion with a notification 
+"can I change you cursor? It doesn't match here so, looks a bit ugly."

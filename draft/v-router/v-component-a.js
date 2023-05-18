@@ -1,4 +1,4 @@
-import { html, VLitElement } from "../../vlit.js"
+import { html, VLitElement } from "/src/vlit.js"
 
 await new Promise(r=>setTimeout(r,1000))
 
