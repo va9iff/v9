@@ -18,7 +18,7 @@ class VSidebar extends VLitElement {
 		if (this.v9 > this.v9max) setTimeout(() => (this.v9 = 0), 999)
 	}
 	switch(active) {
-		if (this.active == active) return this.active = null
+		if (this.active == active) return (this.active = null)
 		this.active = active
 	}
 	close() {
@@ -26,6 +26,7 @@ class VSidebar extends VLitElement {
 	}
 	render() {
 		return html`
+			<div class="circle1">ga</div>
 			<div class="header" v9=${this.v9} @click=${this.headerClick}>
 				<span>
 					V
@@ -62,6 +63,7 @@ class VSidebar extends VLitElement {
 					this.switch(
 						"projects"
 					)}><img src="./icons/projects.png" alt="projects"></button>
+			</div>
 					`
 	}
 }

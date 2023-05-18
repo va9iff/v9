@@ -21,7 +21,7 @@ v-sidebar[v9="1"] {
 	overflow: hidden;
 }
 
-v-sidebar:before {
+/*v-sidebar:before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -36,11 +36,7 @@ v-sidebar[v9="1"]:before {
 	transition: 1600ms;
 	opacity: 1;
 }
-
-
-/*v-sidebar.active9{*/
-/*	overflow: hidden;*/
-/*}*/
+*/
 
 v-sidebar .header {
 	display: flex;
@@ -65,6 +61,8 @@ v-sidebar .header {
 v-sidebar .content {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex: 1;
 	flex-direction: column;
 	padding: 0 0;
 	gap: 10px;
@@ -164,27 +162,6 @@ v-sidebar .header[v9="1"] {
 	z-index: 999;
 }
 
-v-sidebar .header:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	opacity: 0;
-	transition: 1200ms;
-/*	background: linear-gradient(to right, #0ff1, #6060);*/
-/*	box-shadow: 0 -20px 20px #101010 inset;*/
-	transform: translateX(-30px);
-}
-v-sidebar .header[v9="1"]:before {
-	content: "";
-	opacity: 1;
-	transform: translateX(0);
-	transition-timing-function: ease-in;
-}
-
 /*   */
 
 v-sidebar .header[v9="1"] span,
@@ -195,17 +172,93 @@ v-sidebar .header[v9="1"] span.reveal {
 
 v-sidebar .header[v9="1"] + .content,
 v-sidebar .header[v9="1"] + .content + .footer {
-	transform: translateY(85px);
-	transition-delay: 300ms;
+	transition: all 400ms, box-shadow 2000ms;
 	flex: 0;
 	height: 0;
+	overflow: hidden;
 	border-radius: 50px;
 	box-shadow: 0 13px 5px 10px #0ff inset;
 	opacity: 0.7;
+}
+
+v-sidebar .header[v9="2"] + .content,
+v-sidebar .header[v9="2"] + .content + .footer {
+	transition: 300ms;
 }
 
 v-sidebar .header[v9="2"] {
 	transform: translateX(-100%);
 	opacity: 0;
 	transition: 150ms;
+}
+
+/*   */
+
+v-sidebar{
+	transition: 200ms;
+}
+v-sidebar[v9="1"]{
+	background-color: #171c1c;
+	transition: 2000ms;
+}
+v-sidebar .circle1{
+	position: absolute;
+/*	top: 3%;*/
+/*	right: -20%;*/
+/*	right: 50%;*/
+/*	top: 70vh;*/
+	width: 70vh;
+	height: 70vh;
+	transition: 1400ms;
+	border-radius: 	30%;
+/*	border: 4px cyan solid;*/
+	filter: blur(27px);
+
+
+	display: none;
+	bottom: -50%;
+/*	left: -300%;*/
+	right: -70%;
+	opacity: 0;
+	background-color: cyan;
+	transition: 150ms;
+	animation: rotatorAnim 4100ms infinite linear, fadeInLava 2000ms;
+}
+v-sidebar[v9="1"] .circle1 {
+	display: block;
+	transition: 1400ms;
+	opacity: 0.35;
+/*	bottom: -50%;*/
+}
+v-sidebar[v9="1"]:hover .circle1 {
+/*	animation-duration: 3000ms;	*/
+	width: 90vh;
+	height: 90vh;
+	opacity: 0.6;
+	
+}
+
+@keyframes fadeInLava{
+	from{
+		transform: scale(0);
+	}
+	to{
+		transform: scale(1);
+	}
+
+}
+
+@keyframes rotatorAnim{
+	from{
+		transform: rotate(0);
+		border-radius: 20%;
+	}
+	50%{
+		border-radius: 45%;
+	}
+	to{
+		transform: rotate(360deg);
+		border-radius: 20%;
+
+	}
 }
