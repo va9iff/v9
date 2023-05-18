@@ -10,6 +10,15 @@ class VComponentA extends VLitElement {
 			that's component a from a different module
 		`
 	}
+	updated(){
+		super.updated()
+
+		this.classList.remove("open")
+		console.log(this.classList)
+		console.log('yes updated')
+		window.requestAnimationFrame(()=>this.classList.add("open"),1)
+
+	}
 }
 
 VComponentA.tag = "v-component-a"

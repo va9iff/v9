@@ -1,0 +1,27 @@
+body{
+	background-color: #eda;
+}
+
+*{
+	transition: 200ms;
+	padding-inline: 10px;
+}
+
+v-component-a {
+	display: flex;
+	transform: translateX(-50px);
+	background-color: blue;
+	opacity: 0.0;
+	border: 2px solid brown;
+}
+v-component-a.open {
+	opacity: 1;
+	transform: translateX(0);
+	background-color: red;
+	animation: bAnim;
+
+}
+
+#content.loading{
+	background-color: lime;
+}

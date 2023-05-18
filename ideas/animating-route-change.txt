@@ -34,3 +34,35 @@ cuz if I can't, the user will have to go back every letter one by one :|
 
 I found this
 history.replaceState({}, 'Title', link.href);
+
+(I realised I can't use /path in github but I could use #path aka hashroute)
+
+ANOTHER SOLUTION 
+
+since we can use back button, we can just add letters and then remove them by 
+going back to where these wasn't added. (go back steps number of letters)
+we also need to block moving the path while animating? or abort functionality?
+anyways, idea is like this:
+
+start #starting
+pop   #s
+pop   #ts
+pop   #cts
+pop   #ects
+pop   #jects
+pop   #ojects
+pop   #rojects
+pop   #projects
+back()
+back()
+back()
+back()
+back()
+back()
+back()
+back() (we're at the point before #s which is #starting)
+pop #projects
+
+the history:
+#starting
+#projects

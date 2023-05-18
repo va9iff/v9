@@ -1,5 +1,7 @@
 import { html, VLitElement } from "../../vlit.js"
 
+
+
 const content = document.querySelector("#content")
 console.log(content)
 
@@ -19,9 +21,23 @@ const handleLocation = async () => {
 	console.log(path)
 	console.log(hash)
 
-	content.innerHTML = "loading"
-	content.innerHTML = await routes[hash]()
 
+	// content.innerHTML = "loading"
+	// content.innerHTML = await routes[hash]()
+	// setTimeout(()=>content.setAttribute("route", hash.split('#').pop()))
+
+	for (let child of content.children) {
+		child.classList.remove("open")
+		setTimeout(()=>{
+			console.log(child)
+			child.remove()
+		}, 1000)
+	}
+	content.classList.add("loading") // commented for now
+	let routeElement = await routes[hash]()
+	console.log(routeElement)
+	content.appendChild(routeElement)
+	content.classList.remove("loading") // commented for now
 
 }
 
@@ -30,28 +46,22 @@ const routes = {
 	// "/about": "/pages/about.html",
 	// 404: "/pages/404.html",
 	// I'll use functions:
-	"#about": async ()=> {
-		console.log('get')
-		await import('./v-component-a.js')
-		new Promise(setTimeout(r=>r(),1000))
-		return "that's from v-component-a"
-	},
 	"#v-compact": async ()=>{
 		console.log('get')
 		await import('./v-component-a.js')
-		new Promise(r=>setTimeout(r,1000))
-		return `<v-component-a></v-component-a>`
+		return document.createElement('v-component-a')
 
 	},
 	"#projects": async ()=>{
 		console.log('get')
 		await import('./v-component-b.js')
-		new Promise(r=>setTimeout(r,1000))
-		return `<v-component-b></v-component-b>`
+		// new Promise(r=>setTimeout(r,1000))
+		return document.createElement('v-component-b')
 
 	},
-	404: ()=>"not found",
-	"": ()=>"the default"
+	"#nu": async () => document.createElement('div'),
+	404: ()=> document.createElement('div'),
+	"": ()=> document.createElement('div')
 };
 
 handleLocation();
@@ -61,36 +71,36 @@ window.onhashchange = function() {
 
 
 
-class VA extends VLitElement{
-	static properties = {
-		href: {
-			attribute: true,
-			reflect: true
-		},
-		text: {
-			attribute: true,
-			reflect: true
-		}
-	}
-	constructor(){
-		super()
-	}
-	connectedCallback(){
-		super.connectedCallback()
+// class VA extends VLitElement{
+// 	static properties = {
+// 		href: {
+// 			attribute: true,
+// 			reflect: true
+// 		},
+// 		text: {
+// 			attribute: true,
+// 			reflect: true
+// 		}
+// 	}
+// 	constructor(){
+// 		super()
+// 	}
+// 	connectedCallback(){
+// 		super.connectedCallback()
 
-	}
-	route(e){
-		e.preventDefault()
-		// window.history.pushState({}, "", e.target.href);
-		handleLocation()
-	}
-	render(){
-		return html`
-			<a @click = ${this.route} href=${this.href}>${this.text}</a>
-		`
-	}
-}
-VA.tag = "v-a"
+// 	}
+// 	route(e){
+// 		e.preventDefault()
+// 		// window.history.pushState({}, "", e.target.href);
+// 		handleLocation()
+// 	}
+// 	render(){
+// 		return html`
+// 			<a @click = ${this.route} href=${this.href}>${this.text}</a>
+// 		`
+// 	}
+// }
+// VA.tag = "v-a"
 
 // class VRouter extends VLitElement {
 // 	static props = {
