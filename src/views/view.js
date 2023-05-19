@@ -1,19 +1,17 @@
 import { html, VLitElement } from "/src/vlit.js"
 
 export class View extends VLitElement {
-	render(){
-		return html`
-			view's render method isn't defined
-		`
+	render() {
+		return html` view's render method isn't defined `
 	}
-	updated(){
+	updated() {
 		super.updated()
 
 		// this.classList.remove("open")
-		console.log(this.classList)
-		console.log('yes updated')
-		window.requestAnimationFrame(()=>this.classList.add("open"),1)
-
+		// making sure to call after the element has rendered :D
+		window.requestAnimationFrame(
+			() => setTimeout(() => this.classList.add("open")),
+			1
+		)
 	}
 }
-

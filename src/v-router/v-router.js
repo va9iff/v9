@@ -21,8 +21,7 @@ const handleLocation = async () => {
 	// console.log(path)
 	// console.log(hash)
 	for (let child of content.children) {
-		// see View class @view.js
-		// child.classList.remove("open")
+		// for classList.add("open") see View class @view.js
 		child.classList.add("close")
 		setTimeout(()=>{
 			console.log(child)
