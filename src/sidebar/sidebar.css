@@ -204,7 +204,7 @@ v-sidebar .header[v9="1"] + .content + .footer {
 
 v-sidebar .header[v9="2"] + .content,
 v-sidebar .header[v9="2"] + .content + .footer {
-	transition: all 700ms, flex 200ms, opacity 0ms, border-radius 1400ms;
+	transition: all 700ms, flex 150ms, opacity 0ms, border-radius 1400ms;
 }
 
 v-sidebar .header[v9="2"] {
