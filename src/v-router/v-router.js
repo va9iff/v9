@@ -29,6 +29,7 @@ const handleLocation = async () => {
 		}, 1000)
 	}
 	content.classList.add("loading") // commented for now
+	console.log('loading', hash)
 	let routeElement = await routes[hash]()
 	console.log(loadingFor, hash, loadingFor == hash, routeElement)
 	if (loadingFor == hash) content.appendChild(routeElement)
@@ -56,23 +57,31 @@ const routes = {
 	},
 	"#nu": async () => document.createElement('div'),
 	404: ()=> document.createElement('div'),
-	"": ()=> document.createElement('div'),
+	"": ()=> {
+		let el = document.createElement('div')
+		el.innerHTML = "that's the default home view"
+		return el
+	},
+	// unnecessary. /# will go to / which is "" (just above)
+	"#": ()=> {
+		console.log('hash hash called?')
+	},
 
 	// MAIN ROUTES
-	"#dashboard": ()=>{
+	"#dashboard": ()=> {
 		let el = document.createElement("div")
 		el.innerHTML = "still in progress"
 		return el
 	},
-	"#network": async ()=>{
+	"#network": async () => {
 		await import("../views/network/network.js")
 		let el = document.createElement("v-network")
 		return el
 	},
 
-	"#projects": ()=>{
-		let el = document.createElement("div")
-		el.innerHTML = "projo"
+	"#projects": async () => {
+		await import("../views/projects/projects.js")
+		let el = document.createElement("projects-view")
 		return el
 	},
 
