@@ -4,11 +4,12 @@ import { html, VLitElement } from "/src/vlit.js"
 
 const content = document.querySelector("#content")
 console.log(content)
-
+let loadingFor // to check if the location has changed before the element has appended
 const route = (e) => {
 	e = e || window.event;
 	e.preventDefault();
 	window.history.pushState({}, "", e.target.href);
+	loadingFor = window.location.hash
 
 	handleLocation();
 }
@@ -18,8 +19,8 @@ const handleLocation = async () => {
 	const path = window.location.pathname;
 	const hash = window.location.hash
 
-	console.log(path)
-	console.log(hash)
+	// console.log(path)
+	// console.log(hash)
 
 	for (let child of content.children) {
 		child.classList.remove("open")
@@ -31,7 +32,7 @@ const handleLocation = async () => {
 	content.classList.add("loading") // commented for now
 	let routeElement = await routes[hash]()
 	console.log(routeElement)
-	content.appendChild(routeElement)
+	if (loadingFor == window.location.hash) content.appendChild(routeElement)
 	content.classList.remove("loading") // commented for now
 
 }
@@ -77,7 +78,7 @@ const routes = {
 	},
 
 };
-
+loadingFor = window.location.hash
 handleLocation();
 window.onhashchange = function() {
 	handleLocation()
