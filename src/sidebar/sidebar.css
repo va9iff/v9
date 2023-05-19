@@ -194,18 +194,22 @@ v-sidebar .header[v9="1"] + .content + .footer {
 	flex: 0;
 	height: 0;
 	overflow: hidden;
-	border-radius: 50px;
-	box-shadow: 0 13px 5px 10px #0ff inset;
-	opacity: 0.7;
+	border-radius: 50px 50px 20px 20px;
+	box-shadow: 
+		0 50px 5px 5px #f0f inset, 
+		0 13px 5px 10px #0ff inset;
+/*	opacity: 0.7;*/
+	opacity: 0;
 }
 
 v-sidebar .header[v9="2"] + .content,
 v-sidebar .header[v9="2"] + .content + .footer {
-	transition: 300ms;
+	transition: all 700ms, flex 200ms, opacity 0ms, border-radius 1400ms;
 }
 
 v-sidebar .header[v9="2"] {
 	transform: translateX(-100%);
+	pointer-events: none;
 	opacity: 0;
 	transition: 150ms;
 }
