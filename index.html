@@ -25,7 +25,7 @@
 /*	body, */
 	.loader {
 		background: #1d1d1d;
-		color: #eee;
+		color: #bbb;
 	}
 
 	@keyframes loaderAnim {
@@ -34,7 +34,7 @@
 			transform: translateY(4px);
 		}
 		to {
-			color: #eee;
+			color: #bbb;
 			transform: translateY(0);
 		}
 	}
@@ -61,8 +61,12 @@
 	/* .loader:active{ cursor: grabbing; }*/
 
 	.loader > .caption {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		text-align: center;
-		font-size: min(25vw, 25vh);
+		letter-spacing: min(6vw, 6vh);
+		font-size: min(8vw, 15vh);
 		font-family: monospace;
 	}
 
@@ -76,7 +80,7 @@
 	}
 
 	.loader > .caption > .bar {
-		width: 100%;
+		width: 150%;
 		height: min(2vw, 2vh);
 		border-radius: 40vw;
 		margin-top: min(3vw, 3vh);
@@ -107,7 +111,7 @@
 	}
 
 	window.addEventListener("load", isLoaded)
-	setTimeout(isAnimed, 1200)
+	setTimeout(isAnimed, 600)
 </script>
 <style>
 	.loader.removed {
