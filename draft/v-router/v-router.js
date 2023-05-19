@@ -61,7 +61,26 @@ const routes = {
 	},
 	"#nu": async () => document.createElement('div'),
 	404: ()=> document.createElement('div'),
-	"": ()=> document.createElement('div')
+	"": ()=> document.createElement('div'),
+
+	// MAIN ROUTES
+	"#dashboard": ()=>{
+		let el = document.createElement("div")
+		el.innerHTML = "dasho"
+		return el
+	},
+	"#network": ()=>{
+		let el = document.createElement("div")
+		el.innerHTML = "neto"
+		return el
+	},
+
+	"#projects": ()=>{
+		let el = document.createElement("div")
+		el.innerHTML = "projo"
+		return el
+	},
+
 };
 
 handleLocation();

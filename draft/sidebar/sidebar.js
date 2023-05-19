@@ -1,5 +1,7 @@
 import { html, VLitElement } from "/src/vlit.js"
 
+import "../v-router/v-router.js"
+
 class VSidebar extends VLitElement {
 	static properties = {
 		v9: { reflect: true },
@@ -23,6 +25,17 @@ class VSidebar extends VLitElement {
 	}
 	close() {
 		// notifications.filter(notification=>notification.uid!=this.uid)
+	}
+	route(e){
+		console.log(e.target)
+		window.route(e)
+		this.switch(window.location.hash)
+		console.log(this.active)
+	}
+	connectedCallback(){
+		super.connectedCallback()
+		addEventListener("popstate", e => this.requestUpdate());
+
 	}
 	render() {
 		return html`
@@ -48,21 +61,24 @@ class VSidebar extends VLitElement {
 				<span class="reveal">
 			</div>
 			<div class="content">
-				<button ?active=${this.active == "dashboard"} 
-				@click=${e =>
-					this.switch(
-						"dashboard"
-					)}><img src="./icons/dashboard.png" alt="dashboard"></button>
-				<button ?active=${this.active == "network"} 
-				@click=${e =>
-					this.switch(
-						"network"
-					)}><img src="./icons/network.png" alt="network"></button>
-				<button ?active=${this.active == "projects"} 
-				@click=${e =>
-					this.switch(
-						"projects"
-					)}><img src="./icons/projects.png" alt="projects"></button>
+				<a 
+					?active=${window.location.hash == "#dashboard"} 
+					href = "#dashboard"
+					@click=${this.route}>
+						<img src="./icons/dashboard.png" alt="dashboard">
+				</a>
+				<a 
+					?active=${window.location.hash == "#network"} 
+					href = "#network"
+					@click=${this.route}>
+						<img src="./icons/network.png" alt="network">
+				</a>
+				<a 
+					?active=${window.location.hash == "#projects"} 
+					href = "#projects"
+					@click=${this.route}>
+						<img src="./icons/projects.png" alt="projects">
+				</a>
 			</div>
 					`
 	}

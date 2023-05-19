@@ -5,6 +5,17 @@ body {
 	padding: 0;
 }
 
+v-sidebar a,
+v-sidebar button{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+v-sidebar a img{
+/*	to prevent event bubbling*/
+	pointer-events: none;
+}
+
 v-sidebar {
 	background-color: #101010;
 	position: fixed;
@@ -70,6 +81,7 @@ v-sidebar .content {
 	opacity: 1;
 }
 
+v-sidebar .content a,
 v-sidebar .content button {
 	position: relative;
 	display: flex;
@@ -87,19 +99,23 @@ v-sidebar .content button {
 
 	border: 0px solid #0000;
 }
+v-sidebar .content a:hover,
 v-sidebar .content button:hover {
 	background-color: #181818;
 }
+v-sidebar .content a[active],
 v-sidebar .content button[active] {
 	transition: 1200ms;
 	box-shadow: 0 0 0 1px #585858;
 	border-radius: 13px;
 }
+v-sidebar .content a[active]:hover,
 v-sidebar .content button[active]:hover {
 	transform: scale(1.05);
 	transition: 400ms;
 }
 
+v-sidebar .content a img,
 v-sidebar .content button img {
 	user-select: none;
 	user-drag: none;
@@ -111,11 +127,13 @@ v-sidebar .content button img {
 	height: auto;
 	transition: 700ms;
 }
+v-sidebar .content a:hover img,
 v-sidebar .content button:hover img {
 	transition: 200ms;
 	transform: rotate(7deg) /*translateX(+1px)*/;
 }
 
+v-sidebar .content a[active] img,
 v-sidebar .content button[active] img {
 	transition: 300ms;
 	transform: scale(1.3);
