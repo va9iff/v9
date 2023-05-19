@@ -18,12 +18,12 @@ window.route = route
 const handleLocation = async () => {
 	const path = window.location.pathname;
 	const hash = window.location.hash
-
 	// console.log(path)
 	// console.log(hash)
-
 	for (let child of content.children) {
-		child.classList.remove("open")
+		// see View class @view.js
+		// child.classList.remove("open")
+		child.classList.add("close")
 		setTimeout(()=>{
 			console.log(child)
 			child.remove()

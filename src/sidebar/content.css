@@ -12,3 +12,47 @@
 	background-color: green;
 	transition: 0;
 }
+
+/* content should contain single element. 
+it can have multiple elements, but one with .open class. (not implemented)
+others will "fade out" in their fashion. the .open class "fades in" creating 
+smooth transition. but to make "fade out" not same with "fade in", 
+we have .close class that will assign the "fade out" properties.
+
+we can use Lit to create our views, import dynamically, create and appemd.
+everything dependant should be in the the element's module itself.
+or maybe dynamic fetching with until() directive. but while the view's itself
+or root content element is loading, #content>loader (not implemented) will do 
+the placeholder job. */
+#content > * {
+	position: inherit;
+/*	background-color: #f005;*/
+	width: 100%;
+	height: 100%;
+}
+
+
+/* kinda example  */
+
+/* starting for .open */
+v-network{
+	opacity: 0;
+	transform: translate(-100%, -60%) scale(0);
+	border-radius: 50%;
+	transition: 700ms;
+	background-color: #466;
+}
+
+v-network.open{
+	opacity: 1;
+	transform: translate(0,0) scale(1.0);
+	border-radius: 0;
+	transition: 200ms;
+}
+
+v-network.close{
+	opacity: 0;
+	transform: translate(0, 60%);
+	border-radius: 41px;
+	transition: 900ms;
+}
