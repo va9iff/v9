@@ -64,9 +64,9 @@ const routes = {
 		el.innerHTML = "still in progress"
 		return el
 	},
-	"#network": ()=>{
-		await import("./views/network/network.js")
-		let el = document.createElement("network")
+	"#network": async ()=>{
+		await import("../views/network/network.js")
+		let el = document.createElement("v-network")
 		return el
 	},
 
