@@ -65,19 +65,23 @@ class VSidebar extends VLitElement {
 					?active=${window.location.hash == "#dashboard"} 
 					href = "#dashboard"
 					@click=${this.route}>
-						<img src="./icons/dashboard.png" alt="dashboard">
+						<!-- relative to the top cuz we use at
+						top index.html I think. not so portable huh -->
+						<!-- <img src="./icons/dashboard.png" alt="dashboard"> -->
+						<img src="./src/sidebar/icons/dashboard.png" alt="dashboard">
+
 				</a>
 				<a 
 					?active=${window.location.hash == "#network"} 
 					href = "#network"
 					@click=${this.route}>
-						<img src="./icons/network.png" alt="network">
+						<img src="./src/sidebar/icons/network.png" alt="network">
 				</a>
 				<a 
 					?active=${window.location.hash == "#projects"} 
 					href = "#projects"
 					@click=${this.route}>
-						<img src="./icons/projects.png" alt="projects">
+						<img src="./src/sidebar/icons/projects.png" alt="projects">
 				</a>
 			</div>
 					`
