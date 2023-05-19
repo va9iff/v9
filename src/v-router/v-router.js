@@ -31,8 +31,8 @@ const handleLocation = async () => {
 	}
 	content.classList.add("loading") // commented for now
 	let routeElement = await routes[hash]()
-	console.log(routeElement)
-	if (loadingFor == window.location.hash) content.appendChild(routeElement)
+	console.log(loadingFor, hash, loadingFor == hash, routeElement)
+	if (loadingFor == hash) content.appendChild(routeElement)
 	content.classList.remove("loading") // commented for now
 
 }
