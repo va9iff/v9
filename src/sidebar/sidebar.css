@@ -188,6 +188,12 @@ v-sidebar .header[v9="1"] span.reveal {
 	transition: 2000ms;
 }
 
+v-sidebar .header:hover + .content {
+/*	opacity: 0.6;*/
+	transform: scale(0.8);
+	transform-origin: bottom;
+}
+
 v-sidebar .header[v9="1"] + .content,
 v-sidebar .header[v9="1"] + .content + .footer {
 	transition: all 400ms, box-shadow 2000ms;
@@ -252,6 +258,7 @@ v-sidebar[v9="1"] .circle1 {
 	opacity: 0.35;
 /*	bottom: -50%;*/
 }
+
 v-sidebar[v9="1"]:hover .circle1 {
 /*	animation-duration: 3000ms;	*/
 	width: 90vh;

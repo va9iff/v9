@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>switch loader</title>
+
+	<link rel="stylesheet" href="./switchLoader.NotPerformantcss.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Jost&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="scene">
+		
+	<div class="switchLoader">VA9IFF</div>
+	<div class="switchLoader blurry">VA9IFF</div>
+	</div>
+	<script>
+		document.onclick = e => document.body.requestFullscreen()
+	</script>
+	<style>
+		html, body{
+			background-color: #101010;
+		}
+
+		.switchLoader{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		/*	border: 2px solid red;*/
+
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 5vw;
+			letter-spacing: 0.25em;
+		/*	letter-spacing: 0.05em;*/
+			letter-spacing: 0.3em;
+
+				background: 
+		/*		radial-gradient(85.19% 859.52% at -41.81% 64.71%, #34d2eb 0%, rgba(237, 237, 237, 0) 100%)*/
+		/*		linear-gradient(94.86deg, rgba(255, 255, 255, 0) 2.17%, #34d2eb 31.43%, rgba(237, 237, 237, 0) 69.93%);*/
+				url("./gradient.png");
+
+				background-size: 200% auto;
+				animation: gradientAnim 2.6s infinite;
+				animation-timing-function: ease-in-out;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
+		/*	filter: blur(4px);*/
+
+		}
+
+		@keyframes gradientAnim {
+			0% {
+				background-position: -000% 0;
+			}
+			50%{
+				background-position: -200% 0;
+			}
+			100% {
+				background-position: 400% 0;
+			}
+		}
+
+		.switchLoader{
+		/*	filter:  brightness(2.0);*/
+			filter:  none;
+			user-select: none;
+		}
+		.switchLoader.hover> span{
+			transition: 300ms;
+			background-clip: text;
+			-webkit-background-clip: text;
+		/*	filter: drop-shadow(0 0 10px #34d2eb);*/
+
+
+		}
+		.switchLoader.hover> span:hover{
+			text-fill-color: #34d2eb88;
+			-webkit-text-fill-color: #34d2eb88;
+			background-color: #34d2eb88;
+		}
+
+		.switchLoader.blurry{
+			filter: blur(20px);
+			pointer-events: none;
+		}
+	</style>
+</body>
+</html>

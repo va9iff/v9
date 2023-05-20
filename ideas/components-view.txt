@@ -1,0 +1,5 @@
+a view in sidebar to showcase every component or functionality separately.
+but I won't probably add it.
+for example the chip button will only accept <v-button text="hi"></v-button>
+see? all the light and all gone. "it's just a button with your custom text" idea 
+comes to people's mind.
