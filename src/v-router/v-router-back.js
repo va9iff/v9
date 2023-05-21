@@ -124,7 +124,7 @@ const routes = {
 
 	"#projects": async () => {
 		await import("../views/projects/projects.js")
-		let el = document.createElement("projects-view")
+		let el = document.createElement("v-projects")
 		return el
 	},
 

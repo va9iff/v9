@@ -3,20 +3,14 @@ import {View} from "../view.js"
 
 await new Promise(r=>setTimeout(r,500))
 
-class VProjects extends View {
+class VDashboard extends View {
 	static properties = {
 	}
-
 	render() {
 		return html`
-			Projeeeeeectsss
-			ts
-			ts
-			ts
-			ts
-			ts
+			that's the dashboard
 		`
 	}
 }
 
-VProjects.tag = "v-projects"
+VDashboard.tag = "v-dashboard"

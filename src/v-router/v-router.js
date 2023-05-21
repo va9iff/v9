@@ -4,12 +4,12 @@ import { html, VLitElement } from "/src/vlit.js"
 
 const content = document.querySelector("#content")
 console.log(content)
-let loadingFor // to check if the location has changed before the element has appended
+// let loadingFor // to check if the location has changed before the element has appended
 const route = (e) => {
 	e = e || window.event;
 	e.preventDefault();
 	window.history.pushState({}, "", e.target.href);
-	loadingFor = window.location.hash
+	// loadingFor = window.location.hash
 
 	handleLocation();
 }
@@ -30,47 +30,38 @@ const handleLocation = async () => {
 	}
 	content.classList.add("loading") // commented for now
 	console.log('loading', hash)
-	let routeElement = await routes[hash]()
-	console.log(loadingFor, hash, loadingFor == hash, routeElement)
-	if (loadingFor == hash) content.appendChild(routeElement)
+	let routeFun = routes[hash] || routes[404]
+	let routeElement = await routeFun()
+	// console.log(loadingFor, hash, loadingFor == hash, routeElement)
+	if (window.location.hash == hash) content.appendChild(routeElement)
 	content.classList.remove("loading") // commented for now
 
 }
 
 
 const routes = {
-	// "/about": "/pages/about.html",
-	// 404: "/pages/404.html",
-	// I'll use functions:
-	"#v-compact": async ()=>{
-		console.log('get')
-		await import('./v-component-a.js')
-		return document.createElement('v-component-a')
-
+	// not found view (/#some path that doesnt exist)
+	404: async ()=> {
+		await import("../views/404/404.js")
+		let el = document.createElement("v-404")
+		return el
 	},
-	"#projects": async ()=>{
-		console.log('get')
-		await import('./v-component-b.js')
-		// new Promise(r=>setTimeout(r,1000))
-		return document.createElement('v-component-b')
-
-	},
-	"#nu": async () => document.createElement('div'),
-	404: ()=> document.createElement('div'),
-	"": ()=> {
-		let el = document.createElement('div')
-		el.innerHTML = "that's the default home view"
+	// home view (active sidebar button deactivated)
+	"": async ()=> {
+		await import("../views/home-view.js")
+		let el = document.createElement("v-home")
 		return el
 	},
 	// unnecessary. /# will go to / which is "" (just above)
-	"#": ()=> {
+	"#": async ()=> {
+		// probably won't be called anyway
 		console.log('hash hash called?')
 	},
 
 	// MAIN ROUTES
-	"#dashboard": ()=> {
-		let el = document.createElement("div")
-		el.innerHTML = "still in progress"
+	"#dashboard": async ()=> {
+		await import("../views/dashboard/dashboard.js")
+		let el = document.createElement("v-dashboard")
 		return el
 	},
 	"#network": async () => {
@@ -81,16 +72,20 @@ const routes = {
 
 	"#projects": async () => {
 		await import("../views/projects/projects.js")
-		let el = document.createElement("projects-view")
+		let el = document.createElement("v-projects")
 		return el
 	},
 
 };
-loadingFor = window.location.hash
+// loadingFor = window.location.hash
 handleLocation();
 window.onhashchange = function() {
 	handleLocation()
 }
+
+window.addEventListener("popstate", (event) => {
+	handleLocation()
+});
 
 
 

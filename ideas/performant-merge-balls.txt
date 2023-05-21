@@ -1,0 +1,28 @@
+I can't remember what this was called but concept is like this: 
+
+when 2 balls gets near, they start to flow to each other like a fluid.
+if close enough, they'll merge and when you put both balls center 
+very close (they do collide) they'll smooth their parts and look almost like 
+a single ball. or r/2 will make it look like a wavy ellipse.
+
+that's very basic. to make merging:
+you have two or many solid objects. (rectangle, circle, doesn't matter)
+blur them all with a big radius.
+increase the contrast.
+
+lets say bg is black and objects are white.
+and assume contrast will turn every pixal into brighter #fff or #000.
+blur will make the pixels near to most ojbects brighter.
+so pixels near most will be filled.
+a few pixels away from filled one is also filled (for example, is #666)
+but since this will be contrasted to #000, it'll look blank.
+so we have a sharp edge of a solid object.
+but also a curved shape, since the inner corners will be "filled".
+
+
+
+
+to make it performant, instead of blurring it, we'll use blurred ones:
+instead of using circle and blur, we'll directly use radial gradient.
+instead of using rectangle, we'll use box shadow.
+now we don't need big gaussian blur radius calculations and do only contrasting.
