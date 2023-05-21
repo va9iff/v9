@@ -36,6 +36,8 @@ const handleLocation = async () => {
 	if (window.location.hash == hash) content.appendChild(routeElement)
 	content.classList.remove("loading") // commented for now
 
+	window.updateTitle()
+
 }
 
 
