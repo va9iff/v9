@@ -1,1 +1,1 @@
-import "./views/v-me.js"
+import "./sidebar/sidebar.js"
