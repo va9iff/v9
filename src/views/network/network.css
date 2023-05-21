@@ -1,0 +1,60 @@
+v-network {
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	justify-content: flex-start;*/
+/*	flex-direction: column;*/
+}
+
+v-network .content{
+	padding: 42px;
+}
+
+v-network h1{
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 74px;
+	line-height: 110%;
+/*	padding: 34px;*/
+/*	padding-left: 62px;*/
+	/* or 81px */
+
+/*	text-align: center;*/
+
+	color: #E0E0E0;
+}
+v-network h4{
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 31px;
+	line-height: 110%;
+	/* or 34px */
+
+}
+
+v-network * {
+/*	border: 2px solid #0ff7;*/
+}
+
+v-network table.socials td.icon {
+/*	background-color: red;*/
+	text-align: center;
+	width: 41px;
+	height: 34;
+}
+
+v-network table.socials td.username{
+	font-family: 'Fira Code';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+}
+
+v-network table.socials td.note {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 31px;
+
+}

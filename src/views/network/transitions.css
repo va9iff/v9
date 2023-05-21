@@ -1,0 +1,21 @@
+v-network{
+	opacity: 0;
+	transform: translate(-100%, -60%) scale(0);
+	border-radius: 50%;
+	transition: 700ms;
+/*	background-color: #466;*/
+}
+
+v-network.open{
+	opacity: 1;
+	transform: translate(0,0) scale(1.0);
+	border-radius: 0;
+	transition: 200ms;
+}
+
+v-network.close{
+	opacity: 0;
+	transform: translate(0, 60%);
+	border-radius: 41px;
+	transition: 900ms;
+}
