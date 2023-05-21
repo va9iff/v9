@@ -15,7 +15,6 @@ class VSidebar extends VLitElement {
 	}
 	v9max = 1
 	headerClick(e) {
-		console.log(this.v9)
 		this.v9++
 		if (this.v9 > this.v9max) setTimeout(() => (this.v9 = 0), 999)
 	}
@@ -27,6 +26,7 @@ class VSidebar extends VLitElement {
 		// notifications.filter(notification=>notification.uid!=this.uid)
 	}
 	route(e){
+		// event will always be itself cuz inner img has pointer-events: none
 		if (e.target.href.split("#").pop()==window.location.hash.split("#").pop()){
 			let a = document.createElement("a")
 			// that's the route you go when you click the active sidebar button
@@ -38,10 +38,8 @@ class VSidebar extends VLitElement {
 				a.remove()
 			})
 		}
-		console.log(e.target)
 		window.route(e)
 		this.switch(window.location.hash)
-		console.log(this.active)
 	}
 	connectedCallback(){
 		super.connectedCallback()

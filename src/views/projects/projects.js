@@ -1,7 +1,7 @@
 import { html, VLitElement } from "/src/vlit.js"
 import {View} from "../view.js"
 
-await new Promise(r=>setTimeout(r,1000))
+await new Promise(r=>setTimeout(r,500))
 
 class ProjectsView extends View {
 	static properties = {

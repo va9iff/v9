@@ -13,6 +13,7 @@ v-component-a {
 	background-color: blue;
 	opacity: 0.0;
 	border: 2px solid brown;
+	transition: 200ms;
 }
 v-component-a.open {
 	opacity: 1;
