@@ -110,15 +110,18 @@ v-network .table.socials .row:hover {
 
 v-network .table.socials .row .cell.icon > img {
 	transition: 1500ms;
+	transition-timing-function: line;
 }
 v-network .table.socials .row:hover .cell.icon > img {
-	transition: 200ms;
+	transition: 600ms;
+	transition-timing-function: cubic-bezier(0.22, 2.18, 0.38, 1.02);
 	filter: 
 	brightness(2)
 	drop-shadow(0 0 20px #1DA1F2)
-	drop-shadow(-10px 0 20px #1DA1F2)
-	drop-shadow(+10px 0 20px #1DA1F2)
-
+	drop-shadow(-100px -100px 0 #1DA1F2)
+	drop-shadow(+100px +100px 0 #1DA1F2)
+	drop-shadow(-100px +100px 0 #1DA1F2)
+	drop-shadow(+100px -100px 0 #1DA1F2)
 	;	
 }
 
