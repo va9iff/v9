@@ -15,9 +15,22 @@ const route = (e) => {
 }
 window.route = route
 
+const titles = {
+	"": ()=> "V9",
+	404: ()=> "V9 oops....",
+	"#dashboard": ()=> "Dashboard - V9",
+	"#network": ()=> "Network - V9",
+	"#projects": ()=> "Projects - V9",
+
+	// "#network": ()=> "Network" + window.styledTitleV9, // one part being 
+	// consistent for a time but the other half (Network) gets changed.
+}
+
 const handleLocation = async () => {
 	const path = window.location.pathname;
 	const hash = window.location.hash
+	let title = titles[hash]?.() || titles[404]()
+	window.changeTitle(title)
 	// console.log(path)
 	// console.log(hash)
 	for (let child of content.children) {
@@ -36,7 +49,6 @@ const handleLocation = async () => {
 	if (window.location.hash == hash) content.appendChild(routeElement)
 	content.classList.remove("loading") // commented for now
 
-	window.updateTitle()
 
 }
 

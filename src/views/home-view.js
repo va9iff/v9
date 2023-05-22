@@ -11,7 +11,15 @@ class VHome extends View {
 	}
 	render() {
 		return html`
-			home view
+		home view home view home view home view home view 
+
+		<div class="content">
+			<br>
+			<br>
+			<br>
+			<br>
+			do we need this content div?
+		</div>
 
 		`
 	}

@@ -8,7 +8,9 @@ class V404 extends View {
 	}
 	render() {
 		return html`
+		<div class="content">
 			<h1>Erro 404</h1>
+		</div>
 		`
 	}
 }
