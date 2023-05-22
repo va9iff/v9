@@ -1,3 +1,9 @@
+/**{*/
+/*	padding: 2px;*/
+/*	border: 2px solid cyan;*/
+/*}*/
+
+
 v-network {
 /*	display: flex;*/
 /*	align-items: center;*/
@@ -6,7 +12,7 @@ v-network {
 }
 
 v-network .content{
-	padding: 42px;
+	padding: 42px 20px;
 }
 
 v-network h1{
@@ -15,6 +21,7 @@ v-network h1{
 	font-weight: 400;
 	font-size: 74px;
 	line-height: 110%;
+	padding: 34px 0;
 /*	padding: 34px;*/
 /*	padding-left: 62px;*/
 	/* or 81px */
@@ -37,24 +44,77 @@ v-network * {
 /*	border: 2px solid #0ff7;*/
 }
 
+v-network table {
+	margin-top: 50px;
+}
+
+td{
+/*	border: 1px solid cyan;*/
+}
+
 v-network table.socials td.icon {
 /*	background-color: red;*/
 	text-align: center;
 	width: 41px;
-	height: 34;
+	height: 34px;
+	min-width: 41px;
+	padding: 10px;
+}
+
+v-network table.socials td.platform{
+	min-width: 204px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 31px;
+	padding: 0 16px;
+
+	/* CAN'T USE PADDING WITH DISPLAY: TABLE-ROW SO I INCREASE INTERNALS */
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 v-network table.socials td.username{
-	font-family: 'Fira Code';
+	font-family: 'Fira Mono';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
+	width: 281px;
 }
 
 v-network table.socials td.note {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 31px;
+	font-size: 20px;
+	line-height: 110%;
+	color: #B8B4B8;
 
 }
+
+v-network table.socials{
+  border-collapse: collapse;
+}
+
+v-network table.socials tr:hover {
+	background-color: #131313;
+	box-shadow: 0 -1px 0 #2c2c2c, 0 1px 0 #2c2c2c;
+}
+
+
+v-network table.socials tr td.icon > img {
+	transition: 1500ms;
+}
+v-network table.socials tr:hover td.icon > img {
+	transition: 200ms;
+	filter: 
+	brightness(2)
+	drop-shadow(0 0 20px #1DA1F2)
+	drop-shadow(-10px 0 20px #1DA1F2)
+	drop-shadow(+10px 0 20px #1DA1F2)
+
+	;	
+}
+
+
+/* <a> row table  */

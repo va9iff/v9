@@ -67,7 +67,7 @@ class VSidebar extends VLitElement {
 				</span>
 				<span class="reveal">
 					F
-				<span class="reveal">
+				</span>
 			</div>
 			<div class="content">
 				<a 

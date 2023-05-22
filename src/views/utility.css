@@ -6,6 +6,35 @@
 	gap: 0;
 }
 
-*[indented]{
-	margin-left: 40px;
+
+v-network{
+	--indent-width: 40px;
+}
+
+*[i],
+*[i1],
+*[i2],
+*[i3],
+*[i4],
+*[i5]{
+}
+
+*[i], *[i1]{
+	margin-left: calc(var(--indent-width) * 1);
+}
+
+*[i2]{
+	margin-left: calc(var(--indent-width) * 2);
+}
+
+*[i3]{
+	margin-left: calc(var(--indent-width) * 3);
+}
+
+*[i4]{
+	margin-left: calc(var(--indent-width) * 4);
+}
+
+*[i5]{
+	margin-left: calc(var(--indent-width) * 5);
 }
