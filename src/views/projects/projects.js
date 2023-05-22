@@ -9,12 +9,14 @@ class VProjects extends View {
 
 	render() {
 		return html`
+			<div class="content">
 			Projeeeeeectsss
 			ts
 			ts
 			ts
 			ts
 			ts
+			</div>
 		`
 	}
 }

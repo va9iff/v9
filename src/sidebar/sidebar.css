@@ -17,7 +17,13 @@ v-sidebar a img{
 }
 
 v-sidebar {
-	background-color: #101010;
+
+/*	translucency for blur effect while turning #1a1a1a into #101010	*/
+/*	background-color: #101010;*/
+	background-color: #00000060;
+	z-index: 905;
+	backdrop-filter: blur(9px);
+
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -227,6 +233,7 @@ v-sidebar{
 }
 v-sidebar[v9="1"]{
 	background-color: #171c1c;
+	backdrop-filter: none;
 	transition: 2000ms;
 }
 v-sidebar .circle1{

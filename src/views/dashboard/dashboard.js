@@ -8,7 +8,9 @@ class VDashboard extends View {
 	}
 	render() {
 		return html`
-			that's the dashboard
+			<div class="content">
+				that's the dashboard
+			</div>
 		`
 	}
 }

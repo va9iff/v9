@@ -5,6 +5,9 @@ v-sidebar::-webkit-scrollbar {
 
 /* Track */
 v-sidebar::-webkit-scrollbar-track {
+  /*  we can make the scroll bar translucent too 
+  but it's better. kinda like protected glass. */
+  /*  background-color: #0000;*/
   background: #101010;
 }
 

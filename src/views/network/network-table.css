@@ -89,16 +89,14 @@ v-network .table.socials .row:hover .cell.icon > img {
     transform: rotate(-25deg);
     filter: 
 
-/*  drop-shadow(-100px -100px 0 #1DA1F288)*/
-/*  drop-shadow(+100px +100px 0 #1DA1F288)*/
-    drop-shadow(-100px -100px 0 #de3aff)
-    drop-shadow(+100px +100px 0 #de3aff)
+    drop-shadow(-100px -100px 0 #3affff)
+    drop-shadow(+100px +100px 0 #3affff)
 
-    drop-shadow(-100px +100px 0 #de3aff)
-    drop-shadow(+100px -100px 0 #de3aff)
-    drop-shadow(-5px +5px 0 #3affff)
+    drop-shadow(-100px +100px 0 #3affff)
+    drop-shadow(+100px -100px 0 #3affff)
+    drop-shadow(-5px +5px 0 #de3aff)
     brightness(2)
-    drop-shadow(0 0 20px #1DA1F2)
+    drop-shadow(0 0 14px #1DA1F2)
     ;   
 }
 

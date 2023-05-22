@@ -1,12 +1,29 @@
-v-network .content{
-	padding: 42px 20px;
-	overflow-y: auto;
+/*
+already in content.css
+#content > *{}
+*/
+/*v-network {
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100vh;
 	height: 100svh;
+	overflow-y: auto;
+	z-index: 904;
+}*/
+
+/* 
+already in content.css
+#content > * > .content{}
+ */
+/*v-network .content{
+	position: absolute;
+	left: 80px;
+	width: calc(100% - 80px);
+}*/
+v-network .content{
+	padding: 42px 20px;
 }
 
 v-network h1{
