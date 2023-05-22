@@ -109,7 +109,7 @@ v-network .table.socials .row:hover {
 
 
 v-network .table.socials .row .cell.icon > img {
-	transition: 1500ms;
+	transition: 1000ms;
 	transition-timing-function: line;
 }
 v-network .table.socials .row:hover .cell.icon > img {
