@@ -31,25 +31,21 @@ class VNetwork extends View {
 		return html`
 			<div class="content">
 				<div i>
-				<h1>Social Media and Network</h1>
+					<h1>Social Media and Network</h1>
 					<div i>
-					<h4>Placces where you can reach me</h4>
-						<table class="socials">
-						${platforms.map(platform=>html`
-							<tr>
-								<td class="icon"><img src="./src/views/network/icons/${platform.identifier}.png" alt=""></td>
-								<td class="platform">${platform.name}</td>
-								<td class="username">${platform.userName}</td>
-								<td class="note">${platform.note}</td>
-							</tr>
-							`)}
-							<tr>
-								<td class="icon"><img src="./src/views/network/icons/facebook.png" alt=""></td>
-								<td class="platform">Facebook</td>
-								<td class="username">@va9iff</td>
-								<td class="note">My elders forced me to</td>
-							</tr>
-						</table>
+						<h4>Placces where you can reach me</h4>
+						<div stretched>
+						<div role="gird" class="table socials">
+							${platforms.map(platform=>html`
+							<a href="facebook.com" target="blank" role="row" class="row">
+								<div role="gridcell" class="cell icon"><img src="./src/views/network/icons/${platform.identifier}.png" alt=""></div>
+								<div role="gridcell" class="cell platform">${platform.name}</div>
+								<div role="gridcell" class="cell username">${platform.userName}</div>
+								<div role="gridcell" class="cell note">${platform.note}</div>
+							</a>
+						`)}
+						</div>
+						</div>
 					</div>
 				</div>
 			</div>

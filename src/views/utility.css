@@ -6,6 +6,10 @@
 	gap: 0;
 }
 
+*[stretched]{
+	display: flex;
+	flex-direction: column;
+}
 
 v-network{
 	--indent-width: 40px;

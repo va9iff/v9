@@ -13,6 +13,9 @@ v-network {
 
 v-network .content{
 	padding: 42px 20px;
+	overflow-y: auto;
+	height: 100vh;
+	height: 100svh;
 }
 
 v-network h1{
@@ -44,15 +47,21 @@ v-network * {
 /*	border: 2px solid #0ff7;*/
 }
 
-v-network table {
+v-network .table.socials {
 	margin-top: 50px;
 }
 
-td{
+v-network .table.socials a{
+	color: #ededed;
+	text-decoration: none;
+
+}
+
+.cell{
 /*	border: 1px solid cyan;*/
 }
 
-v-network table.socials td.icon {
+v-network .table.socials .cell.icon {
 /*	background-color: red;*/
 	text-align: center;
 	width: 41px;
@@ -61,51 +70,48 @@ v-network table.socials td.icon {
 	padding: 10px;
 }
 
-v-network table.socials td.platform{
+v-network .table.socials .cell.platform{
 	min-width: 204px;
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 31px;
 	padding: 0 16px;
-
-	/* CAN'T USE PADDING WITH DISPLAY: TABLE-ROW SO I INCREASE INTERNALS */
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
-v-network table.socials td.username{
+v-network .table.socials .cell.username{
 	font-family: 'Fira Mono';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
-	width: 281px;
+	min-width: 281px;
 }
 
-v-network table.socials td.note {
+v-network .table.socials .cell.note {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 110%;
 	color: #B8B4B8;
+	padding-left: 40px;
 
 }
 
-v-network table.socials{
+v-network .table.socials{
   border-collapse: collapse;
 }
 
-v-network table.socials tr:hover {
+v-network .table.socials .row:hover {
 	background-color: #131313;
 	box-shadow: 0 -1px 0 #2c2c2c, 0 1px 0 #2c2c2c;
 }
 
 
-v-network table.socials tr td.icon > img {
+v-network .table.socials .row .cell.icon > img {
 	transition: 1500ms;
 }
-v-network table.socials tr:hover td.icon > img {
+v-network .table.socials .row:hover .cell.icon > img {
 	transition: 200ms;
 	filter: 
 	brightness(2)
@@ -118,3 +124,36 @@ v-network table.socials tr:hover td.icon > img {
 
 
 /* <a> row table  */
+
+.table {
+  display: table;
+}
+
+.row {
+  display: table-row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.cell.icon{
+text-align: center;
+
+}
+
+.cell {
+  display: table-cell;
+/*  padding: 10px;*/
+vertical-align: middle;
+
+}
+
+/*
+.row:hover {
+  background-color: #cccccc;
+}
+
+.cell:hover {
+  background-color: #e5e5e5;
+}
+*/
