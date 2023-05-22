@@ -108,20 +108,33 @@ v-network .table.socials .row:hover {
 }
 
 
+v-network .table.socials .row .cell.icon {
+	z-index: 3;
+}
+v-network .table.socials .row .cell.username {
+	z-index: 4;
+}
+
+
 v-network .table.socials .row .cell.icon > img {
-	transition: 1000ms;
+	transition: all 1000ms;
 	transition-timing-function: line;
 }
 v-network .table.socials .row:hover .cell.icon > img {
-	transition: 600ms;
+	transition: all 600ms, transform linear 1600ms;
 	transition-timing-function: cubic-bezier(0.22, 2.18, 0.38, 1.02);
+	transform: rotate(-25deg);
 	filter: 
+
+/*	drop-shadow(-100px -100px 0 #1DA1F288)*/
+/*	drop-shadow(+100px +100px 0 #1DA1F288)*/
+	drop-shadow(-100px -100px 0 #3affff)
+	drop-shadow(+100px +100px 0 #3affff)
+
+	drop-shadow(-100px +100px 0 #3affff)
+	drop-shadow(+100px -100px 0 #3affff)
 	brightness(2)
 	drop-shadow(0 0 20px #1DA1F2)
-	drop-shadow(-100px -100px 0 #1DA1F2)
-	drop-shadow(+100px +100px 0 #1DA1F2)
-	drop-shadow(-100px +100px 0 #1DA1F2)
-	drop-shadow(+100px -100px 0 #1DA1F2)
 	;	
 }
 
