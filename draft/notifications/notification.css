@@ -40,10 +40,20 @@ v-notification {
 
 v-notification.important{
 	background: linear-gradient(20deg, #f00, #00f);
-	animation: coloring 1700ms infinite linear;
+	animation: coloring 1700ms infinite linear, bringNotificcation 800ms cubic-bezier(0.18, 0.76, 0.15, 1) 1;
 	background-size: 200% auto;
 	--b-width: 4px;
 }
+
+/*
+enjoying notifaction idk
+v-notification.important .content{
+	transition: 12000ms;
+}
+v-notification.important:hover .content{
+	transform: scale(0);
+
+}*/
 @keyframes coloring{
 	0% {
 		background-position: -100% 0;
