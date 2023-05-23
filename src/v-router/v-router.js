@@ -97,9 +97,9 @@ window.onhashchange = function() {
 	handleLocation()
 }
 
-window.addEventListener("popstate", (event) => {
-	handleLocation()
-});
+// window.addEventListener("popstate", (event) => {
+	// handleLocation()
+// });
 
 
 
