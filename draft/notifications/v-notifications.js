@@ -49,6 +49,7 @@ window.notify = notfi => {
 	notification.uid = notfi.uid
 	window.notfis.push(notfi)
 	notifications.appendChild(notification)
+	if (Math.random() > 0.5) notification.classList.add("important")
 	return notification
 }
 
