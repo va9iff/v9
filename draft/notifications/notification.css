@@ -17,8 +17,8 @@ v-notification {
 	border-radius: var(--b-radius);
 	font-family: "open sans";
 
-	height: 180px;
-	min-height: 180px;
+/*	height: 180px;*/
+	min-height: 220px;
 }
 
 v-notification .content {
@@ -54,6 +54,19 @@ v-notification{
 /*	max-height: 100vh;*/
 /*	min-max-height: 100vh;*/
 	margin-top: 20px;
+}
+
+v-notification{
+	animation: bringNotificcation 800ms;
+	animation-timing-function: cubic-bezier(0.18, 0.76, 0.24, 0.92);
+}
+@keyframes bringNotificcation{
+	from{
+		transform: translateX(100%) scale(0.7);
+	}
+	to{
+		transform: translateX(0) scale(1);;
+	}
 }
 
 v-notification{

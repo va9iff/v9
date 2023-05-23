@@ -49,29 +49,38 @@ window.notify = notfi => {
 	notification.uid = notfi.uid
 	window.notfis.push(notfi)
 	notifications.appendChild(notification)
-
+	return notification
 }
 
 
-window.notify({
-	content: "hi"
-})
+// window.notify({
+// 	content: "hi"
+// })
 
-window.notify({
-	content: "widsja ksjlask kwjl"
-})
-window.notify({
-	content: "widsja ksjlask kwjl"
-})
-window.notify({
-	content: "widsja ksjlask kwjl"
-})
-window.notify({
-	content: "widsja ksjlask kwjl"
-})
-window.notify({
-	content: "widsja ksjlask kwjl"
-})
-window.notify({
-	content: "widsja ksjlask kwjl"
-})
+// window.notify({
+// 	content: "widsja ksjlask kwjl"
+// })
+// window.notify({
+// 	content: "widsja ksjlask kwjl"
+// })
+// window.notify({
+// 	content: "widsja ksjlask kwjl"
+// })
+// window.notify({
+// 	content: "widsja ksjlask kwjl"
+// })
+// window.notify({
+// 	content: "widsja ksjlask kwjl"
+// })
+// window.notify({
+// 	content: "widsja ksjlask kwjl"
+// })
+
+
+setInterval(()=>{
+	let notification = window.notify({
+		content: Math.random()
+	})
+	// setTimeout(()=>notification.close(),2400)
+},2000)
+
