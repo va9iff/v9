@@ -42,3 +42,15 @@ v-network{
 *[i5]{
 	margin-left: calc(var(--indent-width) * 5);
 }
+
+[fadeInOpacity]{
+	animation: fadeInOpacityAnim 300ms;
+}
+@keyframes fadeInOpacityAnim{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}

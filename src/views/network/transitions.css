@@ -1,21 +1,66 @@
-v-network{
-	opacity: 0;
-	transform: translate(-100%, -60%) scale(0);
-	border-radius: 50%;
-	transition: 700ms;
+/*v-network > .content{*/
+/*	opacity: 0;*/
+/*	transform: translate(0, 30%) scale(0.9);*/
+/*	transition: 700ms;*/
 /*	background-color: #466;*/
-}
+/*}*/
+/*v-network.open > .content{*/
+/*	opacity: 1;*/
+/*	transform: translate(0,0) scale(1.0);*/
+/*	border-radius: 0;*/
+/*	transition: 200ms;*/
+/*}*/
 
-v-network.open{
-	opacity: 1;
-	transform: translate(0,0) scale(1.0);
-	border-radius: 0;
+v-network > .content h1{
 	transition: 200ms;
+	transform: translate(-100%, 0);
+}
+v-network.open > .content h1{
+	transition: 1800ms;
+	transition-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
+	transform: translate(0, 0);
+}
+v-network.close > .content h1{
+	transition: transform 1600ms, opacity 300ms;
+	transform: translate(-100%, 0);
+/*	opacity: 0;*/
 }
 
-v-network.close{
+
+
+v-network > .content h4 {
+	transition: 260ms;
 	opacity: 0;
-	transform: translate(0, 60%);
-	border-radius: 41px;
-	transition: 900ms;
+}
+v-network.open > .content h4 {
+	opacity: 1;
+}
+
+v-network.close > .content h4 {
+	opacity: 0;
+}
+
+
+v-network > .content .table.socials .row{
+/*	--i*/
+	--row-transition-duration: calc(600ms * var(--i));
+	transition: 
+	transform var(--row-transition-duration),
+	opacity var(--row-transition-duration)
+	;
+
+	transform: translateY(400px) scale(0.7);
+	transform-origin: left;
+	opacity: 0;
+}
+v-network.open > .content .table.socials .row{
+	transform: translateY(0);
+	opacity: 1;
+
+}
+v-network.close > .content .table.socials .row{
+	transform: translateY(400px) scale(0.7);
+	transition: calc(600ms / var(--i));
+	transform-origin: right;
+	opacity: 0;
 }

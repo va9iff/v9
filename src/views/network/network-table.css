@@ -7,8 +7,10 @@
 
 .row {
 	display: table-row;
-	padding-top: 10px;
-	padding-bottom: 10px;
+
+/*  doesn't work  */
+/*	padding-top: 10px;*/
+/*	padding-bottom: 10px;*/
 }
 
 .cell.icon {
@@ -23,6 +25,10 @@
 /**/
 /**/
 
+
+v-network .table.socials {
+    margin-bottom: 30vh;
+}
 
 v-network .table.socials .cell.icon {
 /*  background-color: red;*/

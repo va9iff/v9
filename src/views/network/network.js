@@ -33,11 +33,11 @@ class VNetwork extends View {
 				<div i>
 					<h1>Social Media and Network</h1>
 					<div i>
-						<h4>Placces where you can reach me</h4>
+						<h4 fadeInOpacity>Placces where you can reach me</h4>
 						<div stretched>
 						<div role="gird" class="table socials">
-							${platforms.map(platform=>html`
-							<a href=${platform.link} target="blank" role="row" class="row">
+							${platforms.map((platform, i)=>html`
+							<a href=${platform.link} target="blank" role="row" class="row" style="--i: ${i+1}">
 								<div role="gridcell" class="cell icon"><img src="./src/views/network/icons/${platform.identifier}.png" alt=""></div>
 								<div role="gridcell" class="cell platform">${platform.name}</div>
 								<div role="gridcell" class="cell username">${platform.userName}</div>
