@@ -3,7 +3,6 @@ import { html, VLitElement } from "/src/vlit.js"
 
 
 const content = document.querySelector("#content")
-console.log(content)
 // let loadingFor // to check if the location has changed before the element has appended
 const route = (e) => {
 	e = e || window.event;

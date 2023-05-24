@@ -13,17 +13,20 @@
 
 v-network > .content h1{
 	transition: 200ms;
-	transform: translate(-100%, 0);
+	transform: translate(-80%, 0);
+	opacity: 0;
 }
 v-network.open > .content h1{
 	transition: 1800ms;
+	opacity: 1;
 	transition-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
 	transform: translate(0, 0);
 }
 v-network.close > .content h1{
-	transition: transform 1600ms, opacity 300ms;
-	transform: translate(-100%, 0);
-/*	opacity: 0;*/
+	transition: transform 300ms, opacity 300ms;
+	transform: translate(2%, 0);
+/*	background-color: red;*/
+	opacity: 0;
 }
 
 

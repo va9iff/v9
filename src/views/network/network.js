@@ -1,7 +1,7 @@
 import { html, VLitElement } from "/src/vlit.js"
 import {View} from "../view.js"
 
-await new Promise(r=>setTimeout(r,500))
+await new Promise(r=>setTimeout(r,1500))
 
 import socials from "../../../content/en/panes/social-networks.js"
 let platforms = Object.keys(socials.table).map(identifier=>({

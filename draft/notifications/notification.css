@@ -143,8 +143,8 @@ v-notification button.close{
 	transition: 400ms;
 }
 v-notification button.close:hover{
-	background-color: #2f2f2f;
-/*	box-shadow: 0 0px 10px #ffffff16;*/
+	background-color: #282828;
+	box-shadow: 0 0px 10px #ffffff16;
 	transform: scale(0.98);
 
 	/*
