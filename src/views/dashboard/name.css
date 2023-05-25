@@ -62,16 +62,17 @@
 	bottom: -10px;
 	transform: rotate(-2deg) translateY(3%);
 	transform-origin: left;
-	width: 700px;
+/*	width: 700px; at transitions*/
+/*	transition: 400ms;*/
 	height: 4px;
-	transition: 400ms;
 	border-radius: 7px;
 }
 
-.name:hover .line {
+.name/*:hover .line {
 	width: 720px;
 }
 
 .name:active .line {
 	width: 800px;
 }
+*/

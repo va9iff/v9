@@ -6,10 +6,7 @@ v-dashboard img.me{
 	-webkit-user-drag: none;
 
 
-	border-radius: 17px;
 
-	width: 283px;
-	height: 283px;
 
 	transform-origin: top;
 /*	transition: border-radius 1070ms, transform 1070ms, box-shadow 800ms;*/
@@ -29,6 +26,28 @@ v-dashboard img.me{
 	left: 57px;
 
 	z-index: 99999;
+
+	width: 0;
+	height: 0;
+	opacity: 0;
+/*	border-radius: 17px;*/
+	border-radius: 50%;
+	transform: scale(0);
+
+}
+
+v-dashboard.open img.me{
+	width: 283px;
+	height: 283px;
+	opacity: 1;
+	transform: scale(1);
+	border-radius: 17px;
+
+}
+v-dashboard.close img.me{
+	transition: 700ms;
+	transform: translateX(-100%);
+	opacity: 0;
 }
 
 v-dashboard img.me:hover{

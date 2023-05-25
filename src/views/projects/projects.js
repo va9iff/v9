@@ -9,13 +9,9 @@ class VProjects extends View {
 
 	render() {
 		return html`
-			<div class="content">
-			Projeeeeeectsss
-			ts
-			ts
-			ts
-			ts
-			ts
+			<div opacome class="content">
+			work in progress.. <br>
+			there will be my projects
 			</div>
 		`
 	}

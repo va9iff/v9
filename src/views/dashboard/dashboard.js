@@ -10,7 +10,7 @@ class VDashboard extends View {
 		return html`
 			<div class="content">
 				<img src="./img/me.jpg" class="me" alt="">
-				<div class="name">
+				<div opacome class="name">
 					<h1 class="english">
 						Vagif Valiyev
 					</h1>

@@ -54,3 +54,30 @@ v-network{
 		opacity: 1;
 	}
 }
+
+*[opacome]{
+	opacity: 0;
+	transition: 300ms;
+}
+
+.open *[opacome]{
+	opacity: 1;
+}
+
+.close *[opacome]{
+	transition: 400ms;
+	opacity: 0;
+}
+
+*[popin]{
+	transform: scale(0);
+	transform: 300ms;
+}
+
+.open *[popin]{
+	transform: scale(1);
+}
+
+.close *[popin]{
+	transform: scale(0);
+}

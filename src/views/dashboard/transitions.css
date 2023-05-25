@@ -1,0 +1,16 @@
+v-dashboard .line{
+	width: 0;
+	text-replace: 700ms;
+}
+
+v-dashboard.open .line{
+	width: 700px;
+	transition: 1700ms;
+}
+
+v-dashboard.close .line{
+	transform: rotate(4deg);
+	opacity: 0;
+	transition: 170ms;
+	width: 1700px;
+}
