@@ -1,0 +1,42 @@
+v-dashboard img.me{
+/*	box-shadow: 0px 11px 35px rgba(0, 0, 0, 0.35);*/
+	box-shadow: 0 0 0 #1a1a1a;
+	user-select: none;
+	user-drag: none;
+	-webkit-user-drag: none;
+
+
+	border-radius: 17px;
+
+	width: 283px;
+	height: 283px;
+
+	transform-origin: top;
+/*	transition: border-radius 1070ms, transform 1070ms, box-shadow 800ms;*/
+	transition: border-radius 1070ms, transform 1070ms, height 300ms, width 300ms, top 300MS, left 300MS, box-shadow 400ms;
+
+/*	*/
+	position: absolute;
+	top: 47px;
+	left: 57px;
+}
+
+v-dashboard img.me:hover{
+	border-radius: 25px;
+}
+
+v-dashboard img.me:active{
+/*	transition: border-radius 250ms, transform 1070ms, box-shadow 1800ms;*/
+	transition: border-radius 400ms, transform 1070ms, height 1070ms, width 1070ms, left 1070ms, top 1070ms, box-shadow 400ms;
+
+	border-radius: 50%;
+	transform: rotate(6deg) scale(1.5) translateX(50%);
+	box-shadow: 0 0 0 15.0px #101010, 0 0 0 22.5px #dedede,0 0 20px 125.0px #10101030;
+
+	/*	*/
+	transform: rotate(6deg) translateX(-50%);
+	top: 15vh;
+	height: 80vh;
+	width: 80vh;
+	left: 50%;
+}
