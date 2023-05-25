@@ -9,19 +9,15 @@ class VDashboard extends View {
 	render() {
 		return html`
 			<div class="content">
-			<img src="./img/me.jpg" class="me" alt="">
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
-				that's the dashboard
+				<img src="./img/me.jpg" class="me" alt="">
+				<div class="name">
+					<h1 class="english">
+						Vagif Valiyev
+					</h1>
+					<h1 class="native">
+						Vaqif Vəliyev
+					</h1>
+				</div>
 			</div>
 		`
 	}

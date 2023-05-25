@@ -1,0 +1,51 @@
+.name{
+	display: flex;
+	position: absolute;
+	left: 600px;
+	top: 200px;
+	min-width: 600px;
+
+	left: 380px;
+	top: 40px;
+}
+
+.name > h1{
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 100px;
+	color: #EDEDED;
+
+	transition: 600ms;
+	transform-origin: left;
+}
+
+.native {
+	left: 0;
+	top: 0;
+	position: absolute;
+}
+
+.name > h1.english{
+	transform: rotate(0);
+	opacity: 1;
+	filter: none;
+}
+
+.name > h1.native{
+	transform: rotate(2deg);
+	opacity: 0;
+	filter: blur(7px);
+}
+
+.name:hover > h1.english {
+	transform: rotate(-2deg);
+	opacity: 0;
+	filter: blur(7px);
+}
+
+.name:hover > h1.native {
+	transform: rotate(0);
+	opacity: 1;
+	filter: none;
+}

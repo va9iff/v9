@@ -13,7 +13,16 @@ v-dashboard img.me{
 
 	transform-origin: top;
 /*	transition: border-radius 1070ms, transform 1070ms, box-shadow 800ms;*/
-	transition: border-radius 1070ms, transform 1070ms, height 300ms, width 300ms, top 300MS, left 300MS, box-shadow 400ms;
+	transition: 
+	border-radius 1070ms,
+	transform 1070ms,
+	height 200ms,
+	width 400ms,
+	top 300MS,
+	left 300MS,
+	box-shadow 400ms;
+/*	border-top-left-radius 60ms*/
+	;
 
 /*	*/
 	position: absolute;
@@ -27,11 +36,21 @@ v-dashboard img.me:hover{
 
 v-dashboard img.me:active{
 /*	transition: border-radius 250ms, transform 1070ms, box-shadow 1800ms;*/
-	transition: border-radius 400ms, transform 1070ms, height 1070ms, width 1070ms, left 1070ms, top 1070ms, box-shadow 400ms;
+	transition: 
+	border-radius 400ms,
+	transform 1070ms,
+	height 1070ms,
+	width 1070ms,
+	left 1070ms,
+	top 1070ms,
+	box-shadow 400ms,
+	border-top-left-radius 600ms ease-out
+
+	;
 
 	border-radius: 50%;
 	transform: rotate(6deg) scale(1.5) translateX(50%);
-	box-shadow: 0 0 0 15.0px #101010, 0 0 0 22.5px #dedede,0 0 20px 125.0px #10101030;
+	box-shadow: 0 0 0 15.0px #101010, 0 0 0 22.5px #dedede,0 0 20px 0 #10101030;
 
 	/*	*/
 	transform: rotate(6deg) translateX(-50%);
