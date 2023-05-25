@@ -1,0 +1,59 @@
+.shady-scroller{
+	--shade-color: #1a1a1a;
+	--shade-height: 53px;
+
+	position: relative;
+	max-	height: 330px;
+	widows: 200px;
+	overflow-y: scroll;
+	margin-right: 5px;
+
+	/* Text */
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 110%;
+
+}
+
+.shady-scroller:before,
+.shady-scroller:after{
+	content: "";
+	z-index: 999;
+	display: block;
+	position: sticky;
+	height: var(--shade-height);
+}
+
+.shady-scroller:before{
+	top: 0;
+	background: linear-gradient(to bottom, var(--shade-color), transparent);
+}
+
+.shady-scroller:after{
+	bottom: 0;
+	background: linear-gradient(to top, var(--shade-color), transparent);
+}
+
+
+
+.shady-scroller::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.shady-scroller::-webkit-scrollbar-track {
+  background: 0000;
+}
+
+/* Handle */
+.shady-scroller::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.shady-scroller::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
