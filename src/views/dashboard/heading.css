@@ -22,12 +22,13 @@ v-dashboard img.me{
 	left 300MS,
 	box-shadow 400ms;
 /*	border-top-left-radius 60ms*/
-	;
 
 /*	*/
 	position: absolute;
 	top: 47px;
 	left: 57px;
+
+	z-index: 99999;
 }
 
 v-dashboard img.me:hover{
@@ -44,13 +45,15 @@ v-dashboard img.me:active{
 	left 1070ms,
 	top 1070ms,
 	box-shadow 400ms,
+	filter 3000ms,
 	border-top-left-radius 600ms ease-out
 
 	;
 
 	border-radius: 50%;
 	transform: rotate(6deg) scale(1.5) translateX(50%);
-	box-shadow: 0 0 0 15.0px #101010, 0 0 0 22.5px #dedede,0 0 20px 0 #10101030;
+	box-shadow: 0 0 0 15.0px #101010, 0 0 0 22.5px #dedede;
+	filter: drop-shadow(50px 50px #101010);
 
 	/*	*/
 	transform: rotate(6deg) translateX(-50%);

@@ -1,12 +1,10 @@
 .name{
 	display: flex;
 	position: absolute;
-	left: 600px;
-	top: 200px;
 	min-width: 600px;
 
-	left: 380px;
-	top: 40px;
+	left: 400px;
+	top: 60px;
 }
 
 .name > h1{
@@ -16,8 +14,11 @@
 	font-size: 100px;
 	color: #EDEDED;
 
-	transition: 600ms;
+	transition: 400ms;
 	transform-origin: left;
+
+	/*???*/
+	pointer-events: none;
 }
 
 .native {
@@ -27,25 +28,50 @@
 }
 
 .name > h1.english{
-	transform: rotate(0);
+/*	transform: rotate(0);*/
+	transform: translate(0, 0);
 	opacity: 1;
 	filter: none;
 }
 
 .name > h1.native{
-	transform: rotate(2deg);
+/*	transform: rotate(2deg);*/
+	transform: translate(-15px, 15px);
 	opacity: 0;
-	filter: blur(7px);
+	filter: blur(20px);
 }
 
 .name:hover > h1.english {
-	transform: rotate(-2deg);
+/*	transform: rotate(-2deg);*/
+	transform: translate(-15px, -15px);
 	opacity: 0;
-	filter: blur(7px);
+	filter: blur(20px);
 }
 
 .name:hover > h1.native {
-	transform: rotate(0);
+/*	transform: rotate(0);*/
+	transform: translate(0, 0);
 	opacity: 1;
 	filter: none;
+}
+
+.line {
+	background: linear-gradient(270deg, #00FFFF 0%, #D500FF 63.12%, rgba(213, 0, 255, 0) 100%);
+	position: inherit;
+	left: 0;
+	bottom: -10px;
+	transform: rotate(-2deg) translateY(3%);
+	transform-origin: left;
+	width: 700px;
+	height: 4px;
+	transition: 400ms;
+	border-radius: 7px;
+}
+
+.name:hover .line {
+	width: 720px;
+}
+
+.name:active .line {
+	width: 800px;
 }

@@ -17,6 +17,7 @@ class VDashboard extends View {
 					<h1 class="native">
 						Vaqif Vəliyev
 					</h1>
+					<div class="line"></div>
 				</div>
 			</div>
 		`
