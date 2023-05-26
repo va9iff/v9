@@ -1,0 +1,27 @@
+v-dashboard .content{
+	height: 180vh;
+}
+
+.about{
+	position: relative;
+	height: 140vh;
+/*	background-color: #3006;*/
+
+	/*kinda var*/
+	top: 320px;
+}
+
+.texty{
+	position: sticky;
+/*	background-color: #8502;*/
+	width: 50%;
+	left: 50%;
+	top: 320px;
+
+	height: calc(100vh - 320px);
+}
+
+.split2col{
+	display: flex;
+	flex-direction: row;
+}

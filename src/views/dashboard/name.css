@@ -1,3 +1,10 @@
+.head{
+	position: sticky;
+	top: 0;
+	z-index: 99999;
+
+}
+
 .name{
 	display: flex;
 	position: absolute;
@@ -68,11 +75,4 @@
 	border-radius: 7px;
 }
 
-.name/*:hover .line {
-	width: 720px;
-}
 
-.name:active .line {
-	width: 800px;
-}
-*/

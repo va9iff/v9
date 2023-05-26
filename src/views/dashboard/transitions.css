@@ -1,3 +1,9 @@
+v-dashboard.close{
+	overflow-x: hidden;
+}
+
+/**/
+
 v-dashboard .line{
 	width: 0;
 	text-replace: 700ms;
@@ -8,9 +14,36 @@ v-dashboard.open .line{
 	transition: 1700ms;
 }
 
+v-dashboard.scrolled .name{
+	left: 170px;
+	top: 65px;
+}
+v-dashboard.scrolled .line{
+	transition: 200ms;
+	transform:  rotate(1deg);
+	filter: hue-rotate(30deg);
+	opacity: 0;
+	width: 50px;
+/*	opacity: 0;*/
+}
+
+v-dashboard.scrolled .name > h1 {
+	font-size: 25px;
+}
+
+
+
 v-dashboard.close .line{
 	transform: rotate(4deg);
 	opacity: 0;
 	transition: 170ms;
 	width: 1700px;
+}
+
+
+
+v-dashboard.close .shady-scroller,
+v-dashboard.close .shady-scroller:before,
+v-dashboard.close .shady-scroller:after{
+	background: none;
 }

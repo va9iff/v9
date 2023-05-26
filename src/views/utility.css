@@ -1,3 +1,7 @@
+.red{
+	background-color: red !important;
+}
+
 *[centered]{
 	display: flex;
 	align-items: center;

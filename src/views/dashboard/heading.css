@@ -54,6 +54,13 @@ v-dashboard img.me:hover{
 	border-radius: 25px;
 }
 
+v-dashboard.scrolled img.me{
+/*	transition: 200ms;*/
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
 v-dashboard img.me:active{
 /*	transition: border-radius 250ms, transform 1070ms, box-shadow 1800ms;*/
 	transition: 
@@ -81,3 +88,6 @@ v-dashboard img.me:active{
 	width: 80vh;
 	left: 50%;
 }
+
+
+
