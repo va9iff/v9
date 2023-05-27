@@ -1,5 +1,10 @@
 v-dashboard .content{
-	height: 180vh;
+/* when reached, header image and name won't sticky at the top.
+just gonna scroll to top. this enables us a nice transition to switch
+another section in the dashboard with greater focus. for now, we don't
+have any idea for this part. so I'll just use dashboard as tree/details page*/
+
+/*	height: 180vh;*/
 }
 
 .about{
@@ -40,9 +45,9 @@ v-dashboard .content{
 }
 .mytree{
 /*	flex: 1;*/
-	border-left: 20px solid cyan;
+	border-left: 4px solid cyan;
 	margin-left: 150px;
-	transform: translateX(-10px);
+	transform: translateX(-2px);
 }
 
 .split2col{

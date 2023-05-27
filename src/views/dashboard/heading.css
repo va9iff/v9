@@ -49,9 +49,18 @@ v-dashboard.close img.me{
 	transform: translateX(-100%);
 	opacity: 0;
 }
+v-dashboard.scrolled.close img.me{
+	transition: 400ms;
+	opacity: 0;
+	transform: translateY(-100vh);
+}
+
 
 v-dashboard img.me:hover{
+/* messes :active transition */
+/*	transition-timing-function: cubic-bezier(0.19, 0.85, 0.53, 1.32);*/
 	border-radius: 25px;
+
 }
 
 v-dashboard.scrolled img.me{
