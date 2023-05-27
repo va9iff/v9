@@ -14,14 +14,39 @@ v-dashboard .content{
 .texty{
 	position: sticky;
 /*	background-color: #8502;*/
-	width: 50%;
-	left: 50%;
-	top: 320px;
 
-	height: calc(100vh - 320px);
+/*	width: 50%;*/
+/*	left: 50%;*/
+
+
+/*	top: 320px;*/
+/*	height: calc(100vh - 320px);*/
+
+	top: 80px;
+	height: calc(100vh - 80px);
+/*	background-color: red;*/
+	flex: 1;
+/*	padding-left: 100px;*/
+/*	margin-right: 180px;*/
+	margin-right: 70px;
+	margin-left: 70px;
+
+/*	margin-left: auto;*/
+/*	text-align: center;*/
+	/*	!TODO: add a wrapper with flex align center
+		can't make itself flex. messes box-shadow inset up */
+/* or just use fixed margin from left	*/
+
+}
+.mytree{
+/*	flex: 1;*/
+	border-left: 20px solid cyan;
+	margin-left: 150px;
+	transform: translateX(-10px);
 }
 
 .split2col{
 	display: flex;
 	flex-direction: row;
 }
+

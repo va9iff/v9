@@ -57,10 +57,15 @@ v-dashboard img.me:hover{
 v-dashboard.scrolled img.me{
 /*	transition: 200ms;*/
 	width: 80px;
+	left: 110px;
 	height: 80px;
 	border-radius: 50%;
 }
+v-dashboard.scrolled img.me:hover{
+	transform: translateY(10px);
+}
 
+v-dashboard.scrolled img.me:active,
 v-dashboard img.me:active{
 /*	transition: border-radius 250ms, transform 1070ms, box-shadow 1800ms;*/
 	transition: 

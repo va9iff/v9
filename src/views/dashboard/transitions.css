@@ -15,15 +15,16 @@ v-dashboard.open .line{
 }
 
 v-dashboard.scrolled .name{
-	left: 170px;
+	transition: 700ms;
+	left: 210px;
 	top: 65px;
 }
 v-dashboard.scrolled .line{
-	transition: 200ms;
-	transform:  rotate(1deg);
+	transition: 700ms;
+/*	transform:  rotate(1deg);*/
 	filter: hue-rotate(30deg);
 	opacity: 0;
-	width: 50px;
+	width: 0px;
 /*	opacity: 0;*/
 }
 

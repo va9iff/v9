@@ -15,6 +15,8 @@ class VDashboard extends View {
 		super()
 		this.addEventListener("scroll", e=>this.scroll(e))
 	}
+	// mouse in to a circle of the tree will make the right pane explain it
+	// UNEC - Azerbaijan State University of Economics is a university that...
 	render() {
 		return html`
 			<div class="content">
@@ -34,43 +36,42 @@ class VDashboard extends View {
 				<div class="about">
 					<div class="split2col">
 						<div class="mytree">
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
-							fasad <br>fasad <br>fasad <br>fasad <br>fasad <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br>
+						Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNECEducation - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br>
+						Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br>
 						</div>
 						<div opacome class="shady-scroller texty">
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
-							Education - UNEC <br>
+							UNEC - Azerbaijan State University of Economics is a university that some <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
+							university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
 						</div>
 					</div>
 				</div>
