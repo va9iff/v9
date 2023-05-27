@@ -9,7 +9,7 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 .about{
 	position: relative;
-	height: 140vh;
+/*	height: 140vh;*/
 /*	background-color: #3006;*/
 
 	/*kinda var*/
@@ -44,10 +44,10 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 }
 .mytree{
-/*	flex: 1;*/
-	border-left: 4px solid cyan;
-	margin-left: 150px;
-	transform: translateX(-2px);
+/* we'll do a real one */
+/*	border-left: 4px solid cyan;*/
+/*	margin-left: 150px;*/
+/*	transform: translateX(-2px);*/
 }
 
 .split2col{
@@ -55,3 +55,41 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	flex-direction: row;
 }
 
+.mytree{
+	padding-top: 70px;
+}
+
+.treeRow{
+	display: flex;
+}
+
+.treeRow > .treeTitle {
+	width: 150px;
+	padding-bottom: 270px;
+}
+
+.treeRow > .divider {
+	transform: translateX(-50%);
+	width: 1px;
+	background-color: #6E5ED0;
+/*	height: 100%;*/
+}
+
+.treeRow > .divider > .circle {
+	position: sticky;
+	top: 350px;
+	margin-bottom: 22px;
+	transform: translateX(-50%);
+	background-color: #1a1a1a;
+	border: 1px solid #6E5ED0;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+
+	transition: 500ms;
+}
+
+.treeRow > .divider > .circle:hover {
+	background-color: #dcd7f4;
+	box-shadow: 0 0 30px 3px #6E5ED0;
+}
