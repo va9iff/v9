@@ -77,7 +77,8 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 .treeRow > .divider > .circle {
 	position: sticky;
-	top: 350px;
+/*	top: 350px;*/
+	top: 50%;
 	margin-bottom: 22px;
 	transform: translateX(-50%);
 	background-color: #1a1a1a;
@@ -91,5 +92,5 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 .treeRow > .divider > .circle:hover {
 	background-color: #dcd7f4;
-	box-shadow: 0 0 30px 3px #6E5ED0;
+	box-shadow: 0 0 100px 30px #6E5ED0;
 }

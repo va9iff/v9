@@ -49,3 +49,15 @@ v-dashboard.close .shady-scroller:before,
 v-dashboard.close .shady-scroller:after{
 	background: none;
 }
+
+v-dashboard.close .treeRow > .divider > .circle {
+	transition: 900ms;
+	transform: translateX(-50%) translateY(100vh);
+	opacity: 0;
+}
+
+v-dashboard.close .treeRow > .divider {
+	transition: 400ms;
+	transition-delay: 400ms;
+	opacity: 0;
+}

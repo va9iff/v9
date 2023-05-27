@@ -9,9 +9,22 @@
 	display: flex;
 	position: absolute;
 	min-width: 600px;
+	user-select: none;
+	color: #EDEDED;
+	
 
 	left: 400px;
 	top: 60px;
+}
+
+.scrolled .name{
+	transition: filter 0ms;
+	filter: 
+	drop-shadow(0 0 15px #1a1a1a)
+	drop-shadow(0 0 15px #1a1a1a)
+	drop-shadow(0 0 15px #1a1a1a)
+	drop-shadow(0 0 15px #1a1a1a)
+	;
 }
 
 .name > h1{
@@ -19,7 +32,6 @@
 	font-style: normal;
 	font-weight: 400;
 	font-size: 100px;
-	color: #EDEDED;
 
 	transition: 400ms;
 	transform-origin: left;

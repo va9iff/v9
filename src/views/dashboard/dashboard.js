@@ -25,6 +25,7 @@ class VDashboard extends View {
 	// when went over the name. also a scale transition may be applied. but
 	// that's not the style I wanted to go with at all... so, no scale. or
 	// maybe translateX(-x)
+	// ..no. I'll just use filter: drop-shadow on the name when scrolled.
 	render() {
 		return html`
 			<div class="content">
