@@ -64,8 +64,27 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 }
 
 .treeRow > .treeTitle {
+	padding-top: 130px;
 	width: 150px;
-	padding-bottom: 270px;
+
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 110%;
+	padding-left: 50px;
+
+}
+.treeRow > .treeDesc {
+	padding-top: 130px;
+	padding-bottom: 130px;
+
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 110%;
+	padding-left: 50px;
 }
 
 .treeRow > .divider {

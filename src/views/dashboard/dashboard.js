@@ -51,7 +51,16 @@ class VDashboard extends View {
 							<div class="divider">
 								<div class="circle"></div>
 							</div>
-							<div class="treeDesc">UNEC</div>
+							<div class="treeDesc">at Azerbaijan State University of <br>
+							Economics (UNEC) </div>
+						</div>
+						<div class="treeRow">
+							<div class="treeTitle">Education</div>
+							<div class="divider">
+								<div class="circle"></div>
+							</div>
+							<div class="treeDesc">at Azerbaijan State University of <br>
+							Economics (UNEC) </div>
 						</div>
 						<div class="treeRow">
 							<div class="treeTitle">Education</div>
