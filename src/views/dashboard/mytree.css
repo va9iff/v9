@@ -110,7 +110,12 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	transition: 500ms;
 }
 
-.treeRow > .divider > .circle:hover {
+/*.treeRow > .divider > .circle:hover {*/
+.treeRow > .divider > .circle.active {
 	background-color: #dcd7f4;
 	box-shadow: 0 0 100px 30px #6E5ED0;
+}
+
+.texty.loading {
+	background-color: green !important;
 }

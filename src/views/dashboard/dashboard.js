@@ -1,11 +1,11 @@
-import { html, VLitElement } from "/src/vlit.js"
+import { html, VLitElement, classMap } from "/src/vlit.js"
 import {View} from "../view.js"
 
 await new Promise(r=>setTimeout(r,500))
 
 const treeContent = [
 	{
-		title: "Education",
+		title: "High scoolmush",
 		desc: html`at Azerbaijan State University of <br>
 			Economics (UNEC)`,
 		getContent: async () => {
@@ -34,7 +34,9 @@ const treeContent = [
 class VDashboard extends View {
 	static properties = {
 		activeTreeNum: {},
-		shownContent: html``
+		shownContent: {},
+		glowing: {},
+		contentIsLoading: {}
 	}
 	scroll(e){
 		// console.log(this.scrollTop)
@@ -46,8 +48,12 @@ class VDashboard extends View {
 		this.addEventListener("scroll", e=>this.scroll(e))
 	}
 	async circleIn(row){
+		if (this.glowing == row.title) return null
+		this.glowing = row.title
 		this.shownContent = `Loading for ${row.title}...`
+		this.contentIsLoading = true
 		this.shownContent = await row.getContent()
+		this.contentIsLoading = false
 		console.log('inned')
 	}
 	render() {
@@ -73,14 +79,21 @@ class VDashboard extends View {
 						${treeContent.map(row=>html`
 							<div class="treeRow">
 								<div class="treeTitle">${row.title}</div>
-								<div class="divider">
-									<div class="circle" @mouseenter=${e=>this.circleIn(row)}></div>
+								<div class="divider" opacome>
+									<div class=${classMap({
+										circle: true,
+										active: this.glowing == row.title,
+									})} @mouseenter=${e=>this.circleIn(row)}></div>
 								</div>
 								<div class="treeDesc">${row.desc}</div>
 							</div>
 							`)}
 						</div>
-						<div opacome class="shady-scroller texty">
+						<div opacome class=${classMap({
+							"shady-scroller": true,
+							texty: true,
+							loading: this.contentIsLoading,
+						})}>
 						${this.shownContent}
 						</div>
 					</div>
