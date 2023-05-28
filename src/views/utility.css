@@ -73,6 +73,16 @@ v-network{
 	opacity: 0;
 }
 
+/* !WARNING: !TODO: we use position: relative to bring .treeRow to front.
+I couldn't figure out why the next elements were always on top of the previous
+ones in my tree  */
+/*oh nvm. utility.css was overwritten by mytree.css*/
+*[ontop]{
+/*	background-color: #f008;*/
+	z-index: 99999999; 
+	position: relative;
+}
+
 *[popin]{
 	transform: scale(0);
 	transform: 300ms;

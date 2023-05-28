@@ -77,7 +77,7 @@ class VDashboard extends View {
 						<div class="mytree">
 
 						${treeContent.map(row=>html`
-							<div class="treeRow">
+							<div class="treeRow" ?ontop = ${this.glowing == row.title}>
 								<div class="treeTitle">${row.title}</div>
 								<div class="divider" opacome>
 									<div class=${classMap({

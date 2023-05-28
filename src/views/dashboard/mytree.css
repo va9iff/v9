@@ -44,6 +44,7 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 }
 .mytree{
+	z-index: 900;
 /* we'll do a real one */
 /*	border-left: 4px solid cyan;*/
 /*	margin-left: 150px;*/
@@ -62,6 +63,9 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 .treeRow{
 	display: flex;
+/*	background-color: #f004;*/
+	position: relative;
+	z-index: 777;
 }
 
 .treeRow > .treeTitle {
@@ -119,3 +123,4 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 .texty.loading {
 	background-color: green !important;
 }
+

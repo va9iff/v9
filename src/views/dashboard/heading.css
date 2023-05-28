@@ -4,6 +4,7 @@ v-dashboard img.me{
 	user-select: none;
 	user-drag: none;
 	-webkit-user-drag: none;
+	z-index: 1200;
 
 
 
