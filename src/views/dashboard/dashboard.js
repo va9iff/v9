@@ -3,9 +3,38 @@ import {View} from "../view.js"
 
 await new Promise(r=>setTimeout(r,500))
 
+const treeContent = [
+	{
+		title: "Education",
+		desc: html`at Azerbaijan State University of <br>
+			Economics (UNEC)`,
+		getContent: async () => {
+			await new Promise(r => setTimeout(r, 600))
+			return html`contentus contentami contama`
+		}
+	},
+	{
+		title: "Education",
+		desc: html`at Azerbaijan State University of <br>
+			Economics (UNEC)`,
+		getContent: async () => {
+			return html`UNEC - Azerbaijan State University of Economics is a university that some <br>
+			university that university and a university that is something of a some sort of university 
+			and a university that is something of a some sort of university and a university that is 
+			something of a some sort of university and a`
+		}
+	},
+	{
+		title: "Some cont",
+		desc: html`That's from tree content const`,
+		getContent: async () => html`some content`
+	}
+]
+
 class VDashboard extends View {
 	static properties = {
-		activeTreeNum: {}
+		activeTreeNum: {},
+		shownContent: html``
 	}
 	scroll(e){
 		// console.log(this.scrollTop)
@@ -16,16 +45,11 @@ class VDashboard extends View {
 		super()
 		this.addEventListener("scroll", e=>this.scroll(e))
 	}
-	// mouse in to a circle of the tree will make the right pane explain it
-	// UNEC - Azerbaijan State University of Economics is a university that...
-
-	// when scrolled tree, education's short explanation will go behind the name
-	// the idea I currently have is to change its opacity to 0 like fading out 
-
-	// when went over the name. also a scale transition may be applied. but
-	// that's not the style I wanted to go with at all... so, no scale. or
-	// maybe translateX(-x)
-	// ..no. I'll just use filter: drop-shadow on the name when scrolled.
+	async circleIn(row){
+		this.shownContent = `Loading for ${row.title}...`
+		this.shownContent = await row.getContent()
+		console.log('inned')
+	}
 	render() {
 		return html`
 			<div class="content">
@@ -46,115 +70,18 @@ class VDashboard extends View {
 					<div class="split2col">
 						<div class="mytree">
 
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
+						${treeContent.map(row=>html`
+							<div class="treeRow">
+								<div class="treeTitle">${row.title}</div>
+								<div class="divider">
+									<div class="circle" @mouseenter=${e=>this.circleIn(row)}></div>
+								</div>
+								<div class="treeDesc">${row.desc}</div>
 							</div>
-							<div class="treeDesc">at Azerbaijan State University of <br>
-							Economics (UNEC) </div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">at Azerbaijan State University of <br>
-							Economics (UNEC) </div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-						<div class="treeRow">
-							<div class="treeTitle">Education</div>
-							<div class="divider">
-								<div class="circle"></div>
-							</div>
-							<div class="treeDesc">UNEC</div>
-						</div>
-
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br>
-						Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNECEducationEducation - UNECEducation - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br>
-						Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br> Education - UNEC <br>
+							`)}
 						</div>
 						<div opacome class="shady-scroller texty">
-							UNEC - Azerbaijan State University of Economics is a university that some <br>
-							university that university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br>
-							university that is something of a some sis something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a <br> university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
-							university that is something of a some sort of university and a university that is something of a some sort of university  a university that is something of a some sort of university and a university that is something of a some sort of university and a university that is something of a some sort of university and a 
+						${this.shownContent}
 						</div>
 					</div>
 				</div>
