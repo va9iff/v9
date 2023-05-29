@@ -67,7 +67,7 @@ v-dashboard img.me:hover{
 v-dashboard.scrolled img.me{
 /*	transition: 200ms;*/
 	width: 80px;
-	left: 110px;
+	left: 210px;
 	height: 80px;
 	border-radius: 50%;
 }

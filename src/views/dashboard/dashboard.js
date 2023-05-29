@@ -90,11 +90,12 @@ class VDashboard extends View {
 							`)}
 						</div>
 						<div opacome class=${classMap({
-							"shady-scroller": true,
 							texty: true,
 							loading: this.contentIsLoading,
 						})}>
-						${this.shownContent}
+						<div class="shady-scroller">
+							${this.shownContent}
+						</div>
 						</div>
 					</div>
 				</div>

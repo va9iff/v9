@@ -3,9 +3,9 @@
 	--shade-height: 53px;
 
 	position: relative;
-	max-	height: 330px;
+	max-height: 330px;
 	widows: 200px;
-	overflow-y: scroll;
+	overflow-y: auto;
 	margin-right: 5px;
 
 	/* Text */
