@@ -146,7 +146,7 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	width: 25px;
 	height: 25px;
 
-	transition: 500ms;
+	transition: all 500ms, box-shadow 600ms;
 }
 
 /*.treeRow > .divider > .circle:hover {*/
@@ -160,6 +160,7 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	transition: all 800ms;
 	border-radius: 13px;
 	box-shadow: 0 0 0 0 #6660;
+	padding-left: 30px;
 }
 
 .texty.loading > .shady-scroller {

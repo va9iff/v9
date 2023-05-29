@@ -1,0 +1,29 @@
+
+like 
+
+  o a
+    b
+    c
+    d
+
+a is active and when you select c it goes like
+
+
+  o a
+    b
+    c
+    d
+
+    a
+  o b
+    c
+    d
+
+    a
+    b
+  o c
+    d
+
+this sorta stuff. I wich I realized before so I could make my sidebar more optimized for this style.
+but still can be configured.
+it's more alive.
