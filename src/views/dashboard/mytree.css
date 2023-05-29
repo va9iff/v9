@@ -100,13 +100,31 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	display: flex;
 	align-items: center;
 
-	
+
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
 	line-height: 110%;
 	padding-left: 50px;
+}
+
+/*.treeRow:first-child > .divider:before {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	width: 1px;
+	background: linear-gradient(to top, #6E5ED0, #0000);
+	height: 60px;
+}
+*/
+.treeRow:last-child > .divider:before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	width: 1px;
+	background: linear-gradient(to bottom, #6E5ED0, #0000);
+	height: 600px;
 }
 
 .treeRow > .divider {
