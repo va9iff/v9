@@ -157,15 +157,17 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 .texty > .shady-scroller{
 	flex: 1;
-	transition: all 600ms;
+	transition: all 800ms;
 	border-radius: 13px;
 	box-shadow: 0 0 0 0 #6660;
 }
 
 .texty.loading > .shady-scroller {
-	box-shadow: 0 0 0 1px #666;
-	background-color: #eeeeee04;
-	transform: scale(0.99);
+	box-shadow: 0 0 0 1px #6E5ED0
+/*	,0 0 90px -50px #dcd7f4*/
+	;
+	background-color: #eeeeee03;
+/*	transform: scale(0.99);*/
 }
 
 .texty > .shady-scroller:before,

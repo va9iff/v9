@@ -9,7 +9,7 @@ const treeContent = [
 		desc: html`at Azerbaijan State University of <br>
 			Economics (UNEC)`,
 		getContent: async () => {
-			await new Promise(r => setTimeout(r, 600))
+			await new Promise(r => setTimeout(r, 1600))
 			return html`contentus contentami contama`
 		}
 	},
