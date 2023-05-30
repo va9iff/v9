@@ -1,0 +1,13 @@
+v-projects{
+	font-size: 26px;
+	font-family: 'Open Sans';
+}
+
+v-projects .content{
+	padding: 70px;
+}
+
+v-projects a{
+	color: #aaf;
+	text-decoration: none;
+}

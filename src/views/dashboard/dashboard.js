@@ -78,14 +78,14 @@ class VDashboard extends View {
 
 						${treeContent.map(row=>html`
 							<div class="treeRow" ?ontop = ${this.glowing == row.title} @click=${e=>this.circleIn(row)}>
-								<div class="treeTitle">${row.title}</div>
+								<div class="treeTitle" opacome>${row.title}</div>
 								<div class="divider" opacome>
 									<div class=${classMap({
 										circle: true,
 										active: this.glowing == row.title,
 									})} @mouseenter=${e=>this.circleIn(row)}></div>
 								</div>
-								<div class="treeDesc">${row.desc}</div>
+								<div class="treeDesc" opacome>${row.desc}</div>
 							</div>
 							`)}
 						</div>
