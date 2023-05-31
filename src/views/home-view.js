@@ -11,14 +11,10 @@ class VHome extends View {
 	}
 	render() {
 		return html`
-		the background 
+		background 
 
-		<div class="content">
-			<br>
-			<br>
-			<br>
-			<br>
-			element
+		<div class="content" fadeInOpacity>
+			Emptyness...
 		</div>
 
 		`

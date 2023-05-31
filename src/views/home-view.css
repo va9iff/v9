@@ -1,0 +1,16 @@
+v-home {
+	transition: 600ms;
+	opacity: 0;
+}
+
+v-home .content{
+	font-family: 'Open Sans';
+	padding-left: 80px;
+}
+v-home.open{
+	opacity: 1;
+}
+
+v-home.close{
+	opacity: 0;
+}
