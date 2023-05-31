@@ -7,7 +7,8 @@ import {
 	keyed,
 	styleMap,
 	unsafeHTML
-} from "https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js"
+// } from "https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js"
+} from "./lit.js"
 
 class VLitElement extends LitElement {
 	static props = {} // reactive property: default value
