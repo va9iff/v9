@@ -1,18 +1,38 @@
 v-projects{
 	font-size: 26px;
 	font-family: 'Open Sans';
-}
-v-projects .bg{
+
+	/* is required to keep position fixed inside the scroll bars */
+	transform: scale(1.0);
+	animation: opacityAnim 500ms;
 	background: radial-gradient(206.72% 262.32% at -60.65% -106.72%, #000000 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, linear-gradient(71.39deg, rgba(17, 50, 166, 0.2) -32.95%, rgba(0, 0, 0, 0) 50.96%), radial-gradient(204.02% 204.02% at 83.17% 259.01%, #9000B1 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #1A1A1A;
+}
+
+@keyframes opacityAnim{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+v-projects .content{
+}
+
+v-projects .bg{
+/*	position: sticky;*/
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: calc(100% - 5px);
+	z-index: 8;
 	height: 100%;
 }
 
 v-projects .content{
 	padding: 70px;
+	z-index: 9;
 }
 
 v-projects a{

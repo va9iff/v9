@@ -1,0 +1,2 @@
+in mobile, the browser's top bar and some other stuff 
+can be defined. Let's use it to make it a bit more professional.
