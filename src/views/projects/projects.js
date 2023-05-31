@@ -1,4 +1,4 @@
-import { html, VLitElement, unsafeHTML } from "/src/vlit.js"
+import { html, VLitElement, unsafeHTML } from "../../vlit.js"
 import {View} from "../view.js"
 import {coolify} from "../../coolText/coolText.js"
 

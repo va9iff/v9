@@ -1,4 +1,4 @@
-import { html, VLitElement } from "/src/vlit.js"
+import { html, VLitElement } from "../vlit.js"
 
 export class View extends VLitElement {
 	render() {

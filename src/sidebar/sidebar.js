@@ -1,4 +1,4 @@
-import { html, VLitElement } from "/src/vlit.js"
+import { html, VLitElement } from "../vlit.js"
 
 import "../v-router/v-router.js"
 

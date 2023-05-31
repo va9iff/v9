@@ -1,5 +1,3 @@
-// import { html, VLitElement } from "/src/vlit.js"
-
 export function coolify(str, opts) {
 	let classes = []
 	if (opts?.extra) classes.push("extra")
