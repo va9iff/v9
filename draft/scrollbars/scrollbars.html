@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>scrollbars</title>
+</head>
+<body>
+	<style>
+		body{
+			height: 300vh;
+			background-color: #1a1a1a;
+		}
+
+		/* width */
+		body::-webkit-scrollbar {
+		  width: 14px;
+		}
+
+		/* Track */
+		body::-webkit-scrollbar-track {
+		  background: #1a1a1a;
+		}
+
+		/* Handle */
+		body::-webkit-scrollbar-thumb {
+			border-radius: 50px;
+			background: #333;
+		}
+
+		/* Handle on hover */
+		body::-webkit-scrollbar-thumb:hover {
+			background: #444;
+		}
+
+
+	</style>
+</body>
+</html>
