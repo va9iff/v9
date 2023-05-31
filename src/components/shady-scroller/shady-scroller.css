@@ -3,7 +3,8 @@
 	--shade-height: 53px;
 
 	position: relative;
-	max-height: 330px;
+/*	max-height: 330px;*/
+	max-height: 100%;
 	widows: 200px;
 	overflow-y: auto;
 	margin-right: 5px;

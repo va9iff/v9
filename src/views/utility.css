@@ -19,6 +19,14 @@ v-network{
 	--indent-width: 40px;
 }
 
+*[o5]{
+	opacity: 0.5;
+}
+*[o7]{
+	opacity: 0.7;
+}
+
+
 *[i],
 *[i1],
 *[i2],

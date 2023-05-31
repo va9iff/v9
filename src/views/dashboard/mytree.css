@@ -37,22 +37,12 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	flex: 1;
 /*	padding-left: 100px;*/
 /*	margin-right: 180px;*/
-	margin-right: 70px;
-	margin-left: 70px;
-
-/*	margin-left: auto;*/
-/*	text-align: center;*/
-	/*	!TODO: add a wrapper with flex align center
-		can't make itself flex. messes box-shadow inset up */
-/* or just use fixed margin from left	*/
-
+/*	margin-left: 70px;*/
+	margin-right: 17px;
+	margin-left: 0px;
 }
 .mytree{
 	z-index: 900;
-/* we'll do a real one */
-/*	border-left: 4px solid cyan;*/
-/*	margin-left: 150px;*/
-/*	transform: translateX(-2px);*/
 }
 
 .split2col{
@@ -72,14 +62,21 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	z-index: 777;
 }
 
+.treeRow:hover > .treeTitle {
+	color: #fff;
+}
+
 .treeRow > .treeTitle {
-/*	padding-top: 130px;*/
-	min-height: 300px;
+	cursor: default;
+
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
+	padding-right: 19px;
 
 
 	width: 250px;
+	min-width: 250px;
 
 	font-family: 'Open Sans';
 	font-style: normal;
@@ -87,17 +84,16 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	font-size: 26px;
 	line-height: 110%;
 	padding-left: 50px;
+	min-height: 300px;
 
 }
 .treeRow > .treeDesc {
+	cursor: default;
 /*	padding-top: 130px;
 	padding-bottom: 130px;
 */
-/*	min-height: 300px;
 	display: flex;
-	align-items: center;
-*/
-	display: flex;
+/*	border: 2px solid cyan;*/
 	align-items: center;
 
 
@@ -105,8 +101,20 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
-	line-height: 110%;
+	line-height: 32px;
+	padding: 50px 0;
 	padding-left: 50px;
+	max-width: 500px;
+}
+
+.texty a {
+	color: #6e5ed0;
+	text-decoration: none;
+
+}
+.texty a:hover {
+	text-decoration: underline;
+
 }
 
 /*.treeRow:first-child > .divider:before {
@@ -161,6 +169,7 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	border-radius: 13px;
 	box-shadow: 0 0 0 0 #6660;
 	padding-left: 30px;
+	max-height: 80%;
 }
 
 .texty.loading > .shady-scroller {

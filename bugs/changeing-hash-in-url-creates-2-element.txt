@@ -1,5 +1,0 @@
-go to a route
-then change it to #network in the url bar
-scroll down
-
-you'll see it scrolling but exact coppy in the back too

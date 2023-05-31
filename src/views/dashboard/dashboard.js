@@ -5,29 +5,42 @@ await new Promise(r=>setTimeout(r,500))
 
 const treeContent = [
 	{
-		title: "High scoolmush",
-		desc: html`at Azerbaijan State University of <br>
-			Economics (UNEC)`,
-		getContent: async () => {
-			await new Promise(r => setTimeout(r, 1600))
-			return html`contentus contentami contama`
-		}
-	},
-	{
 		title: "Education",
-		desc: html`at Azerbaijan State University of <br>
-			Economics (UNEC)`,
+		desc: html`
+		<div>
+		Cyber-Security student <br><br>
+				<span o5>at</span> Azerbaijan State <br>
+				University <span o5>of</span> Economics (UNEC) <br><br>
+				Bachelor's degree - senior year
+		</div>
+
+		`,
 		getContent: async () => {
-			return html`UNEC - Azerbaijan State University of Economics is a university that some <br>
-			university that university and a university that is something of a some sort of university 
-			and a university that is something of a some sort of university and a university that is 
-			something of a some sort of university and a`
+			await import("./treeContent/Education.js")
+			return html`<treecontent-education></treecontent-education>`
 		}
 	},
 	{
-		title: "Some cont",
-		desc: html`That's from tree content const`,
-		getContent: async () => html`some content`
+		title: "Location",
+		desc: html`Baku, Azerbaijan`,
+		getContent: async () => html`
+		Azerbaijan, Baku. <br> 
+		Narimanov district, <br> 
+		Ataturk avenue (approximate) <br><br>
+		<a href="#network">Contact</a> for more information.
+		`
+	},
+	{
+		title: "Cyber-Security",
+		desc: html`<div>
+		Cybersecurity Analyst Professional Certificate <br><br>
+		<span o5>by</span> IBM
+
+		`,
+		getContent: async () => {
+			await import ("./treeContent/Cyber-Security.js")
+			return html`<treecontent-cyber-security></treecontent-cyber-security>`
+		}
 	}
 ]
 
