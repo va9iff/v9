@@ -22,6 +22,9 @@ v-network.open > .content h1{
 	transition-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
 	transform: translate(0, 0);
 }
+v-network.close {
+	overflow-x: hidden;
+}
 v-network.close > .content h1{
 	transition: transform 300ms, opacity 300ms;
 	transform: translate(2%, 0);
