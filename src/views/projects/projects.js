@@ -12,6 +12,7 @@ class VProjects extends View {
 
 	render() {
 		return html`
+			<div class="bg" opacome></div>
 			<div opacome class="content">
 				${coolHTML("All my")} ${coolHTML("projects", {super: true})} ${coolHTML("will be shown here. If you don't want to wait, you can check my")}
 				${coolHTML("GitHub repos")} <a href="https://github.com/va9iff"><nobr>${coolHTML("@va9iff",{extra: true})}</nobr></a>.
