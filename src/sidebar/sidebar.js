@@ -26,19 +26,17 @@ class VSidebar extends VLitElement {
 		// notifications.filter(notification=>notification.uid!=this.uid)
 	}
 	route(e){
+		e.preventDefault()
 		// event will always be itself cuz inner img has pointer-events: none
 		if (e.target.href.split("#").pop()==window.location.hash.split("#").pop()){
-			let a = document.createElement("a")
 			// that's the route you go when you click the active sidebar button
-			a.href = "#"
-			a.onclick = e => this.route(e)
-			document.body.appendChild(a)
-			setTimeout(() => {
-				a.click()
-				a.remove()
-			})
+			window.location.hash = "#"
+			new HashChangeEvent("hashchange")
+			return
+		} else{
+			window.route(e)
 		}
-		window.route(e)
+
 		this.switch(window.location.hash)
 	}
 	connectedCallback(){
