@@ -63,7 +63,7 @@ class VDashboard extends View {
 	async circleIn(row){
 		if (this.glowing == row.title) return null
 		this.glowing = row.title
-		this.shownContent = `Loading for ${row.title}...`
+		this.shownContent = `Loading ${row.title}...`
 		this.contentIsLoading = true
 		this.shownContent = await row.getContent()
 		this.contentIsLoading = false
@@ -106,7 +106,7 @@ class VDashboard extends View {
 							texty: true,
 							loading: this.contentIsLoading,
 						})}>
-						<div class="shady-scroller">
+						<div class="scroll-content">
 							${this.shownContent}
 						</div>
 						</div>

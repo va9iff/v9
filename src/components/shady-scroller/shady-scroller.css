@@ -21,7 +21,7 @@
 .shady-scroller:before,
 .shady-scroller:after{
 	content: "";
-	z-index: 999;
+/*	z-index: 999;*/
 	display: block;
 	position: sticky;
 	height: var(--shade-height);
