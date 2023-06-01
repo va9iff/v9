@@ -12,8 +12,13 @@ function addImpact(x, y) {
 	return impact
 }
 let r = ()=>Math.random()
+let spread = 30
 document.addEventListener("click", e => {
 	let [x, y] = [e.clientX, e.clientY]
+	if (impacts.length + 1 >= superImpactIdx){ 
+		x += spread * r() - spread * 0.5
+		y += spread * r() - spread * 0.5
+	}
 	let impact = addImpact(x, y)
 	if (impacts.length >= superImpactIdx) {
 		impact.classList.add("super")
