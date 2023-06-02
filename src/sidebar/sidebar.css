@@ -236,7 +236,7 @@ v-sidebar[v9="1"]{
 /*	background-color: #171c1c;*/
 /*	background-color: #0003;*/
 	background-color: #171c1c33;
-	backdrop-filter: none;
+/*	backdrop-filter: none;*/
 	transition: 2000ms;
 }
 v-sidebar .circle1{
