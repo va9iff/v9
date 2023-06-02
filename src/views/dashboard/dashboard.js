@@ -5,7 +5,7 @@ await new Promise(r=>setTimeout(r,500))
 
 const treeContent = [
 	{
-		title: "Education",
+		title: html`<span>Education</span>`,
 		desc: html`
 		<div>
 		Cyber-Security student <br><br>
@@ -21,7 +21,7 @@ const treeContent = [
 		}
 	},
 	{
-		title: "Location",
+		title: html`<span>Location</span>`,
 		desc: html`Baku, Azerbaijan`,
 		getContent: async () => html`
 		Azerbaijan, Baku. <br> 
@@ -31,7 +31,7 @@ const treeContent = [
 		`
 	},
 	{
-		title: "Cyber-Security",
+		title: html`<span>Cyber-Security</span>`,
 		desc: html`<div>
 		Cybersecurity Analyst Professional Certificate <br><br>
 		<span o5>by</span> IBM

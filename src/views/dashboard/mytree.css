@@ -63,17 +63,16 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	z-index: 777;
 }
 
-.treeRow:hover > .treeTitle {
-	color: #fff;
-}
+
 
 .treeRow > .treeTitle {
 	cursor: default;
 
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	padding-right: 19px;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	padding-right: 39px;
 
 
 	width: 250px;
@@ -82,12 +81,31 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 26px;
-	line-height: 110%;
-	padding-left: 50px;
-	min-height: 300px;
 
+/*	font-size: 26px;*/
+	font-size: 30px;
+
+/*	line-height: 110%;*/
+/*	padding-left: 50px;*/
+
+	min-height: 300px;
+/*	min-height: 200px;*/
+
+	color: #ccc;
 }
+
+.treeRow:hover > .treeTitle {
+	color: #fff;
+}
+.treeRow > .treeTitle > span {
+	display: inline-block;
+	white-space: nowrap;
+
+	wrap: no-wrap;
+	transform: rotate(-90deg) translateX(50%);
+	transform-origin: right;
+}
+
 .treeRow > .treeDesc {
 	cursor: default;
 /*	padding-top: 130px;
@@ -101,7 +119,8 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 26px;
+/*	font-size: 26px;*/
+	font-size: 22px;
 	line-height: 32px;
 	padding: 50px 0;
 	padding-left: 50px;
@@ -149,6 +168,7 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 /*	top: 350px;*/
 	top: 50%;
 	margin-bottom: 22px;
+	margin-top: 22px;
 	transform: translateX(-50%);
 	background-color: #1a1a1a;
 	border: 1px solid #6E5ED0;
