@@ -32,7 +32,8 @@ v-dashboard img.me{
 	height: 0;
 	opacity: 0;
 /*	border-radius: 17px;*/
-	border-radius: 50%;
+/*	border-radius: 50%;*/
+	border-radius: 150px;
 	transform: scale(0);
 
 }
@@ -46,8 +47,8 @@ v-dashboard.open img.me{
 
 }
 v-dashboard.close img.me{
-	transition: 700ms;
-	transform: translateX(-100%);
+	transition: 230ms;
+	transform: translateX(-50px);
 	opacity: 0;
 }
 v-dashboard.scrolled.close img.me{
