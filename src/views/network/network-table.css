@@ -72,8 +72,9 @@ v-network .table.socials{
 }
 
 v-network .table.socials .row:hover {
-    background-color: #131313;
-    box-shadow: 0 -1px 0 #2c2c2c, 0 1px 0 #2c2c2c;
+/*    background-color: #131313;*/
+    background-color: #00000013;
+    box-shadow: 0 -1px 0 #ffffff2c, 0 1px 0 #ffffff2c;
 }
 
 
