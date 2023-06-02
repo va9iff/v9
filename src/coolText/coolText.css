@@ -6,6 +6,10 @@ body {
 	user-select: none;
 }
 
+a .coolText span{
+	cursor: pointer;
+}
+
 .coolText span,
 .coolText br {
 	transition: 600ms;
