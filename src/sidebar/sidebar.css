@@ -97,7 +97,7 @@ v-sidebar .content button {
 
 	width: 60px;
 	height: 60px;
-	background-color: #141414;
+	background-color: #bbbbbb07;
 	color: #585858;
 	padding: 10px 0px;
 	border-radius: 6px;
@@ -107,7 +107,8 @@ v-sidebar .content button {
 }
 v-sidebar .content a:hover,
 v-sidebar .content button:hover {
-	background-color: #181818;
+/*	background-color: #181818;*/
+	background-color: #cccccc14;
 }
 v-sidebar .content a[active],
 v-sidebar .content button[active] {
@@ -232,7 +233,9 @@ v-sidebar{
 	transition: 200ms;
 }
 v-sidebar[v9="1"]{
-	background-color: #171c1c;
+/*	background-color: #171c1c;*/
+/*	background-color: #0003;*/
+	background-color: #171c1c33;
 	backdrop-filter: none;
 	transition: 2000ms;
 }
