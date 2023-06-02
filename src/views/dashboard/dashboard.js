@@ -63,7 +63,7 @@ class VDashboard extends View {
 	async circleIn(row){
 		if (this.glowing == row.title) return null
 		this.glowing = row.title
-		this.shownContent = `Loading ${row.title}...`
+		this.shownContent = html`Loading ${row.title}...`
 		this.contentIsLoading = true
 		this.shownContent = await row.getContent()
 		this.contentIsLoading = false
