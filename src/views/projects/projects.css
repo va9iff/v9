@@ -1,6 +1,10 @@
 v-projects{
-	font-size: 26px;
+/*	font-size: 26px;*/
 	font-family: 'Open Sans';
+}
+
+v-projects v-button{
+	font-size: 15px;
 }
 
 v-projects .wrapper{
