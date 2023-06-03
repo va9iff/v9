@@ -20,10 +20,10 @@
 .scrolled .name{
 	transition: filter 0ms;
 	filter: 
-	drop-shadow(0 0 15px #1a1a1a)
-	drop-shadow(0 0 15px #1a1a1a)
-	drop-shadow(0 0 15px #1a1a1a)
-	drop-shadow(0 0 15px #1a1a1a)
+	drop-shadow(0 0 15px #131313)
+	drop-shadow(0 0 15px #131313)
+	drop-shadow(0 0 15px #131313)
+	drop-shadow(0 0 15px #131313)
 	;
 }
 
