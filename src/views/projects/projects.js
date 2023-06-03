@@ -2,6 +2,9 @@ import { html, VLitElement, unsafeHTML } from "../../vlit.js"
 import {View} from "../view.js"
 import {coolify} from "../../coolText/coolText.js"
 
+import "../../components/v-button/v-button.js"
+
+
 let coolHTML = (...args) => unsafeHTML(coolify(...args))
 
 await new Promise(r=>setTimeout(r,500))
@@ -11,8 +14,124 @@ class VProjects extends View {
 	}
 	render() {
 		return html`
-			<div opacome class="content">
-				${coolHTML("All my ")}${coolHTML("projects", {super: true})}${coolHTML(` will be shown here. If you don't want to wait, you can check my GitHub repos `)}<a href="https://github.com/va9iff"><nobr>${coolHTML("@va9iff",{extra: true})}</nobr></a>${coolHTML(". Vanyl, Ranture and Won projects will definitely be here. ")}
+			<div class="content">
+				<div class="wrapper">
+					<div class="skills">
+					<v-button 
+						text="Profile">
+					</v-button>
+					<v-button 
+						text="Django" 
+						style="--active: hsl(120deg, 100%, 70%)">
+					</v-button>
+					<v-button 
+						active
+						text="Python" 
+						class="glass"
+						style="--active: hsl(207deg, 100%, 70%)">
+					</v-button>
+					<v-button 
+						active
+						text="JavaScript" 
+						class="glass"
+						style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
+					</v-button>
+					<v-button 
+						active
+						text="SASS" 
+						class="glass"
+						style="--active: hsl(330deg, 100%, 70%);">
+					</v-button>
+
+					<v-button/ 
+						text="GitHub" 
+						class="glass"
+						style="--active: hsl(153deg, 100%, 70%); --passive: #131313">
+					</v-button>
+					<v-button 
+						text="F">
+					</v-button>
+					</div>
+					<div class="projectsScroll">
+						<div class="activeSkills">
+							<v-button 
+								active
+								text="JavaScript" 
+								class="glass"
+								style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
+							</v-button>
+
+						</div>
+						<div class="projects">
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						<br>
+						VanylUI
+						</div>
+						p
+					</div>
+				</div>	
 			</div>
 		`
 	}
