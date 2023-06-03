@@ -34,7 +34,8 @@ v-dashboard img.me{
 /*	border-radius: 17px;*/
 /*	border-radius: 50%;*/
 	border-radius: 150px;
-	transform: scale(0);
+	transform: translateX(-30px);
+	opacity: 0;
 
 }
 
