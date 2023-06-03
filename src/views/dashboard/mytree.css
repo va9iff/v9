@@ -130,10 +130,14 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	color: #6e5ed0;
 	text-decoration: none;
 
+	transition: 200ms;
+	border-radius: 3px;
+	
 }
 .texty a:hover {
-	text-decoration: underline;
-
+	transition: 130ms;
+	background-color: #6e5ed0;
+	color: #e1e1e1;
 }
 
 /*.treeRow:first-child > .divider:before {
