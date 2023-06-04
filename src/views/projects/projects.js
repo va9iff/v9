@@ -73,10 +73,19 @@ class VProjects extends View {
 											style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
 										</v-button>
 									</div>
-									selecte projects
+									Selected projects
 								</div>
 								<div class="project">
-									<div class="name">VanylUI</div>
+									<div class="name"><b>VanylUI</b>	</div>
+									<div class="headline">Declerative, Performant JavaScript Component Library (Powered With Tagged Functions)</div>
+									<div class="content">
+										<div class="imgs">
+											<div style="background-color: #999">salmon</div>
+										</div>
+										<div class="content">
+											Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update.
+										</div>
+									</div>
 								</div>
 								VanylUI
 								<br>
