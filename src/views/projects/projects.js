@@ -62,18 +62,22 @@ class VProjects extends View {
 						</v-button>
 					</div>
 					<div class="projectsColumn" scrolly>
-						<div class="activeSkills">
-							<v-button 
-								active
-								text="JavaScript" 
-								class="glass"
-								style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
-							</v-button>
-
-						</div>
 						<div class="projects">
 							<div class="list selecteds">
-								<div class="title">selecte projects</div>
+								<div class="title">
+									<div class="activeSkills">
+										<v-button 
+											active
+											text="JavaScript" 
+											class="glass"
+											style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
+										</v-button>
+									</div>
+									selecte projects
+								</div>
+								<div class="project">
+									<div class="name">VanylUI</div>
+								</div>
 								VanylUI
 								<br>
 								VanylUI

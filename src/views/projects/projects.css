@@ -35,9 +35,9 @@ v-projects .projectsColumn {
 
 .activeSkills{
 	padding: 7px;
-	position: sticky;
+/*	position: sticky;*/
 	top: 0px;
-	background-color: #0004;
+/*	background-color: #0004;*/
 	border-bottom: 1px solid #eee6;
 	display: flex;
 	align-items: center;
@@ -48,11 +48,11 @@ v-projects .projectsColumn {
 .activeSkills v-button{
 	transform-origin: left;
 }
-.activeSkills v-button[active]{
+/*.activeSkills v-button[active]{
 	transition: 400ms;
 	transform: rotate(45deg) translateX(200px);
 	opacity: 0;
-}
+}*/
 
 
 v-button[active]{
@@ -60,21 +60,57 @@ v-button[active]{
 }
 
 
-v-projects .activeSkills{
-	z-index: 7;
-}
-
 v-projects .projects .list:first-child > .title{
 	margin-top: 0;
 }
 
 v-projects .projects .list > .title{
-/*	box-shadow: 20px 7px 8px black inset;*/
-	background: linear-gradient(to right, #000a 0%, transparent 100%);
+/*	background: linear-gradient(to right, #0a0a0a 0%, transparent 100%);*/
+	background-color: #0004;
 	position: sticky;
-	top: 80px;
-/*	background-color: #0004;*/
+/*	top: 80px;*/
+	top: 0;
 	padding: 3px;
-	margin-top: 24px;
-	z-index: 6;
+/*	margin-top: 24px;*/
+}
+
+.project{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 32px 19px 32px 32px;
+	gap: 24px;
+
+	height: 449px;
+	margin: 28px 32px;
+
+	background: rgba(255, 255, 255, 0.015);
+	border: 1px solid #626262;
+	border-radius: 21px;
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 0;
+	align-self: stretch;
+	flex-grow: 0;
+
+	transition: 200ms;
+}
+.project:hover{
+	background: rgba(255, 255, 255, 0.025);
+
+}
+
+.project .name{
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 110%;
+	/* or 40px */
+
+
+	color: #FFFFFF;
+
 }
