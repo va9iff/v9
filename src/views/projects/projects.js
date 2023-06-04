@@ -9,6 +9,31 @@ let coolHTML = (...args) => unsafeHTML(coolify(...args))
 
 // await new Promise(r=>setTimeout(r,500))
 
+const projects = [
+	{
+		name: "VanylUI",
+		headline: "Declerative, Performant JavaScript Component Library (Powered With Tagged Functions)",
+		description: "Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update."
+	},
+	{
+		name: "Ranture",
+		headline: "Sophisticated iteration library",
+		description: `
+		Using object keys as argument, Ranture can set up an iteration you like with its simple syntax. 
+		No need for range() or manually programming to stop at a random point with maximum. 
+		Ranture also gives a nice methods for arrays to structure a mock object in a more readable way.`,
+		img: "./img/me.jpg"
+	},
+	{
+		name: "ReadyJS",
+		headline: "utility class to inherit",
+		description: `
+		ReadyJS has a class called Ready to be inherited. This class's ready() method will be fired on first
+		instantiation. When I was building a game engine, needed this behavior and made this little library.
+		`,
+	},
+]
+
 class VProjects extends View {
 	static properties = {
 	}
@@ -73,8 +98,23 @@ class VProjects extends View {
 											style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
 										</v-button>
 									</div>
-									Selected projects
+									<p>Selected skills applied projects</p>
 								</div>
+								${projects.map(project=>html`
+									<div class="project">
+										<div class="name"><b>${project.name}</b>	</div>
+										<div class="headline">${project.headline}</div>
+										<div class="content">
+											${project.img ? html`
+												<div class="imgs">
+													<img src="${project.img}">
+												</div>` : html``}
+											<div class="content">
+												${project.description}
+											</div>
+										</div>
+									</div>
+								`)}
 								<div class="project">
 									<div class="name"><b>VanylUI</b>	</div>
 									<div class="headline">Declerative, Performant JavaScript Component Library (Powered With Tagged Functions)</div>
@@ -110,7 +150,7 @@ class VProjects extends View {
 								VanylUI
 							</div>
 							<div class="list other">
-								<div class="title">all projects</div>
+								<div class="title">All projects</div>
 								VanylUI
 								<br>
 								VanylUI

@@ -64,6 +64,10 @@ v-projects .projects .list:first-child > .title{
 	margin-top: 0;
 }
 
+v-projects .projects .list > .title > p{
+	background-color: #040404bb;
+}
+
 v-projects .projects .list > .title{
 /*	background: linear-gradient(to right, #0a0a0a 0%, transparent 100%);*/
 	background-color: #0004;
@@ -95,7 +99,7 @@ v-projects .projects .list > .title{
 	align-self: stretch;
 	flex-grow: 0;
 
-	transition: 200ms;
+	transition: 300ms;
 }
 .project:hover{
 	background: rgba(255, 255, 255, 0.025);
@@ -136,9 +140,8 @@ v-projects .projects .list > .title{
 	height: 200px;
 }
 
-.project .content .imgs > *{
+.project .content .imgs > img{
 	width: 300px;
-	padding: 30px;
 	border-radius: 8px;
 	transition: 540ms;
 }
