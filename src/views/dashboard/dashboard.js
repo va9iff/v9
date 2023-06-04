@@ -1,7 +1,7 @@
 import { html, VLitElement, classMap } from "../../vlit.js"
 import {View} from "../view.js"
 
-await new Promise(r=>setTimeout(r,500))
+// await new Promise(r=>setTimeout(r,500))
 
 const treeContent = [
 	{

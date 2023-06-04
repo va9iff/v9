@@ -21,16 +21,14 @@ v-projects .skills {
 	overflow-y: scroll;
 }
 
-v-projects .projectsScroll {
-	flex: 1;
-}
 
-v-projects .projectsScroll {
+v-projects .projectsColumn {
+	flex: 1;
 	height: 100%;
 	overflow-y: scroll;
 }
 
-.projectsScroll{
+.projectsColumn{
 	border-left: 1px solid #eee6;
 	background-color: #0008;
 }
@@ -45,6 +43,15 @@ v-projects .projectsScroll {
 	align-items: center;
 	flex-direction: 100%;
 	height: 80px;
+}
+
+.activeSkills v-button{
+	transform-origin: left;
+}
+.activeSkills v-button[active]{
+	transition: 400ms;
+	transform: rotate(45deg) translateX(200px);
+	opacity: 0;
 }
 
 

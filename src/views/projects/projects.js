@@ -7,7 +7,7 @@ import "../../components/v-button/v-button.js"
 
 let coolHTML = (...args) => unsafeHTML(coolify(...args))
 
-await new Promise(r=>setTimeout(r,500))
+// await new Promise(r=>setTimeout(r,500))
 
 class VProjects extends View {
 	static properties = {
@@ -61,7 +61,7 @@ class VProjects extends View {
 							text="F">
 						</v-button>
 					</div>
-					<div class="projectsScroll" scrolly>
+					<div class="projectsColumn" scrolly>
 						<div class="activeSkills">
 							<v-button 
 								active
