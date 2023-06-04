@@ -106,7 +106,7 @@ class VDashboard extends View {
 							texty: true,
 							loading: this.contentIsLoading,
 						})}>
-						<div class="scroll-content">
+						<div class="scroll-content" scrolly2>
 							${this.shownContent}
 						</div>
 						</div>

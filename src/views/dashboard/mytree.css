@@ -202,26 +202,6 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 
 	padding: 40px;
 }
-.scroll-content::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-.scroll-content::-webkit-scrollbar-track {
-  background: 0000;
-}
-
-/* Handle */
-.scroll-content::-webkit-scrollbar-thumb {
-  background: #2e2e2e;
-  border-radius: 4px;
-}
-
-/* Handle on hover */
-.scroll-content::-webkit-scrollbar-thumb:hover {
-  background: #444;
-}
-
 
 
 .texty > .shady-scroller,
