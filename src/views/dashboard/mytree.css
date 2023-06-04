@@ -169,8 +169,11 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	position: sticky;
 /*	top: 350px;*/
 	top: 50%;
-	margin-bottom: 22px;
-	margin-top: 22px;
+
+/*	margin-bottom: 22px;*/
+/*	margin-top: 22px;*/
+	margin: 11px 0;
+
 	transform: translateX(-50%);
 	background-color: #151515;
 	border: 1px solid #6E5ED0;

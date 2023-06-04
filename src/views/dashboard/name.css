@@ -5,7 +5,7 @@
 
 }
 
-.name{
+v-dashboard .name{
 	display: flex;
 	position: absolute;
 	min-width: 600px;
@@ -17,7 +17,7 @@
 	top: 60px;
 }
 
-.scrolled .name{
+v-dashboard .scrolled .name{
 	transition: filter 0ms;
 	filter: 
 	drop-shadow(0 0 15px #131313)
@@ -27,7 +27,7 @@
 	;
 }
 
-.name > h1{
+v-dashboard .name > h1{
 	font-family: 'Jost';
 	font-style: normal;
 	font-weight: 400;
@@ -46,28 +46,28 @@
 	position: absolute;
 }
 
-.name > h1.english{
+v-dashboard .name > h1.english{
 /*	transform: rotate(0);*/
 	transform: translate(0, 0);
 	opacity: 1;
 	filter: none;
 }
 
-.name > h1.native{
+v-dashboard .name > h1.native{
 /*	transform: rotate(2deg);*/
 	transform: translate(-15px, 15px);
 	opacity: 0;
 	filter: blur(20px);
 }
 
-.name:hover > h1.english {
+v-dashboard .name:hover > h1.english {
 /*	transform: rotate(-2deg);*/
 	transform: translate(-15px, -15px);
 	opacity: 0;
 	filter: blur(20px);
 }
 
-.name:hover > h1.native {
+v-dashboard .name:hover > h1.native {
 /*	transform: rotate(0);*/
 	transform: translate(0, 0);
 	opacity: 1;
