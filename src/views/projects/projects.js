@@ -13,7 +13,8 @@ const projects = [
 	{
 		name: "VanylUI",
 		headline: "Declerative, Performant JavaScript Component Library (Powered With Tagged Functions)",
-		description: "Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update."
+		description: "Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update.",
+		tags: ["JavaScript", "DOM"]
 	},
 	{
 		name: "Ranture",
@@ -29,7 +30,8 @@ const projects = [
 		name: "Design",
 		headline: "one of my design project",
 		description: `this has a few more images than usual`,
-		carousel: ["./img/me.jpg","./img/me.jpg","./img/me.jpg"]
+		carousel: ["./img/me.jpg","./img/me.jpg","./img/me.jpg"],
+		tags: ["Figma", "GitHub"]
 	},
 	{
 		name: "Ranture2", // name is required to ditungish and should be unique
@@ -55,6 +57,7 @@ const projects = [
 		ReadyJS has a class called Ready to be inherited. This class's ready() method will be fired on first
 		instantiation. When I was building a game engine, needed this behavior and made this little library.
 		`,
+		tags: ["SASS"]
 	},
 ]
 
@@ -126,6 +129,36 @@ let skills = [
 
 const allSkills = skills.map(category=>({...category.skills, category})).flat(1)
 
+class VProject extends View{
+	static properties = {
+		project: {}
+	}
+	render(){
+		let { project } = this
+		return html`
+			<div class="project">
+				<div class="name"><b>${project.name}</b>	</div>
+				<div class="headline">${project.headline}</div>
+				<div class="content">
+					${project.img ? html` <div class="imgs">
+						<img src=${project.img}>
+					</div>` : html``}
+					<div class="description">
+						${project.description}
+					</div>
+				</div>
+				${project.carousel?.length>0 ? html`
+				<div class="carousel" scrolly2>
+					${project.carousel.map(src=>html`<img src=${src}>`)}
+				</div>
+				` : html``}
+			</div>
+		`
+	}	
+}
+
+VProject.tag = "v-project"
+
 class VProjects extends View {
 	static properties = {
 		activeSkills: {}
@@ -142,6 +175,8 @@ class VProjects extends View {
 		}
 	}
 	render() {
+		let selectedSkillProjects = projects.filter(project=>project.tags?.some(tag=>this.activeSkills.map(skill=>skill.skill).includes(tag)))
+		let otherProjects = projects.filter(project=>!selectedSkillProjects.includes(project))
 		return html`
 			<div opacome class="content">
 				<div class="wrapper">
@@ -189,7 +224,7 @@ class VProjects extends View {
 					</div>
 					<div class="projectsColumn" scrolly>
 						<div class="projects">
-							<div class="list selecteds">
+							${this.activeSkills.length > 0 ? html`<div class="list selecteds">
 								<div class="title">
 									<div class="activeSkills">
 										${this.activeSkills.map(skill=>html`
@@ -205,146 +240,19 @@ class VProjects extends View {
 									</div>
 									<p>Selected skills applied projects</p>
 								</div>
-								${projects.map(project=>project.raw ?? html`
-									<div class="project">
-										<div class="name"><b>${project.name}</b>	</div>
-										<div class="headline">${project.headline}</div>
-										<div class="content">
-											${project.img ? html` <div class="imgs">
-												<img src=${project.img}>
-											</div>` : html``}
-											<div class="description">
-												${project.description}
-											</div>
-										</div>
-										${project.carousel?.length>0 ? html`
-										<div class="carousel" scrolly2>
-											${project.carousel.map(src=>html`<img src=${src}>`)}
-										</div>
-										` : html``}
-									</div>
+								${selectedSkillProjects.map(project=>project.raw ?? html`
+									<v-project
+										.project = ${project}
+									></v-project>
 								`)}
-								<div class="project">
-									<div class="name"><b>VanylUI</b>	</div>
-									<div class="headline">Declerative, Performant JavaScript Component Library (Powered With Tagged Functions)</div>
-									<div class="content">
-										<div class="imgs">
-											<div style="background-color: #999">salmon</div>
-										</div>
-										<div class="description">
-											Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update.
-										</div>
-									</div>
-								</div>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-							</div>
+							</div>` : html``}
 							<div class="list other">
-								<div class="title">All projects</div>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
-								<br>
-								VanylUI
+								<div class="title" ?selectedsGone=${this.activeSkills.length == 0}>${this.activeSkills.length > 0 ? "All projects" : "Select skills from left pane to filter the projects"}</div>
+								${otherProjects.map(project=>project.raw ?? html`
+									<v-project
+										.project = ${project}
+									></v-project>
+								`)}
 							</div>
 						</div>
 						p

@@ -1,3 +1,17 @@
+@keyframes projectAnim{
+	from{
+		transform: translateY(38px);
+	}
+	to{
+		transform: translateY(0);
+	}	
+}
+v-project{
+	animation: projectAnim 500ms;
+	display: block;
+	transform-origin: top;
+}
+
 v-projects{
 /*	font-size: 26px;*/
 	font-family: 'Open Sans';
@@ -98,7 +112,43 @@ v-button[active]{
 }
 
 
+@keyframes titleAddedAnim{
+	from{
+		margin-top: -80px;
+	}
+	to{
+		margin-top: 0;
+
+	}
+
+}
+
+v-projects .projects .list> .title{
+/*	animation: titleAddedAnim 400ms;*/
+
+}
+
+@keyframes selectedsGoneAnim{
+	from{
+		margin-top: 80px;
+	}
+	to{
+		margin-top: 0;
+	}
+}
+v-projects .projects .list> .title[selectedsGone]{
+/*	animation: selectedsGoneAnim 400ms;*/
+}
+
+v-projects .projects .list> .title{
+	transform: scale(1);
+	z-index: 8;
+/*	animation: titleAddedAnim 400ms;*/
+	
+}
+
 v-projects .projects .list:first-child > .title{
+	animation: titleAddedAnim 300ms;
 	margin-top: 0;
 }
 
