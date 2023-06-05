@@ -18,8 +18,9 @@ class VButton extends VLitElement {
 		this.x = e.offsetX
 		this.y = e.offsetY
 	}
-	button(){
-		return html`<div>default v-button elements</div>`
+	handler(e) {
+		this.active = !this.active
+		console.log("clicked", this)
 	}
 	render() {
 		return html`
@@ -35,4 +36,4 @@ class VButton extends VLitElement {
 	}
 }
 
-VButton.tag = "v-button"
+VButton.tag = "v-button-test"

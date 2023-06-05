@@ -58,6 +58,10 @@ v-projects .projectsColumn {
 	opacity: 0;
 }*/
 
+v-projects v-button.category{
+	margin-top: 70px;
+	margin-bottom: 7px;
+}
 
 v-button[active]{
 	filter: hue-rotate(31deg);
@@ -184,3 +188,4 @@ v-projects .projects .list > .title{
 	gap: 7px;
 	padding-bottom: 7px;
 }
+

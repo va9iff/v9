@@ -57,47 +57,100 @@ const projects = [
 	},
 ]
 
+let skills = [
+	{
+		category: "languages",
+		style: `--active: hsl(120deg, 100%, 70%)`,
+		skills: [ 
+			{
+				skill: "Django",
+				style: `--active: hsl(120deg, 100%, 70%)`
+			},
+			{
+				skill: "Figma",
+				style: "--active: hsl(266deg, 92%, 66%)"
+			},
+			{
+				skill: "Python" ,
+				style: `--active: hsl(207deg, 100%, 70%)`
+			},
+			{
+				skill: "JavaScript",
+				style: `--active: hsl(60deg, 100%, 70%); --passive: #222;`
+			},
+			{
+				skill: "SASS" ,
+				style: `--active: hsl(330deg, 100%, 70%)`
+			},
+			{
+				skill: "GitHub",
+				style: `--active: hsl(153deg, 100%, 70%); --passive: #131313`
+			}
+		]
+	},
+	{
+		category: "languages",
+		style: `--active: hsl(120deg, 100%, 70%)`,
+		skills: [ 
+			{
+				skill: "Django",
+				style: `--active: hsl(120deg, 100%, 70%)`
+			},
+			{
+				skill: "Figma",
+				style: "--active: hsl(266deg, 92%, 66%)"
+			},
+			{
+				skill: "Python" ,
+				style: `--active: hsl(207deg, 100%, 70%)`
+			},
+			{
+				skill: "JavaScript",
+				style: `--active: hsl(60deg, 100%, 70%); --passive: #222;`
+			},
+			{
+				skill: "SASS" ,
+				style: `--active: hsl(330deg, 100%, 70%)`
+			},
+			{
+				skill: "GitHub",
+				style: `--active: hsl(153deg, 100%, 70%); --passive: #131313`
+			}
+		]
+	}
+]
+
 class VProjects extends View {
 	static properties = {
+	}
+	skillClick(e){
+		let skill = e.text
+		console.log('fasad')
 	}
 	render() {
 		return html`
 			<div opacome class="content">
 				<div class="wrapper">
-					<div class="skills" scrolly2>
-						<v-button 
-							text="Languages" 
-							style="--active: hsl(120deg, 100%, 70%)">
-						</v-button> <br>
-						<v-button 
-							text="Django" 
-							class="glass"
-							style="--active: hsl(120deg, 100%, 70%)">
-						</v-button>
-						<v-button 
-							active
-							text="Python" 
-							class="glass"
-							style="--active: hsl(207deg, 100%, 70%)">
-						</v-button>
-						<v-button 
-							active
-							text="JavaScript" 
-							class="glass"
-							style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
-						</v-button>
-						<v-button 
-							active
-							text="SASS" 
-							class="glass"
-							style="--active: hsl(330deg, 100%, 70%);">
-						</v-button>
-
-						<v-button/ 
-							text="GitHub" 
-							class="glass"
-							style="--active: hsl(153deg, 100%, 70%); --passive: #131313">
-						</v-button>
+					<div class="skills" scrolly2 >
+						${skills.map(
+							category=>html`
+								<br> <v-button 
+									.text=${category.category} 
+									class="category"
+									style=${category.style}>
+								</v-button> <br> 
+								${
+									category.skills.map(skill=>html`
+									<v-button 
+									active
+										.text=${skill.skill} 
+										style=${skill.style}
+										class="glass"
+									</v-button>
+									`)
+								}
+							`
+							)}
 
 						<br>
 						<v-button 
