@@ -58,6 +58,36 @@ v-projects .projectsColumn {
 	opacity: 0;
 }*/
 
+.activeSkills v-button{
+	animation: activeSkillInserted 200ms;
+	transition: transform 150ms, margin-right 0ms;
+}
+.activeSkills v-button:hover{
+	transition: all 800ms, margin-right 0ms;
+}
+
+@keyframes activeSkillInserted{
+	from{
+/*		margin-left: -30px;*/
+		opacity: 0;
+		transform: scale(0.9) translateX(30px);
+	}
+	to{
+		transform: scale(1);
+/*		margin-left: 4px;*/
+		opacity: 1;
+	}
+}
+.activeSkills v-button:active{
+	transition: transform 40ms, margin-right 100ms;
+	transform: rotate(8deg) translateX(10px);
+	margin-right: -38px;
+	opacity: 0.57;
+}
+.activeSkills v-button:active + v-button{
+	pointer-events: none;
+}
+
 v-projects v-button.category{
 	margin-top: 70px;
 	margin-bottom: 7px;
