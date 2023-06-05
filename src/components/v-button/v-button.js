@@ -10,14 +10,14 @@ class VButton extends VLitElement {
 	constructor() {
 		super()
 		this.active = false
-		this.x = 30
-		this.y = 30
+		this.x = Math.random() * 100 + "%"
+		this.y = Math.random() * 100 + "%"
 		// this.text ??= this.getAttribute("text")
 		this.addEventListener("mousemove", this.hoverPositionFix)
 	}
 	hoverPositionFix = e => {
-		this.x = e.offsetX
-		this.y = e.offsetY
+		this.x = e.offsetX + "px"
+		this.y = e.offsetY + "px"
 	}
 	// button(){
 		// return html`<div>default v-button elements</div>`
@@ -28,8 +28,8 @@ class VButton extends VLitElement {
 			<div
 				class="circle"
 				style=${styleMap({
-					left: this.x + "px",
-					top: this.y + "px",
+					left: this.x,
+					top: this.y,
 				})}
 			></div>
 		`
