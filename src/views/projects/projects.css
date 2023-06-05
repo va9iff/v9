@@ -1,6 +1,10 @@
 v-projects{
 /*	font-size: 26px;*/
 	font-family: 'Open Sans';
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 v-projects v-button{
@@ -70,7 +74,7 @@ v-projects .projects .list > .title > p{
 
 v-projects .projects .list > .title{
 /*	background: linear-gradient(to right, #0a0a0a 0%, transparent 100%);*/
-	background-color: #0004;
+	background-color: #0008;
 	position: sticky;
 /*	top: 80px;*/
 	top: 0;
@@ -137,6 +141,7 @@ v-projects .projects .list > .title{
 
 .project .content .imgs{
 	display: flex;
+	gap: 7px;
 	height: 200px;
 }
 
@@ -150,4 +155,32 @@ v-projects .projects .list > .title{
 /*	transform: scale(1.005);*/
 	border-radius: 14px;
 
+}
+
+.project .content .description{
+	display: flex;
+}
+
+.project .carousel img {
+	scroll-snap-align: center;
+	border-radius: 7px;
+}
+
+.project .carousel::-webkit-scrollbar {
+	height: 13px;
+}
+
+.project .carousel {
+	display: flex;
+	flex: 1;
+	width: 100%;
+	flex-direction: row;
+	overflow-x: scroll;
+	scroll-snap-type: x proximity;
+	height: 570px;
+/*	scroll-behavior: smooth;*/
+/*	-webkit-overflow-scrolling: touch;*/
+
+	gap: 7px;
+	padding-bottom: 7px;
 }

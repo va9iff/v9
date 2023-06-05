@@ -25,6 +25,29 @@ const projects = [
 		img: "./img/me.jpg"
 	},
 	{
+		name: "Design",
+		headline: "one of my design project",
+		description: `this has a few more images than usual`,
+		carousel: ["./img/me.jpg","./img/me.jpg","./img/me.jpg"]
+	},
+	{
+		name: "Ranture2", // name is required to ditungish and should be unique
+		raw: html`
+		<div class="project">
+			<div class="name"><b>Ranture</b></div>
+		<div style="background-color: red">a mad one</div>
+			<div class="headline"></div>
+			<div class="content">
+				<div class="imgs" scrolly2>
+					
+				</div>
+				<div class="content">
+					
+				</div>
+			</div>
+		</div>`,
+	},
+	{
 		name: "ReadyJS",
 		headline: "utility class to inherit",
 		description: `
@@ -100,19 +123,23 @@ class VProjects extends View {
 									</div>
 									<p>Selected skills applied projects</p>
 								</div>
-								${projects.map(project=>html`
+								${projects.map(project=>project.raw ?? html`
 									<div class="project">
 										<div class="name"><b>${project.name}</b>	</div>
 										<div class="headline">${project.headline}</div>
 										<div class="content">
-											${project.img ? html`
-												<div class="imgs">
-													<img src="${project.img}">
-												</div>` : html``}
-											<div class="content">
+											${project.img ? html` <div class="imgs">
+												<img src=${project.img}>
+											</div>` : html``}
+											<div class="description">
 												${project.description}
 											</div>
 										</div>
+										${project.carousel?.length>0 ? html`
+										<div class="carousel" scrolly2>
+											${project.carousel.map(src=>html`<img src=${src}>`)}
+										</div>
+										` : html``}
 									</div>
 								`)}
 								<div class="project">
@@ -122,7 +149,7 @@ class VProjects extends View {
 										<div class="imgs">
 											<div style="background-color: #999">salmon</div>
 										</div>
-										<div class="content">
+										<div class="description">
 											Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update.
 										</div>
 									</div>
