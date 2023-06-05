@@ -1,4 +1,4 @@
-import { html, VLitElement, unsafeHTML } from "../../vlit.js"
+import { html, VLitElement, unsafeHTML, keyed } from "../../vlit.js"
 import {View} from "../view.js"
 import {coolify} from "../../coolText/coolText.js"
 
@@ -27,9 +27,11 @@ const projects = [
 		tags: ["JavaScript"],
 	},
 	{
-		name: "Design",
-		headline: "one of my design project",
-		description: `this has a few more images than usual`,
+		name: "Startup Design ",
+		headline: "Real Estate Marketplace App Startup",
+		description: `After signing up, users can check sale or rental real estate near
+		by map.
+		`,
 		carousel: ["./img/me.jpg","./img/me.jpg","./img/me.jpg"],
 		tags: ["Figma", "GitHub"]
 	},
@@ -174,6 +176,21 @@ class VProjects extends View {
 			this.activeSkills = [...this.activeSkills, skill]
 		}
 	}
+	firstUpdated(){
+		super.firstUpdated()
+		this.projectsColumn = this.querySelector(".projectsColumn")
+	}
+	updated(changedProperties){
+		super.updated(...arguments)
+		// let oldActiveSkills =  changedProperties.get("activeSkills")
+		// if (this.activeSkills.length == 1 || this.activeSkills.length == 0)
+		// if (this.activeSkills.length > this.oldActiveSkillsLength)
+		if(changedProperties.has("activeSkills"))
+			// this.projectsColumn.scrollTop = 0
+			this.projectsColumn.scrollTo({top: 0, behavior: "smooth"})
+
+		// this.oldActiveSkillsLength = this.activeSkills.length
+	}
 	render() {
 		let selectedSkillProjects = projects.filter(project=>project.tags?.some(tag=>this.activeSkills.map(skill=>skill.skill).includes(tag)))
 		let otherProjects = projects.filter(project=>!selectedSkillProjects.includes(project))
@@ -240,11 +257,11 @@ class VProjects extends View {
 									</div>
 									<p>Selected skills applied projects</p>
 								</div>
-								${selectedSkillProjects.map(project=>project.raw ?? html`
-									<v-project
-										.project = ${project}
-									></v-project>
-								`)}
+								${selectedSkillProjects.map(project=>keyed(project.name, project.raw ?? html`
+																	<v-project
+																		.project = ${project}
+																	></v-project>
+																`))}
 							</div>` : html``}
 							<div class="list other">
 								<div class="title" ?selectedsGone=${this.activeSkills.length == 0}>${this.activeSkills.length > 0 ? "All projects" : "Select skills from left pane to filter the projects"}</div>
