@@ -10,11 +10,10 @@ class VHome extends View {
 		setTimeout(()=>this.setAttribute("v",parseInt(Math.random()*10)))
 	}
 	render() {
-		return html`
-		background 
-
+		return html` 
 		<div class="content" fadeInOpacity>
-			Emptyness...
+		<br>
+			I'm not one of your template dependant "developers"
 		</div>
 
 		`
