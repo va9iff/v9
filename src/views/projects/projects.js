@@ -22,7 +22,8 @@ const projects = [
 		Using object keys as argument, Ranture can set up an iteration you like with its simple syntax. 
 		No need for range() or manually programming to stop at a random point with maximum. 
 		Ranture also gives a nice methods for arrays to structure a mock object in a more readable way.`,
-		img: "./img/me.jpg"
+		img: "./img/me.jpg",
+		tags: ["JavaScript"],
 	},
 	{
 		name: "Design",
@@ -68,7 +69,8 @@ let skills = [
 			},
 			{
 				skill: "Figma",
-				style: "--active: hsl(266deg, 92%, 66%)"
+				style: "--active: hsl(266deg, 92%, 66%)",
+				isActive: true
 			},
 			{
 				skill: "Python" ,
@@ -76,7 +78,9 @@ let skills = [
 			},
 			{
 				skill: "JavaScript",
-				style: `--active: hsl(60deg, 100%, 70%); --passive: #222;`
+				style: `--active: hsl(60deg, 100%, 70%); --passive: #222;`,
+				about: `I can make whatever you can imagine. To make what you're 
+				unable to imagine is just gon' take a bit time.`
 			},
 			{
 				skill: "SASS" ,
@@ -93,39 +97,49 @@ let skills = [
 		style: `--active: hsl(120deg, 100%, 70%)`,
 		skills: [ 
 			{
-				skill: "Django",
+				skill: "LDjango",
 				style: `--active: hsl(120deg, 100%, 70%)`
 			},
 			{
-				skill: "Figma",
+				skill: "LFigma",
 				style: "--active: hsl(266deg, 92%, 66%)"
 			},
 			{
-				skill: "Python" ,
+				skill: "LPython" ,
 				style: `--active: hsl(207deg, 100%, 70%)`
 			},
 			{
-				skill: "JavaScript",
+				skill: "LJavaScript",
 				style: `--active: hsl(60deg, 100%, 70%); --passive: #222;`
 			},
 			{
-				skill: "SASS" ,
+				skill: "LSASS" ,
 				style: `--active: hsl(330deg, 100%, 70%)`
 			},
 			{
-				skill: "GitHub",
+				skill: "LGitHub",
 				style: `--active: hsl(153deg, 100%, 70%); --passive: #131313`
 			}
 		]
 	}
 ]
 
+const allSkills = skills.map(category=>({...category.skills, category})).flat(1)
+
 class VProjects extends View {
 	static properties = {
+		activeSkills: {}
 	}
-	skillClick(e){
-		let skill = e.text
-		console.log('fasad')
+	constructor(){
+		super()
+		this.activeSkills = []
+	}
+	skillClick(skill){
+		if (this.activeSkills.includes(skill)){
+			this.activeSkills = this.activeSkills.filter(_skill=>_skill!=skill)
+		} else {
+			this.activeSkills = [...this.activeSkills, skill]
+		}
 	}
 	render() {
 		return html`
@@ -135,14 +149,25 @@ class VProjects extends View {
 						${skills.map(
 							category=>html`
 								<br> <v-button 
-									.text=${category.category} 
+									@click = ${e=>{
+										if (category.skills.every(skill=>this.activeSkills.includes(skill)))
+											return category.skills.forEach(categorySkill=>this.activeSkills = this.activeSkills.filter(_skill=>_skill!=categorySkill))
+										for(let skill of category.skills)
+											if (!this.activeSkills.includes(skill))
+												this.activeSkills = [...this.activeSkills, skill]
+									}}
+									?active = ${category.skills.every(skill=>this.activeSkills.includes(skill))}
+									text=${category.category} 
 									class="category"
 									style=${category.style}>
 								</v-button> <br> 
 								${
 									category.skills.map(skill=>html`
 									<v-button 
-									active
+										?active = ${this.activeSkills.includes(skill)}
+										@click = ${e=>{
+											this.skillClick(skill)
+										}}
 										.text=${skill.skill} 
 										style=${skill.style}
 										class="glass"
@@ -167,12 +192,16 @@ class VProjects extends View {
 							<div class="list selecteds">
 								<div class="title">
 									<div class="activeSkills">
-										<v-button 
-											active
-											text="JavaScript" 
-											class="glass"
-											style="--active: hsl(60deg, 100%, 70%); --passive: #222;">
-										</v-button>
+										${this.activeSkills.map(skill=>html`
+											<v-button 
+												active
+												text=${skill.skill} 
+												class="glass"
+												@click = ${e=>this.activeSkills = this.activeSkills.filter(_skills=>_skills!=skill)}
+												style=${skill.style}>
+
+											</v-button>											
+										`)}
 									</div>
 									<p>Selected skills applied projects</p>
 								</div>
