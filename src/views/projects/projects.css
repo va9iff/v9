@@ -166,7 +166,7 @@ v-projects .projects .list > .title{
 }
 
 .project .carousel img {
-	scroll-snap-align: center;
+/*	scroll-snap-align: center;*/
 	border-radius: 7px;
 }
 
@@ -180,7 +180,7 @@ v-projects .projects .list > .title{
 	width: 100%;
 	flex-direction: row;
 	overflow-x: scroll;
-	scroll-snap-type: x proximity;
+/*	scroll-snap-type: x proximity;*/
 	height: 570px;
 /*	scroll-behavior: smooth;*/
 /*	-webkit-overflow-scrolling: touch;*/
