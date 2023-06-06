@@ -1,4 +1,4 @@
-import { html, VLitElement, styleMap } from "/src/vlit.js"
+import { html, VLitElement, styleMap } from "../../vlit.js"
 
 class VButton extends VLitElement {
 	static properties = {

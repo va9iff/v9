@@ -13,7 +13,7 @@ class VHome extends View {
 		return html` 
 		<div class="content" fadeInOpacity>
 		<br>
-			I'm not one of your template dependant "developers"
+			Not one of your template dependant "developers"
 		</div>
 
 		`
