@@ -10,10 +10,14 @@ v-button {
 	border-radius: 10em;
 	/*----*/
 	background-color: var(--passive);
-	display: inline-block;
+
+	display: inline-flex;
+
 	position: relative;
 	overflow: hidden;
 }
+
+
 
 v-button .circle {
 	transition: width 350ms, height 350ms;
@@ -36,6 +40,7 @@ v-button:hover {
 }
 
 v-button button {
+	flex: 1;
 	margin: 2px; /* padding for highlight border */
 	transition: 350ms;
 	font-size: 1.2em;
