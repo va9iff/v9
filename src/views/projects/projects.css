@@ -28,12 +28,19 @@ v-project{
 
 
 v-projects{
-/*	font-size: 26px;*/
+	font-size: 24px;
 	font-family: 'Open Sans';
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+}
+
+v-projects  a{
+/*	background-color: red;*/
+	color: #ededed;
+/*  font-family: 'Fira Mono';*/
+	text-decoration: none;
 }
 
 v-projects v-button{
@@ -135,7 +142,8 @@ v-projects .projectsColumn {
 }
 
 v-projects v-button.category{
-	margin-top: 70px;
+/*	margin-top: 70px;*/
+	margin-top: 25px;
 	margin-bottom: 7px;
 }
 
@@ -184,6 +192,12 @@ v-projects .projects .list > .title{
 	margin-top: 40px;
 }
 
+
+v-projects .projects .list.selecteds > .title > p{
+	font-size: 16px;
+	font-family: 'Open Sans';
+}
+
 v-projects .projects .list.selecteds > .title{
 	animation: titleAddedAnim 1300ms;
 }
@@ -211,7 +225,7 @@ v-projects .projects .list > .title{
 	display: flex;
 	flex-direction: column;
 	scroll-behavior: smooth;
-	align-items: flex-start;
+/*	align-items: flex-start;*/
 	padding: 32px 19px 32px 32px;
 	gap: 24px;
 
@@ -237,11 +251,12 @@ v-projects .projects .list > .title{
 }
 
 .project .name{
+	display: flex;
 	font-family: 'Josefin Sans';
 	font-style: normal;
 	font-weight: 700;
 	font-size: 38px;
-	line-height: 110%;
+/*	line-height: 110%;*/
 	/* or 40px */
 
 
@@ -249,12 +264,25 @@ v-projects .projects .list > .title{
 
 }
 
+.project .type{
+	font-size: 22px;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+/*	background-color: red;*/
+}
+
+
+
 .project .headline{
-	font-family: 'Josefin Sans';
+/*	font-family: 'Josefin Sans';*/
+  font-family: 'Fira Mono';
+
 	font-style: normal;
 	font-weight: 400;
-	font-size: 26px;
-	line-height: 110%;
+	font-size: 28px;
+/*	text-decoration: underline;*/
+/*	line-height: 110%;*/
 	/* or 39px */
 }
 

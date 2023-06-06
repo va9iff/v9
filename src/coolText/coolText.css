@@ -18,7 +18,7 @@ a .coolText span{
 	transition-timing-function: cubic-bezier(0.21, 2.1, 0.58, 1);
 	transform-origin: bottom;
 	-webkit-user-drag: none;
-	font-family: sans-serif;
+/*	font-family: sans-serif;*/
 }
 
 .coolText span:hover {

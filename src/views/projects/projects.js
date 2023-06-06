@@ -1,4 +1,4 @@
-import { html, VLitElement, unsafeHTML, keyed } from "../../vlit.js"
+import { html, VLitElement, unsafeHTML, keyed, nothing } from "../../vlit.js"
 import {View} from "../view.js"
 import {coolify} from "../../coolText/coolText.js"
 
@@ -7,78 +7,188 @@ import "../../components/v-button/v-button.js"
 
 let coolHTML = (...args) => unsafeHTML(coolify(...args))
 
+let cool = (strings, ...bosh) => unsafeHTML(coolify(strings[0], {super: true}))
+
+
 // await new Promise(r=>setTimeout(r,500))
 
 const projects = [
 	{
 		name: "VanylUI",
+		type: "Most Complicated",
+		typeStyle : `color: hsla(0deg, 100%, 60%, 0.5)`,
+		link: "https://github.com/va9iff/vanyl",
 		headline: "Declerative, Performant JavaScript Component Library (Powered With Tagged Functions)",
-		description: "Aside from built in 2 way data binding lazy, Vanyl doesn't have any knowledge about your data so, when it's changed, you should call update.",
-		tags: ["JavaScript", "DOM"]
+		description: html`Aside from built in 2 way data binding, 
+		uses the library TheJS which also is written by me to assign dynamic 
+		properties and adds up its own middle ware to deal with DOM API. <br><br>
+
+		The API documentation isn't complete yet. Only the template syntax and 
+		a way to make imperative updates are shown. The native components aren't 
+		even talked about at all. <br>
+		This project is my most complicated project 
+		and explaining it at this stage would be too technical. It is complete 
+		but not enough to rely on for everything. So a bit time is needed. 
+		Probably will be ready in mid summer.
+		`,
+		tags: ["JavaScript", "DOM"],
 	},
 	{
 		name: "Ranture",
 		headline: "Sophisticated iteration library",
-		description: `
+		type: "Decent",
+		typeStyle: `color: hsla(103deg, 100%, 80%, 0.5)`,
+		link: "https://www.npmjs.com/package/ranture",
+		description: html`
 		Using object keys as argument, Ranture can set up an iteration you like with its simple syntax. 
 		No need for range() or manually programming to stop at a random point with maximum. 
-		Ranture also gives a nice methods for arrays to structure a mock object in a more readable way.`,
-		img: "./img/me.jpg",
+		Ranture also gives a nice methods for arrays to structure a mock object in a more readable way. <br>
+		See the package in npm.
+		`,
+		// img: "./img/me.jpg",
 		tags: ["JavaScript"],
 	},
 	{
-		name: "Startup Design ",
-		headline: "Real Estate Marketplace App Startup",
-		description: `After signing up, users can check sale or rental real estate near
-		by map.
+		name: "Tesol",
+		headline: "Zen testing platform",
+		type: "Decent",
+		typeStyle: `color: hsla(103deg, 100%, 80%, 0.5)`,
+		link: "https://va9iff.github.io/tesol/",
+		description: html`
+		<div>
+			Aside from being a platform, this open-source project defines its own
+			language to write tests on top of HTML. Which means you can not only 
+			write traditional tests in ease, but also design tests with media such 
+			as sounds from Google Drive or wherever you like, put YouTube videos
+			and literally anything that's possible on the web. <br> <br>
+			When Tesol was designing, the ${cool`mobile experience`} was always mattered the 
+			most. You can:
+			<ul style="margin-left: 40px">
+				<li>
+					Swipe your finger to switch back-n-fore between questions. 
+				</li>
+				<li>
+					Bring the answers down near to your finger.
+				</li>
+				<li>
+					Switch to its own dark theme
+				</li>
+			</ul> <br>
+			The other most striking feature Tesol is that its overall user 
+			experience. To be more specific, 
+			${cool`users never waits for loading`}. 
+			The questions of the test are pre-loaded. This makes Tesol work 
+			seamless smooth. <br> <br> 
+
+			With all these features, Tesol also has mode to go even more "zen". 
+			There's a mode which will tell the user their answer is whether 
+			right or wrong when they select immediately. <br><br>
+
+			Is there a downside of pre-loading? No. <br>
+			The questions are stored in a text file. Any external media 
+			will be loaded when question is rendered. <br> 
+			Sure, it'll load a bit late. But this loading will happen only once.
+		</div>
 		`,
-		carousel: ["./img/me.jpg","./img/me.jpg","./img/me.jpg"],
-		tags: ["Figma", "GitHub"]
+		tags: ["JavaScript"]
 	},
 	{
-		name: "Ranture2", // name is required to ditungish and should be unique
-		raw: html`
-		<div class="project">
-			<div class="name"><b>Ranture</b></div>
-		<div style="background-color: red">a mad one</div>
-			<div class="headline"></div>
-			<div class="content">
-				<div class="imgs" scrolly2>
-					
-				</div>
-				<div class="content">
-					
-				</div>
-			</div>
-		</div>`,
+		name: "Old Portfolio",
+		headline: "Wasn't a template guy since back in 2021 :)",
+		type: "Old",
+		typeStyle: `color: hsla(303deg, 100%, 80%, 0.5)`,
+		link: "https://va9iff.github.io/Portfolio/",
+		tags: ["JavaScript", "JavaScript", "SCSS", "DOM", "HTML", "CSS"],
+		description: html`
+		<div>
+			The projects pane is under the page. When user clicks the "Projects", 
+			the current page flow will be wrapped to left and the projects will 
+			be shown. <br><br>
+			Also another css trick that I came up with is to rotate the 
+			container 90 degrees. Then I rotated every element in it -90 degree. 
+			I had a vertical scrolling element that works with native mouse 
+			scroll. Big problem was that - their spacing was based of height. 
+			Since they think they're stacked vertically. So I gave them 
+			appropriate heights and width simulating their vertical stacking. <br><br>
+			<b>${cool`Bonus:`}</b> you can find my old projects in this portfolio
+		</div>
+		`,
 	},
 	{
 		name: "ReadyJS",
-		headline: "utility class to inherit",
-		description: `
-		ReadyJS has a class called Ready to be inherited. This class's ready() method will be fired on first
-		instantiation. When I was building a game engine, needed this behavior and made this little library.
+		type: "little",
+		typeStyle: `color: #9ff8;`,
+		headline: html`Utility class - one time method`,
+		tags: ["JavaScript"],
+		link: "https://github.com/va9iff/ReadyJS/blob/main/ready.js",
+		description: html`
+		ReadyJS has a class called Ready to be inherited. This class's ready() 
+		method will be fired on first instantiation. When I was building a game 
+		engine, needed this behavior and made this little library.
 		`,
-		tags: ["SASS"]
 	},
+
+	{
+		name: "V9",
+		type: "Currently viewing",
+		typeStyle: `color: hsla(240deg, 100%, 80%, 0.5)`,
+		headline: html`This Portfolio Itself`,
+		tags: ["JavaScript"],
+		link: "#dashboard",
+		description: html`
+		As being the newest project, this is one of the most sophisticated 
+		webpages I've built. Every micro animations and URL transitions 
+		were carefully designed. Those chip buttons on left, filtering, 
+		pop-culture-design in network page and sticky tricks in the dashboard. 
+		Could use a template or pre-built components, but so every one can. 
+		Everything on this page was made by myself, as my message says in the 
+		hidden message page :) 
+		`,
+	},
+
+	// {
+	// 	name: "Startup Design ",
+	// 	headline: "Real Estate Marketplace App Startup",
+	// 	description: `After signing up, users can check sale or rental real estate near
+	// 	by map.
+	// 	`,
+	// 	carousel: ["./img/me.jpg","./img/me.jpg","./img/me.jpg"],
+	// 	tags: ["Figma", "GitHub"]
+	// },
+	// {
+	// 	name: "Ranture2", // name is required to ditungish and should be unique
+	// 	raw: html`
+	// 	<div class="project">
+	// 		<div class="name"><b>Ranture</b></div>
+	// 	<div style="background-color: red">a mad one</div>
+	// 		<div class="headline"></div>
+	// 		<div class="content">
+	// 			<div class="imgs" scrolly2>
+					
+	// 			</div>
+	// 			<div class="content">
+					
+	// 			</div>
+	// 		</div>
+	// 	</div>`,
+	// },
 ]
 
 let skills = [
 	{
-		category: "languages",
+		category: "Web",
 		style: `--active: hsl(120deg, 100%, 70%)`,
 		skills: [ 
+			// {
+				// skill: "Django",
+				// style: `--active: hsl(120deg, 100%, 70%)`
+			// },
 			{
-				skill: "Django",
-				style: `--active: hsl(120deg, 100%, 70%)`
+				skill: "HTML",
+				style: `--active: hsl(12deg, 100% , 70%)`
 			},
 			{
-				skill: "Figma",
-				style: "--active: hsl(266deg, 92%, 66%)",
-				isActive: true
-			},
-			{
-				skill: "Python" ,
+				skill: "CSS",
 				style: `--active: hsl(207deg, 100%, 70%)`
 			},
 			{
@@ -88,58 +198,61 @@ let skills = [
 				unable to imagine is just gon' take a bit time.`
 			},
 			{
+				skill: "TypeScript" ,
+				style: `--active: hsl(200deg, 100%, 70%)`
+			},
+			{
 				skill: "SASS" ,
 				style: `--active: hsl(330deg, 100%, 70%)`
 			},
 			{
-				skill: "GitHub",
-				style: `--active: hsl(153deg, 100%, 70%); --passive: #131313`
-			}
+				skill: "Python" ,
+				style: `--active: hsl(207deg, 100%, 70%)`
+			},
 		]
 	},
 	{
-		category: "languages",
+		category: "Design",
 		style: `--active: hsl(120deg, 100%, 70%)`,
 		skills: [ 
 			{
-				skill: "LDjango",
-				style: `--active: hsl(120deg, 100%, 70%)`
+				skill: "Figma",
+				style: "--active: hsl(266deg, 92%, 66%)",
+				isActive: true
 			},
 			{
-				skill: "LFigma",
-				style: "--active: hsl(266deg, 92%, 66%)"
+				skill: "Gimp",
+				style: `--active: hsl(80deg, 100%, 70%); --passive: #131313`
 			},
+		]
+	},
+	{
+		category: "Platforms",
+		style: `--active: hsl(120deg, 100%, 70%)`,
+		skills: [ 
 			{
-				skill: "LPython" ,
-				style: `--active: hsl(207deg, 100%, 70%)`
-			},
-			{
-				skill: "LJavaScript",
-				style: `--active: hsl(60deg, 100%, 70%); --passive: #222;`
-			},
-			{
-				skill: "LSASS" ,
-				style: `--active: hsl(330deg, 100%, 70%)`
-			},
-			{
-				skill: "LGitHub",
+				skill: "GitHub",
 				style: `--active: hsl(153deg, 100%, 70%); --passive: #131313`
+			},
+			{
+				skill: "FireBase",
+				style: `--active: hsl(30deg, 100%, 70%); --passive: #131313`
 			}
 		]
-	}
+	},
 ]
 
 const allSkills = skills.map(category=>({...category.skills, category})).flat(1)
 
-class VProject extends View{
+class VProject extends VLitElement{
 	static properties = {
 		project: {}
 	}
 	render(){
 		let { project } = this
 		return html`
-			<div class="project">
-				<div class="name"><b>${project.name}</b>	</div>
+		<a class="project" href=${project.link ?? nothing} target="blank">
+				<div class="name"><b>${project.name}</b><span class="type" style="${project.typeStyle}" vtype=${project.type}>${project.type}</span></div>
 				<div class="headline">${project.headline}</div>
 				<div class="content">
 					${project.img ? html` <div class="imgs">
@@ -154,7 +267,7 @@ class VProject extends View{
 					${project.carousel.map(src=>html`<img src=${src}>`)}
 				</div>
 				` : html``}
-			</div>
+		</a>
 		`
 	}	
 }
