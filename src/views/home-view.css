@@ -135,14 +135,29 @@ v-home .metaeffect div{
 
 }
 
+
 .punchline {
 	position: absolute;
 	pointer-events: none;
 	max-width: 40vw;
 	font-size: 3vw;
 	right: 0;
+	transform: translateY(20%);
+	transition: 820ms;
 }
 
+.open .punchline{
+	transform: translateY(0);
+}
+
+v-home.close{
+	overflow: hidden;
+}
+
+.close .punchline{
+	transform: translateX(100%);
+
+}
 
 
 @keyframes updown{
