@@ -14,3 +14,164 @@ v-home.open{
 v-home.close{
 	opacity: 0;
 }
+
+/* mix element only calculates on the parent 
+so I had to chain to reach the bg */
+v-home {
+	background-color: black;
+	mix-blend-mode: screen;
+}
+
+v-home .metaeffect{
+	overflow: hidden;
+	padding: 60px;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+
+	filter: contrast(30);
+	background-color: #000;
+	mix-blend-mode: screen;
+	box-shadow: 40px 0 40px #fff4 inset;
+
+}
+
+v-home .metaeffect div{
+
+	mix-blend-mode: screen;
+	position: absolute;
+	background-color: #fff;
+	box-shadow: 0 0 6vh 6vh #fff, 0 0 7vw 7vw #000;
+	border-radius: 30px;
+	filter: drop-shadow(cyan -1vw 0) drop-shadow(magenta 1vw 0);
+}
+
+.m1{
+	width: 7px;
+	height: 8px;
+	left: 40vw;
+	top: 90vh;
+	animation: rightLeftAnim 4100ms infinite; ease-in;
+}
+@keyframes rightLeftAnim{
+	0%{
+		left: 40vw;
+	}
+	50%{
+		left: 60vw;
+	}
+	100%{
+		left: 40vw;
+	}
+}
+
+
+.m2{
+	width: 7px;
+	height: 28vh;
+	left: 25vw;
+	top: 20vh;
+	transform: rotate(45deg);
+	animation: rotateBar 10000ms infinite linear;
+}
+
+@keyframes rotateBar{
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(1800deg);
+	}
+}
+
+
+.m3{
+	position: absolute;
+	transition-delay: 0;
+/*	width: 23vw;*/
+/*	height: 23vw;*/
+	width: 3vw;
+	height: 3vw;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.m4{
+	right: 30vw;
+	top: 45vh;
+	width: 7vw;
+	height: 7vw;
+	box-shadow: 0 0 0 0 #fff, 0 0 0 0 #000;
+	transform-origin: top left;
+	animation: oncircle 1600ms infinite linear;
+
+
+}
+
+
+
+.m5{
+	top: 0;
+	right: 60vw;
+	height: 100vh;
+}
+
+
+[exclusion]{
+	position: absolute;
+	z-index: 9;
+	mix-blend-mode: exclusion;
+	pointer-events: none;
+}
+
+.metaballText{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-family: 'Open Sans';
+	padding: 3px;
+
+}
+
+.punchline {
+	position: absolute;
+	pointer-events: none;
+	max-width: 40vw;
+	font-size: 3vw;
+	right: 0;
+}
+
+
+
+@keyframes updown{
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(20vh);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+@keyframes leftright{
+	0%{
+		transform: translateX(0);
+	}
+	50%{
+		transform: translateX(20vh);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+
+@keyframes oncircle{
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
