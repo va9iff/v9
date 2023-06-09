@@ -103,8 +103,9 @@ v-home .metaeffect div{
 	width: 7vw;
 	height: 7vw;
 	box-shadow: 0 0 0 0 #fff, 0 0 0 0 #000;
-	transform-origin: top left;
-	animation: oncircle 1600ms infinite linear;
+/*	transform-origin: left;*/
+	border-radius: 50%;
+	animation: oncircle 15000ms infinite ease-in-out;
 
 
 }
@@ -168,10 +169,10 @@ v-home .metaeffect div{
 }
 
 @keyframes oncircle{
-	from{
-		transform: rotate(0);
+	0%{
+		transform: rotate(0deg);
 	}
-	to{
-		transform: rotate(360deg);
+	100%{
+		transform: rotate(3240deg);
 	}
 }
