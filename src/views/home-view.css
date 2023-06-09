@@ -105,7 +105,7 @@ v-home .metaeffect div{
 	box-shadow: 0 0 0 0 #fff, 0 0 0 0 #000;
 /*	transform-origin: left;*/
 	border-radius: 50%;
-	animation: oncircle 15000ms infinite ease-in-out;
+	animation: oncircle 30000ms infinite ease-in-out;
 
 
 }
@@ -172,7 +172,10 @@ v-home .metaeffect div{
 	0%{
 		transform: rotate(0deg);
 	}
-	100%{
+	50%{
 		transform: rotate(3240deg);
+	}
+	100%{
+		transform: rotate(0);
 	}
 }
