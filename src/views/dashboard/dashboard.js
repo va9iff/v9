@@ -1,4 +1,4 @@
-import { html, VLitElement, classMap } from "../../vlit.js"
+import { html, VLitElement, classMap, unsafeHTML } from "../../vlit.js"
 import {View} from "../view.js"
 
 // await new Promise(r=>setTimeout(r,500))
@@ -16,19 +16,10 @@ const treeContent = [
 
 		`,
 		getContent: async () => {
-			await import("./treeContent/Education.js")
-			return html`<treecontent-education></treecontent-education>`
+			// await import("./treeContent/Education.js")
+			// return html`<treecontent-education></treecontent-education>`
+			return unsafeHTML(await fetch("./src/views/dashboard/treeContent/Education.html").then(res=>res.text()))
 		}
-	},
-	{
-		title: html`<span>Location</span>`,
-		desc: html`Baku, Azerbaijan`,
-		getContent: async () => html`
-		Azerbaijan, Baku. <br> 
-		Narimanov district, <br> 
-		Ataturk avenue (approximate) <br><br>
-		<a href="#network">Contact</a> for more information.
-		`
 	},
 	{
 		title: html`<span>Cyber-Security</span>`,
@@ -41,7 +32,35 @@ const treeContent = [
 			await import ("./treeContent/Cyber-Security.js")
 			return html`<treecontent-cyber-security></treecontent-cyber-security>`
 		}
-	}
+	},
+	{
+		title: html`<span>JavaScript</span>`,
+		desc: html`
+		<div>
+			More than 3 years of experience. <br>
+			Numerous projects and libraries. <br>
+		</div>
+
+		`,
+		getContent: async () => {
+			// return html`
+				// Everything on this portfolio is all about my JavaScript skills. <br><br>
+				// Head to the projects to see more.
+			// `
+			return unsafeHTML(await fetch("./src/views/dashboard/treeContent/JavaScript.html").then(res=>res.text()))
+
+		}
+	},
+	{
+		title: html`<span>Location</span>`,
+		desc: html`Baku, Azerbaijan. <br> Earth, Solar System, <br> Milky Way, the Local Group.`,
+		// Azerbaijan, Baku. <br> 
+		// Narimanov district, <br> 
+		getContent: async () => html`
+		Ataturk avenue (approximate) <br><br>
+		<a href="#network">Contact</a> for more information.
+		`
+	},
 ]
 
 class VDashboard extends View {

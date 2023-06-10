@@ -71,11 +71,12 @@ v-home .metaeffect div{
 
 .m2{
 	width: 7px;
-	height: 28vh;
-	left: 25vw;
-	top: 20vh;
+	height: 202vh;
+	left: 20vw;
+	top: -40vh;
+/*	transform-origin: top;*/
 	transform: rotate(45deg);
-	animation: rotateBar 10000ms infinite linear;
+	animation: rotateBar 37000ms infinite linear;
 }
 
 @keyframes rotateBar{

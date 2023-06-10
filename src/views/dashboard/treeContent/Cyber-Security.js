@@ -21,7 +21,17 @@ class TreeContentCyberSecurity extends VLitElement {
 			<li style="margin-top: 16px">IBM Cybersecurity Analyst Assessment</li>
 		</ul> <br><br>
 
-		Credit certificates in my <a href="https://www.linkedin.com/in/va9iff/">LinkedIn</a>.
+		Credit certificates in my <a href="https://www.linkedin.com/in/va9iff/">LinkedIn</a>. <br><br><br><br><br>
+
+
+		The program's pinnacle was marked by the acquisition of invaluable 
+		expertise in penetration testing, incident response 
+		strategies, and meticulous forensic methodologies. 
+		At the end of the program, I emerged as a sentinel against emerging 
+		risks, fortified by the knowledge necessary to mitigate and 
+		neutralize potential breaches.
+
+
 
 `
 	}

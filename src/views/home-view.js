@@ -33,7 +33,7 @@ class VHome extends View {
 			<div class="m5"></div>
 		</div>
 		<div class="metaballText" exclusion>
-			My implementation of Metaballs. <br>
+			My implementation of Metaballs with halo. <br>
 			Should perform better than Gaussian blur. <br>
 			Optimized, also more visually appealing.
 
