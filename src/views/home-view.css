@@ -32,6 +32,9 @@ v-home .metaeffect{
 	filter: contrast(30);
 	background-color: #000;
 	mix-blend-mode: screen;
+
+	--v: min(1.2vw, 1.2vh);
+
 	box-shadow: 40px 0 40px #fff4 inset;
 
 }
@@ -41,14 +44,14 @@ v-home .metaeffect div{
 	mix-blend-mode: screen;
 	position: absolute;
 	background-color: #fff;
-	box-shadow: 0 0 6vh 6vh #fff, 0 0 7vw 7vw #000;
+	box-shadow: 0 0 var(--v) var(--v) #fff, 0 0 7vw 7vw #000;
 	border-radius: 30px;
 	filter: drop-shadow(cyan -1vw 0) drop-shadow(magenta 1vw 0);
 }
 
 .m1{
-	width: 7px;
-	height: 8px;
+	width: 10vw;
+	height: 1vw;
 	left: 40vw;
 	top: 90vh;
 	animation: rightLeftAnim 4100ms infinite; ease-in;
@@ -139,8 +142,9 @@ v-home .metaeffect div{
 .punchline {
 	position: absolute;
 	pointer-events: none;
-	max-width: 40vw;
-	font-size: 3vw;
+/*	max-width: 40vw;*/
+	font-size: 1.5vw;
+	padding-right: 40px;
 	right: 0;
 	transform: translateY(20%);
 	transition: 820ms;
