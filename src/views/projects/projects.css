@@ -339,3 +339,8 @@ v-projects .projects .list > .title{
 	padding-bottom: 7px;
 }
 
+
+
+v-button.subCat, v-button.category{
+	--passive: #121212
+}

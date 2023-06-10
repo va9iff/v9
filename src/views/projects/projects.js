@@ -133,7 +133,7 @@ const projects = [
 		type: "Currently viewing",
 		typeStyle: `color: hsla(240deg, 100%, 80%, 0.5)`,
 		headline: html`This Portfolio Itself`,
-		tags: ["JavaScript"],
+		tags: ["JavaScript", "Lit", "CSS", "GitHub"],
 		link: "#dashboard",
 		description: html`
 		As being the newest project, this is one of the most sophisticated 
@@ -177,7 +177,17 @@ const projects = [
 let skills = [
 	{
 		category: "Web",
-		style: `--active: hsl(120deg, 100%, 70%)`,
+		subCats: [
+			{
+				cat: "Libraries", 
+				skills: ["ReactJS", "Lit", "SvelteJS"]
+			},
+			{
+				cat: "Languages", 
+				skills: ["HTML", "CSS", "JavaScript"]
+			}
+		],
+		style: `--active: hsl(0, 0%, 100%);`,
 		skills: [ 
 			// {
 				// skill: "Django",
@@ -189,7 +199,7 @@ let skills = [
 			},
 			{
 				skill: "CSS",
-				style: `--active: hsl(207deg, 100%, 70%)`
+				style: `--active: hsl(180deg, 100%, 70%)`
 			},
 			{
 				skill: "JavaScript",
@@ -199,21 +209,34 @@ let skills = [
 			},
 			{
 				skill: "TypeScript" ,
-				style: `--active: hsl(200deg, 100%, 70%)`
+				style: `--active: hsl(200deg, 100%, 70%);`
 			},
 			{
 				skill: "SASS" ,
 				style: `--active: hsl(330deg, 100%, 70%)`
 			},
 			{
-				skill: "Python" ,
-				style: `--active: hsl(207deg, 100%, 70%)`
+				skill: "ReactJS",
+				style: `--active: hsl(193deg,100%,66%)`
 			},
+			{
+				skill: "SvelteJS",
+				style: `--active: hsl(33deg,100%,66%)`
+			},
+			{
+				skill: "Lit",
+				style: `--active: hsl(193deg,100%,66%)`
+			},
+			{
+				skill: "ExpressJS",
+				style: `--active: hsl(233deg,100%,66%)`
+
+			}
 		]
 	},
 	{
 		category: "Design",
-		style: `--active: hsl(120deg, 100%, 70%)`,
+		style: `--active: hsl(160deg, 100%, 70%);`,
 		skills: [ 
 			{
 				skill: "Figma",
@@ -222,23 +245,38 @@ let skills = [
 			},
 			{
 				skill: "Gimp",
-				style: `--active: hsl(80deg, 100%, 70%); --passive: #131313`
+				style: `--active: hsl(80deg, 100%, 70%);`
+			},
+			{
+				skill: "Inkspace",
+				style: `--active: hsl(230deg, 100%, 70%);`
 			},
 		]
 	},
 	{
 		category: "Platforms",
-		style: `--active: hsl(120deg, 100%, 70%)`,
+		style: `--active: hsl(223deg, 100%, 70%)`,
 		skills: [ 
 			{
 				skill: "GitHub",
-				style: `--active: hsl(153deg, 100%, 70%); --passive: #131313`
+				style: `--active: hsl(153deg, 100%, 70%);`
 			},
 			{
 				skill: "FireBase",
-				style: `--active: hsl(30deg, 100%, 70%); --passive: #131313`
+				style: `--active: hsl(30deg, 100%, 70%);`
 			}
 		]
+	},
+	{
+		category: "Other",
+		style: `--active: hsl(111deg, 100%, 70%)`,
+		skills: [
+			{
+				skill: "Python" ,
+				style: `--active: hsl(207deg, 100%, 70%)`
+			},
+		]
+
 	},
 ]
 
@@ -304,6 +342,22 @@ class VProjects extends View {
 
 		// this.oldActiveSkillsLength = this.activeSkills.length
 	}
+	categoryClick(category){
+		if (category.skills.every(skill=>this.activeSkills.includes(skill)))
+			return category.skills.forEach(categorySkill=>this.activeSkills = this.activeSkills.filter(_skill=>_skill!=categorySkill))
+		for(let skill of category.skills)
+			if (!this.activeSkills.includes(skill))
+				this.activeSkills = [...this.activeSkills, skill]
+	}
+	subCatClick(subCat, category){
+		console.log('subCatSkills')
+		let subCatSkills = category.skills.filter(skill=> subCat.skills.includes(skill.skill))
+		if (subCatSkills.every(skill=>this.activeSkills.includes(skill)))
+			return subCatSkills.forEach(subCatSkill=>this.activeSkills = this.activeSkills.filter(_skill=>_skill!=subCatSkill))
+		for(let skill of subCatSkills)
+			if (!this.activeSkills.includes(skill))
+				this.activeSkills = [...this.activeSkills, skill]
+	}
 	render() {
 		let selectedSkillProjects = projects.filter(project=>project.tags?.some(tag=>this.activeSkills.map(skill=>skill.skill).includes(tag)))
 		let otherProjects = projects.filter(project=>!selectedSkillProjects.includes(project))
@@ -314,18 +368,21 @@ class VProjects extends View {
 						${skills.map(
 							category=>html`
 								<br> <v-button 
-									@click = ${e=>{
-										if (category.skills.every(skill=>this.activeSkills.includes(skill)))
-											return category.skills.forEach(categorySkill=>this.activeSkills = this.activeSkills.filter(_skill=>_skill!=categorySkill))
-										for(let skill of category.skills)
-											if (!this.activeSkills.includes(skill))
-												this.activeSkills = [...this.activeSkills, skill]
-									}}
+									@click = ${e => this.categoryClick(category)}
 									?active = ${category.skills.every(skill=>this.activeSkills.includes(skill))}
 									text=${category.category} 
 									class="category"
 									style=${category.style}>
-								</v-button> <br> 
+								</v-button> 
+								${category.subCats?.map(subCat=>html`
+									<v-button 
+										text = ${subCat.cat}
+										?active = ${subCat.skills.every(s=>this.activeSkills.map(as=>as.skill).includes(s))}
+										@click = ${e=>this.subCatClick(subCat, category)}
+										class = "subCat"
+									></v-button>
+									`)}
+								<br> 
 								${
 									category.skills.map(skill=>html`
 									<v-button 
@@ -343,14 +400,6 @@ class VProjects extends View {
 							)}
 
 						<br>
-						<v-button 
-							text="Profile">
-						</v-button> 
-
-						<br>
-						<v-button 
-							text="F">
-						</v-button>
 					</div>
 					<div class="projectsColumn" scrolly>
 						<div class="projects">
@@ -385,7 +434,7 @@ class VProjects extends View {
 								`)}
 							</div>
 						</div>
-						p
+					
 					</div>
 				</div>	
 			</div>
