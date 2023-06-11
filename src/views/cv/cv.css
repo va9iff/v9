@@ -37,19 +37,36 @@ v-cv object{
 v-cv object{
 	transform: translateY(-100px);
 	border-radius: 50%;
-	transition: 800ms;
+	transform-origin: top;
+	opacity: 0;
+	border: 3px solid #eee;
+	transition: opacity 300ms, all 800ms;
 }
 v-cv.open object{
+	opacity: 1;
 	transform: translateY(0);
 	border-radius: 8px;
-
 }
 
+v-cv.close object{
+/*	opacity: 0;*/
+/*	transition: 1000ms opacity, 1000ms all;*/
+	transition: all 300ms, 500ms 400ms transform;
+	transition-delay: 800ms transform;
+	border-radius: 500px;
+	width: 70px;
+	transform: translateY(120vh);
+}
 
 v-cv .center{
 	height: 100%;
 	display: flex;
-	align-items: center;
+/*	align-items: center;*/
 	padding: 20px;
-	justify-content: center;
+/*	justify-content: center;*/
+}
+
+v-cv.close .openPDF{
+	transform: translateX(-50%) translateY(50vh);
+	transition: 1000ms;
 }
