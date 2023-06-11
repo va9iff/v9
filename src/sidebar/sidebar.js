@@ -90,6 +90,12 @@ class VSidebar extends VLitElement {
 					@click=${this.route}>
 						<img src="./src/sidebar/icons/projects.png" alt="projects">
 				</a>
+				<a 
+					?active=${window.location.hash == "#cv"} 
+					href = "#cv"
+					@click=${this.route}>
+						<img src="./src/sidebar/icons/cv.png" alt="cv">
+				</a>
 			</div>
 					`
 	}

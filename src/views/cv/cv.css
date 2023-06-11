@@ -1,0 +1,55 @@
+v-cv .content{
+	height: 100%;
+}
+
+v-cv a.openPDF{
+	position: fixed;
+	transform-origin: bottom;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 200ms, bottom 3000ms;
+
+	padding: 20px 35px;
+	text-decoration: none;
+	color: #000;
+	font-size: 16px;
+	background-color: #99ccff;
+	border-radius: 15px;
+	font-family: Jost;
+
+	bottom: -100%;
+}
+v-cv.open a.openPDF{
+	bottom: 3px;
+}
+
+v-cv a.openPDF:hover{
+	transform: translateX(-50%) scale(1.2);
+	background-color: #aaddff;
+}
+
+v-cv object{
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+}
+
+v-cv object{
+	transform: translateY(-100px);
+	border-radius: 50%;
+	transition: 800ms;
+}
+v-cv.open object{
+	transform: translateY(0);
+	border-radius: 8px;
+
+}
+
+
+v-cv .center{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	justify-content: center;
+}

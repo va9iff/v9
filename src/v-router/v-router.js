@@ -20,6 +20,7 @@ const titles = {
 	"#dashboard": ()=> "Dashboard - V9",
 	"#network": ()=> "Network - V9",
 	"#projects": ()=> "Projects - V9",
+	"#cv": ()=> "CV - V9",
 
 	// "#network": ()=> "Network" + window.styledTitleV9, // one part being 
 	// consistent for a time but the other half (Network) gets changed.
@@ -82,10 +83,14 @@ const routes = {
 		let el = document.createElement("v-network")
 		return el
 	},
-
 	"#projects": async () => {
 		await import("../views/projects/projects.js")
 		let el = document.createElement("v-projects")
+		return el
+	},
+	"#cv": async () => {
+		await import("../views/cv/cv.js")
+		let el = document.createElement("v-cv")
 		return el
 	},
 
