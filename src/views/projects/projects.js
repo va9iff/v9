@@ -34,6 +34,30 @@ const projects = [
 		tags: ["JavaScript", "DOM"],
 	},
 	{
+		name: "WON",
+		headline: "Web OS",
+		type: "Complicated",
+		typeStyle : `color: hsla(-30deg, 100%, 60%, 0.5)`,
+		link: "https://va9iff.github.io/WON/",
+		description: html`
+		Although the project is called an "OS" WON is actually an interface for 
+		an operating system. It's a web implementation of window management 
+		system with the functioning apps and its API to make apps. <br><br>
+
+		The main idea : Backendless fully cloud OS on the web with 1 sign in away 
+		<br><br>
+
+		It didn't have any processing going on the backend. All WON need is the 
+		files. Everything done on the frontend. Then just written to a place. 
+		Users can use their Google Drive to store their WON ROM or have their 
+		data on their own. It's also possible to adapt an literal OS to WON at
+		some point.
+		`,
+		// img: "./src/views/projects/imgs/WON.png",
+		carousel: ["./src/views/projects/imgs/WON.png",],
+		tags: ["JavaScript"],
+	},
+	{
 		name: "Ranture",
 		headline: "Sophisticated iteration library",
 		type: "Decent",
