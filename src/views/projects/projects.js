@@ -98,7 +98,7 @@ const projects = [
 		type: "Old",
 		typeStyle: `color: hsla(303deg, 100%, 80%, 0.5)`,
 		link: "https://va9iff.github.io/Portfolio/",
-		tags: ["JavaScript", "JavaScript", "SCSS", "DOM", "HTML", "CSS"],
+		tags: ["JavaScript", "JavaScript", "SASS", "DOM", "HTML", "CSS"],
 		description: html`
 		<div>
 			The projects pane is under the page. When user clicks the "Projects", 
@@ -419,11 +419,11 @@ class VProjects extends View {
 									</div>
 									<p>Selected skills applied projects</p>
 								</div>
-								${selectedSkillProjects.map(project=>keyed(project.name, project.raw ?? html`
+								${selectedSkillProjects.length ? selectedSkillProjects.map(project=>keyed(project.name, project.raw ?? html`
 																	<v-project
 																		.project = ${project}
 																	></v-project>
-																`))}
+																`)) : html`There's no project record with the selected skills registered yet`}
 							</div>` : html``}
 							<div class="list other">
 								<div class="title" ?selectedsGone=${this.activeSkills.length == 0}>${this.activeSkills.length > 0 ? "All projects" : "Select skills from left pane to filter the projects"}</div>
