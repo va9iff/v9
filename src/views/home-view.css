@@ -1,5 +1,5 @@
 v-home {
-	transition: 600ms;
+	transition: 1000ms;
 	opacity: 0;
 }
 
@@ -46,7 +46,20 @@ v-home .metaeffect div{
 	background-color: #fff;
 	box-shadow: 0 0 var(--v) var(--v) #fff, 0 0 7vw 7vw #000;
 	border-radius: 30px;
+/*	filter: drop-shadow(cyan -1vw 0) drop-shadow(magenta 1vw 0);*/
+	filter: drop-shadow(cyan -20vw 0) drop-shadow(magenta 20vw 0);
+/*	box-shadow: 0 0 0 0 #fff, 0 0 0 0 #000;*/
+}
+v-home.open .metaeffect div{
 	filter: drop-shadow(cyan -1vw 0) drop-shadow(magenta 1vw 0);
+	transition: 1200ms;
+/*	box-shadow: 0 0 var(--v) var(--v) #fff, 0 0 7vw 7vw #000;*/
+}
+v-home.close .metaeffect div{
+	filter: drop-shadow(cyan -10vw 0) drop-shadow(magenta 10vw 0);
+	filter: drop-shadow(cyan -1vw 0) drop-shadow(magenta 1vw 0) contrast(0);
+
+	transition: 700ms;
 }
 
 .m1{
@@ -89,7 +102,7 @@ v-home .metaeffect div{
 }
 
 
-.m3{
+v-home.open .metaeffect div.m3{
 	position: absolute;
 	transition-delay: 0;
 /*	width: 23vw;*/
@@ -99,7 +112,13 @@ v-home .metaeffect div{
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
 	pointer-events: none;
+	transition: 0ms;
 }
+v-home.close .metaeffect div.m3{
+	transition: 1000ms;
+}
+
+
 
 .m4{
 	right: 30vw;
