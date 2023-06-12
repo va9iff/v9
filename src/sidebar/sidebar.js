@@ -76,6 +76,8 @@ class VSidebar extends VLitElement {
 						top index.html I think. not so portable huh -->
 						<!-- <img src="./icons/dashboard.png" alt="dashboard"> -->
 						<img src="./src/sidebar/icons/dashboard.png" alt="dashboard">
+						<span>Dashboard</span>
+
 
 				</a>
 				<a 
@@ -83,18 +85,21 @@ class VSidebar extends VLitElement {
 					href = "#network"
 					@click=${this.route}>
 						<img src="./src/sidebar/icons/network.png" alt="network">
+						<span>Network</span>
 				</a>
 				<a 
 					?active=${window.location.hash == "#projects"} 
 					href = "#projects"
 					@click=${this.route}>
 						<img src="./src/sidebar/icons/projects.png" alt="projects">
+						<span>Projects</span>
 				</a>
 				<a 
 					?active=${window.location.hash == "#cv"} 
 					href = "#cv"
 					@click=${this.route}>
 						<img src="./src/sidebar/icons/cv.png" alt="cv">
+						<span>CV</span>
 				</a>
 			</div>
 					`
