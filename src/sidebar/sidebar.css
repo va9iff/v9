@@ -23,17 +23,19 @@ v-sidebar a > span{
 	font-family: 'Open Sans';
 	position: absolute;
 	top: 100%;
-	color: #a1a1a1;
+/*	color: #a1a1a1;*/
+	color: #eeeeee;
 	cursor: default;
 	font-size: 0;
 	opacity: 0;
-	transition: 200ms;
+	transition: all 300ms, opacity 200ms;
 	pointer-events: none;
 	margin-top: -10px; /*the gap was 10px*/
 /*	transition-delay: 500ms;*/
 }
 /*v-sidebar a[active] > span,*/
 v-sidebar a:hover > span{
+	transition: all 200ms, opacity 1000ms;
 /*	transition: 200ms;*/
 /*	transition-delay: 0;*/
 /*	transition-delay: 300ms;*/
