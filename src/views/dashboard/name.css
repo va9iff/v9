@@ -17,7 +17,7 @@ v-dashboard .name{
 	top: 60px;
 }
 
-v-dashboard .scrolled .name{
+v-dashboard.scrolled .name{
 	transition: filter 0ms;
 	filter: 
 	drop-shadow(0 0 15px #131313)
