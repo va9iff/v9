@@ -1,0 +1,15 @@
+@media only screen and (max-device-width: 480px) {
+	v-projects .wrapper{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	v-projects .wrapper .projectsColumn{
+		border-radius: 0 0 30px 30px;
+	}
+
+	v-projects v-project a.project{
+		margin: 20px 10px;
+		padding: 13px 19px 13px 13px;
+		border-radius: 13px;
+	}
+}
