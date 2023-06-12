@@ -17,7 +17,9 @@ v-dashboard.open .line{
 v-dashboard.scrolled .name{
 	transition: 700ms;
 	min-width: 150px;
-	left: 310px;
+/*	left: 310px;*/
+	left: calc(var(--imgx) + var(--imgs) * 2 + 20px);
+
 	top: 65px;
 }
 v-dashboard.scrolled .line{

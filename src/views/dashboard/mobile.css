@@ -1,0 +1,24 @@
+@media only screen and (max-device-width: 480px) {
+	v-dashboard{
+		--imgx: 23px;
+	}
+	v-dashboard .mytree{
+		min-width: 100%;
+	}
+	.treeRow > .treeTitle {
+		padding-right: 30px;
+/*		width: 120px;*/
+/*		min-width: 120px;*/
+	}
+	.treeRow > .treeTitle > span {
+/*		transform: rotate(0);*/
+	}
+
+	v-dashboard .texty {
+		min-width: 100%;
+	}
+	v-dashboard .texty .scroll-content {
+		padding: 12px;
+		padding-left: 25px;
+	}
+}

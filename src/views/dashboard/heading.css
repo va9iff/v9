@@ -1,3 +1,8 @@
+v-dashboard {
+	--imgx: 210px;
+	--imgs: 40px; /* image width and height is 80 */
+}
+
 v-dashboard img.me{
 /*	box-shadow: 0px 11px 35px rgba(0, 0, 0, 0.35);*/
 	box-shadow: 0 0 0 #1a1a1a;
@@ -68,9 +73,9 @@ v-dashboard img.me:hover{
 
 v-dashboard.scrolled img.me{
 /*	transition: 200ms;*/
-	width: 80px;
-	left: 210px;
-	height: 80px;
+	width: calc(var(--imgs) * 2);
+	left: var(--imgx);
+	height: calc(var(--imgs) * 2);
 	border-radius: 50%;
 }
 v-dashboard.scrolled img.me:hover{

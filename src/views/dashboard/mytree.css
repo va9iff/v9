@@ -75,8 +75,8 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	padding-right: 70px;
 
 
-	width: 250px;
-	min-width: 250px;
+	width: calc(var(--imgx) + var(--imgs));
+	min-width: calc(var(--imgx) + var(--imgs));
 
 	font-family: 'Open Sans';
 	font-style: normal;

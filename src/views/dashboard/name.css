@@ -18,6 +18,8 @@ v-dashboard .name{
 }
 
 v-dashboard.scrolled .name{
+	left: calc(var(--imgx) + var(--imgs) * 2 + 80px);
+
 	transition: filter 0ms;
 	filter: 
 	drop-shadow(0 0 15px #131313)
