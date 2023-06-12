@@ -3,7 +3,7 @@ v-cv .content{
 }
 
 v-cv a.openPDF{
-	position: fixed;
+	position: absolute;
 /*	transform-origin: bottom;*/
 	left: 50%;
 	transform: translateX(-50%);
