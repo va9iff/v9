@@ -1,0 +1,17 @@
+@media only screen and (max-device-width: 480px) {
+	v-network .content{
+		padding: 4.2px .20px;
+	}
+
+	v-network .content > div[i]{
+		margin-left: 0;
+	}
+
+	v-network .content > div[i] > div[i]{
+		margin-left: 0;
+	}
+	v-network .content h1{
+		font-size: 44px;
+
+	}
+}
