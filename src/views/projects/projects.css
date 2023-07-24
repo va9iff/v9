@@ -344,3 +344,9 @@ v-projects .projects .list > .title{
 v-button.subCat, v-button.category{
 	--passive: #121212
 }
+
+v-projects.close .project{
+	transform: translateY(-30px);
+	opacity: 0;
+	transition: 200ms;
+}
