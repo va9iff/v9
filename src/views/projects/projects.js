@@ -29,7 +29,28 @@ const projects = [
 		This project is my most complicated project 
 		and explaining it at this stage would be too technical. It is complete 
 		but not enough to rely on for everything. So a bit time is needed. 
-		Probably will be ready in mid summer.
+		Probably will be after this summer.
+		`,
+		tags: ["JavaScript", "DOM"],
+	},
+	{
+		name: "Fudir",
+		// hsl(152,45,84)
+		type: "Complicated",
+		typeStyle : `color: hsla(0deg, 100%, 60%, 0.5)`,
+		link: "https://va9iff.github.io/fudir/",
+		headline: "Local restaurant management system",
+		description: html`
+		Easily build your own menu with your food and price. Offer discounts for 
+		big orders with Sets and Combo Menus. Clients are managed by the 
+		tables so you can have 2 parallel ongoing checks and add the clients' 
+		orders progressively to their tables. Once the client is done, you 
+		get their checks with 1 click and the results are calculated to give 
+		you a daily summary. all your data is saved locally and can be exported 
+		as CSV file.
+		Admin password: 2024 (Menu is only editable with the admin password. 
+		All your edits are visible to your menu since this app is supposed to
+		work locally.)
 		`,
 		tags: ["JavaScript", "DOM"],
 	},
