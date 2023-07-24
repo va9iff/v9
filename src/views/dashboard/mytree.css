@@ -63,6 +63,11 @@ have any idea for this part. so I'll just use dashboard as tree/details page*/
 	z-index: 777;
 }
 
+.treeRow,
+.treeRow .treeDesc,
+.treeRow .treeDesc *{
+	cursor: pointer;
+}
 
 
 .treeRow > .treeTitle {
